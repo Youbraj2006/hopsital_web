@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Lumbini City Hospital | Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet" href="create-account.css">
+
+</head>
+
+<body>
+
+    <main class="create-page">
+
+        <div class="create-background create-background-one"></div>
+
+        <div class="create-background create-background-two"></div>
+
+        <div class="create-card">
+
+            <div class="create-logo">
+
+                <div class="create-logo-glow"></div>
+
+                <img
+                    src="image/logo-removebg-preview.png"
+                    alt="Lumbini City Hospital">
+
+            </div>
+
+
+            <div class="create-heading">
+
+                <span>NEW PATIENT ACCOUNT</span>
+
+                <h1>Create your account</h1>
+
+                <p>
+                    Join Lumbini City Hospital and manage your healthcare experience.
+                </p>
+
+            </div>
+
+
+            <form
+                class="create-form"
+                id="createAccountForm">
+
+
+                <div class="create-row">
+
+                    <div class="create-field">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <div class="create-input">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                placeholder="Enter first name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="create-field">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <div class="create-input">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                placeholder="Enter last name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="create-field">
+
+                    <label for="createEmail">
+                        Email or Phone
+                    </label>
+
+                    <div class="create-input">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="text"
+                            id="createEmail"
+                            placeholder="Enter email or phone"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="create-field">
+
+                    <label for="createPassword">
+                        Password
+                    </label>
+
+                    <div class="create-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="createPassword"
+                            placeholder="Create a password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="create-password-toggle"
+                            id="createPasswordToggle"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="create-field">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="create-input">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="create-password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <label class="create-terms">
+
+                    <input
+                        type="checkbox"
+                        id="createTerms"
+                        required>
+
+                    <span>
+                        I agree to the hospital prototype terms and understand
+                        that this is not a real healthcare account.
+                    </span>
+
+                </label>
+
+
+                <button
+                    class="create-submit"
+                    type="submit">
+
+                    <span>CREATE ACCOUNT</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div
+                    class="create-success"
+                    id="createSuccess">
+
+                    <div class="create-success-icon">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Account created successfully
+                        </strong>
+
+                        <p>
+                            This is a frontend prototype. Your account is stored
+                            only in this browser for demonstration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+
+            <div class="create-demo">
+
+                <div class="create-demo-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        PROTOTYPE ACCOUNT
+                    </strong>
+
+                    <p>
+                        This page is only for demonstration.
+                        Do not enter your real password or sensitive information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="login.html"
+                class="back-login create-back">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Login
+
+            </a>
+
+
+            <div class="create-footer">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Compassionate Care, Better Health
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="login.js"></script>
+
+    <script src="create-account.js"></script>
+
+</body>
+
+</html>

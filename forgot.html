@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Forgot Password | Lumbini City Hospital</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Shared Login CSS -->
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         FORGOT PASSWORD PAGE
+    ====================================================== -->
+
+    <main class="forgot-page">
+
+        <!-- Background decoration -->
+        <div class="forgot-bg-shape forgot-bg-one"></div>
+        <div class="forgot-bg-shape forgot-bg-two"></div>
+
+
+        <!-- =================================================
+             FORGOT PASSWORD CARD
+        ================================================== -->
+
+        <section class="forgot-card">
+
+            <!-- Hospital Logo -->
+            <div class="forgot-logo">
+
+                <div class="forgot-logo-glow"></div>
+
+                <img
+                    src="image/logo-removebg-preview.png"
+                    alt="Lumbini City Hospital">
+
+            </div>
+
+
+            <!-- Heading -->
+            <div class="forgot-heading">
+
+                <span>ACCOUNT RECOVERY</span>
+
+                <h1>Forgot your password?</h1>
+
+                <p>
+                    Enter your registered email or phone number
+                    and we'll help you recover your account.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESET PASSWORD FORM
+            ================================================== -->
+
+            <form
+                class="forgot-form"
+                id="forgotForm">
+
+                <!-- Email / Phone -->
+                <div class="forgot-field">
+
+                    <label for="forgotEmail">
+                        Email or Phone
+                    </label>
+
+                    <div class="forgot-input">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="forgotEmail"
+                            placeholder="Enter email or phone"
+                            autocomplete="username"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="forgot-submit">
+
+                    <span>SEND RESET LINK</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- =================================================
+                 SUCCESS MESSAGE
+            ================================================== -->
+
+            <div
+                class="forgot-success"
+                id="forgotSuccess">
+
+                <div class="forgot-success-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>Demo Reset Request Sent</strong>
+
+                    <p>
+                        This prototype does not send a real email
+                        or SMS. Your reset request was simulated.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DEMO NOTICE
+            ================================================== -->
+
+            <div class="forgot-demo">
+
+                <div class="forgot-demo-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>DEMO PASSWORD RECOVERY</strong>
+
+                    <p>
+                        This is a frontend prototype.
+                        No real password reset or email will be sent.
+                        Do not enter your real account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Back To Login -->
+            <a
+                href="login.html"
+                class="back-login">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>Back to Login</span>
+
+            </a>
+
+
+            <!-- Footer -->
+            <div class="forgot-footer">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Compassionate Care, Better Health
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Forgot Password JavaScript -->
+    <script src="login.js"></script>
+
+</body>
+
+</html>

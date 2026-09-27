@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lumbini City Hospital | Login</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<div class="login-overlay" id="loginOverlay">
+
+    <div class="login-popup">
+
+        <button
+            class="login-close"
+            id="loginClose"
+            type="button"
+            aria-label="Close login">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital">
+
+        </div>
+
+
+        <!-- HEADING -->
+
+        <div class="login-heading">
+
+            <span>WELCOME BACK</span>
+
+            <h2>Sign in to continue</h2>
+
+            <p>
+                Access your Lumbini City Hospital experience.
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form class="login-form" id="loginForm">
+
+
+            <!-- EMAIL / PHONE -->
+
+            <div class="login-field">
+
+                <label for="loginEmail">
+                    Email or Phone
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="loginEmail"
+                        placeholder="Enter email or phone"
+                        autocomplete="username"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-field">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter password"
+                        autocomplete="current-password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                        aria-label="Show password">
+
+                        <i class="fa-regular fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div class="login-options">
+
+                <label class="remember-me">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe">
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+                <a href="forgot.html">
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                class="login-submit"
+                type="submit">
+
+                <span>LOGIN</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <!-- DIVIDER -->
+
+            <div class="login-divider">
+
+                <span>
+                    OR CONTINUE WITH
+                </span>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="social-login">
+
+                <button
+                    type="button"
+                    class="social-btn google-btn">
+
+                    <i class="fa-brands fa-google"></i>
+
+                    <span>
+                        Google
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="social-btn facebook-btn">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    <span>
+                        Facebook
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="social-btn twitter-btn">
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                    <span>
+                        X
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <div class="create-account">
+
+                <span>
+                    New to Lumbini City Hospital?
+                </span>
+
+                <a href="create.html">
+                    Create new account
+                </a>
+
+            </div>
+
+        </form>
+
+
+        <!-- DEMO NOTICE -->
+
+        <div class="demo-notice">
+
+            <div class="demo-notice-icon">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+
+            <div class="demo-notice-content">
+
+                <strong>
+                    DEMO LOGIN — THIS IS A PROTOTYPE
+                </strong>
+
+                <p>
+                    You don't need a real account. Use the example
+                    credentials below or enter any random email and password.
+                </p>
+
+
+                <div class="demo-credentials">
+
+
+                    <!-- DEMO EMAIL -->
+
+                    <div class="demo-credential">
+
+                        <div>
+
+                            <small>
+                                EMAIL
+                            </small>
+
+                            <span>
+                                demo@lumbinicityhospital.com
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="copy-demo"
+                            data-copy="demo@lumbinicityhospital.com">
+
+                            <i class="fa-regular fa-copy"></i>
+
+                            <span>
+                                Copy
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- DEMO PASSWORD -->
+
+                    <div class="demo-credential">
+
+                        <div>
+
+                            <small>
+                                PASSWORD
+                            </small>
+
+                            <span>
+                                Demo@12345
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="copy-demo"
+                            data-copy="Demo@12345">
+
+                            <i class="fa-regular fa-copy"></i>
+
+                            <span>
+                                Copy
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <em>
+                    Please don't use your real password.
+                </em>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="login.js"></script>
+
+</body>
+
+</html>

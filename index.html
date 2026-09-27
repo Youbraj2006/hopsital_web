@@ -1,0 +1,4933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumbini City Hospital</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LUMBINI CITY HOSPITAL - HTML
+     LOGO UPDATED TO IMAGE
+========================================================= -->
+
+ 
+<!-- ========================================================= 
+     NAVBAR 
+========================================================= --> 
+ 
+<header class="navbar" id="navbar"> 
+ 
+    <div class="nav-container"> 
+ 
+        <a href="#home" class="logo"> 
+ 
+            <img src="image/logo-removebg-preview.png" 
+                 alt="Lumbini City Hospital Logo"> 
+ 
+        </a> 
+ 
+ 
+        <nav class="nav-menu"> 
+ 
+            <a href="#home" class="active"> 
+                Home 
+            </a> 
+ 
+            <a href="#why-choose-us"> 
+                About 
+            </a> 
+ 
+            <a href="#departments"> 
+                Departments 
+            </a> 
+ 
+            <a href="#department-info"> 
+                Department Info 
+            </a> 
+ 
+            <a href="pharmacy.html"> 
+                Pharmacy 
+            </a> 
+ 
+            <a href="#services"> 
+                Services 
+            </a> 
+ 
+            <a href="#contact"> 
+                Contact 
+            </a> 
+ 
+        </nav> 
+ 
+ 
+        <a href="login.html" class="login-btn" id="mainLoginBtn"> 
+ 
+            <i class="fa-solid fa-right-to-bracket"></i> 
+ 
+            <span>Login</span> 
+ 
+        </a> 
+ 
+ 
+        <button 
+            class="menu-toggle" 
+            id="menuToggle" 
+            type="button" 
+            aria-label="Open menu"> 
+ 
+            <i class="fa-solid fa-bars"></i> 
+ 
+        </button> 
+ 
+    </div> 
+ 
+</header> 
+ 
+ 
+ 
+<!-- ========================================================= 
+     MOBILE OVERLAY 
+========================================================= --> 
+ 
+<div 
+    class="mobile-overlay" 
+    id="mobileOverlay"> 
+</div> 
+ 
+ 
+ 
+<!-- ========================================================= 
+     MOBILE SIDE MENU 
+========================================================= --> 
+ 
+<aside 
+    class="mobile-menu" 
+    id="mobileMenu"> 
+ 
+ 
+    <div class="mobile-menu-header"> 
+ 
+        <a href="#home" class="mobile-logo"> 
+ 
+            <img 
+                src="image/logo-removebg-preview.png" 
+                alt="Lumbini City Hospital Logo"> 
+ 
+        </a> 
+ 
+ 
+        <button 
+            class="close-menu" 
+            id="closeMenu" 
+            type="button" 
+            aria-label="Close menu"> 
+ 
+            <i class="fa-solid fa-xmark"></i> 
+ 
+        </button> 
+ 
+    </div> 
+ 
+ 
+    <nav class="mobile-links"> 
+ 
+        <a href="#home"> 
+ 
+            <i class="fa-solid fa-house"></i> 
+ 
+            <span> 
+                Home 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="#why-choose-us"> 
+ 
+            <i class="fa-solid fa-hospital"></i> 
+ 
+            <span> 
+                About 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="#departments"> 
+ 
+            <i class="fa-solid fa-stethoscope"></i> 
+ 
+            <span> 
+                Departments 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="#department-info"> 
+ 
+            <i class="fa-solid fa-circle-info"></i> 
+ 
+            <span> 
+                Department Info 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="pharmacy.html"> 
+ 
+            <i class="fa-solid fa-pills"></i> 
+ 
+            <span> 
+                Pharmacy 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="#services"> 
+ 
+            <i class="fa-solid fa-hand-holding-medical"></i> 
+ 
+            <span> 
+                Services 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <a href="#Contact"> 
+ 
+            <i class="fa-solid fa-phone"></i> 
+ 
+            <span> 
+                Contact 
+            </span> 
+ 
+        </a> 
+ 
+ 
+        <!-- MOBILE APPOINTMENT --> 
+ 
+        <a 
+            href="#" 
+            class="mobile-appointment-trigger open-appointment-modal"> 
+ 
+            <i class="fa-solid fa-calendar-check"></i> 
+ 
+            <span> 
+                Book an Appointment 
+            </span> 
+ 
+        </a> 
+ 
+    </nav> 
+ 
+ 
+    <div class="floating-auth" id="floatingAuth"> 
+ 
+        <a href="login.html" id="floatingAuthBtn"> 
+ 
+            <i class="fa-solid fa-right-to-bracket"></i> 
+ 
+            <span> 
+                Login 
+            </span> 
+ 
+        </a> 
+ 
+    </div> remove department info and when clcike contact shoudl go to contact place in web in last
+
+
+
+    <div class="mobile-footer">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <span>
+            Compassionate Care, Better Health
+        </span>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+
+    <div class="hero-slider">
+
+        <div
+            class="slide active-slide"
+            style="background-image: url('image/image1.jpg');">
+        </div>
+
+        <div
+            class="slide"
+            style="background-image: url('image/image4.avif');">
+        </div>
+
+        <div
+            class="slide"
+            style="background-image: url('image/image2.avif');">
+        </div>
+
+        <div
+            class="slide"
+            style="background-image: url('image/image3.avif');">
+        </div>
+
+        <div
+            class="slide"
+            style="background-image: url('image/image5.avif');">
+        </div>
+
+    </div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-heart">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+
+        <p class="welcome-text">
+            WELCOME TO
+        </p>
+
+
+        <h1>
+            Lumbini City Hospital
+        </h1>
+
+
+        <p class="hero-slogan">
+            Compassionate Care, Better Health
+        </p>
+
+
+        <p class="hero-description">
+
+            Your health, our priority.
+            Providing trusted healthcare with compassion and excellence.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#"
+                class="appointment-btn open-appointment-modal">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Book an Appointment
+
+            </a>
+
+
+            <a
+                href="#services"
+                class="explore-btn">
+
+                Explore Services
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-facilities">
+
+
+            <div class="hero-facility">
+
+                <span class="facility-number">
+                    01
+                </span>
+
+                <div class="hero-facility-icon">
+
+                    <i class="fa-solid fa-truck-medical"></i>
+
+                </div>
+
+                <div class="hero-facility-content">
+
+                    <span class="facility-label">
+                        CARE 01
+                    </span>
+
+                    <h3>
+                        24/7 Emergency
+                    </h3>
+
+                    <span class="facility-extra">
+                        Immediate medical support whenever you need it.
+                    </span>
+
+                </div>
+
+                <span class="facility-arrow">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+                <span class="hero-facility-line"></span>
+
+            </div>
+
+
+            <div class="hero-facility">
+
+                <span class="facility-number">
+                    02
+                </span>
+
+                <div class="hero-facility-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+                <div class="hero-facility-content">
+
+                    <span class="facility-label">
+                        CARE 02
+                    </span>
+
+                    <h3>
+                        Expert Doctors
+                    </h3>
+
+                    <span class="facility-extra">
+                        Experienced medical professionals focused on your care.
+                    </span>
+
+                </div>
+
+                <span class="facility-arrow">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+                <span class="hero-facility-line"></span>
+
+            </div>
+
+
+            <div class="hero-facility">
+
+                <span class="facility-number">
+                    03
+                </span>
+
+                <div class="hero-facility-icon">
+
+                    <i class="fa-solid fa-pills"></i>
+
+                </div>
+
+                <div class="hero-facility-content">
+
+                    <span class="facility-label">
+                        CARE 03
+                    </span>
+
+                    <h3>
+                        Pharmacy
+                    </h3>
+
+                    <span class="facility-extra">
+                        Convenient access to essential medicines and prescriptions.
+                    </span>
+
+                </div>
+
+                <span class="facility-arrow">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+                <span class="hero-facility-line"></span>
+
+            </div>
+
+
+            <div class="hero-facility">
+
+                <span class="facility-number">
+                    04
+                </span>
+
+                <div class="hero-facility-icon">
+
+                    <i class="fa-solid fa-microscope"></i>
+
+                </div>
+
+                <div class="hero-facility-content">
+
+                    <span class="facility-label">
+                        CARE 04
+                    </span>
+
+                    <h3>
+                        Diagnostics
+                    </h3>
+
+                    <span class="facility-extra">
+                        Reliable diagnostic testing to support accurate care.
+                    </span>
+
+                </div>
+
+                <span class="facility-arrow">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+                <span class="hero-facility-line"></span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="slider-dots">
+
+        <button
+            class="dot active-dot"
+            type="button">
+        </button>
+
+        <button
+            class="dot"
+            type="button">
+        </button>
+
+        <button
+            class="dot"
+            type="button">
+        </button>
+
+        <button
+            class="dot"
+            type="button">
+        </button>
+
+        <button
+            class="dot"
+            type="button">
+        </button>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+
+        <span>
+            Scroll to explore
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AUTO LOGIN POPUP
+========================================================= -->
+
+<div class="login-popup-overlay" id="loginPopup">
+
+    <div class="login-popup">
+
+        <button
+            class="login-popup-close"
+            id="loginPopupClose"
+            type="button"
+            aria-label="Close login">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="login-popup-icon">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+        </div>
+
+
+        <h2>
+            Welcome to Lumbini City Hospital
+        </h2>
+
+
+        <p>
+            Please login to access your hospital account.
+        </p>
+
+
+        <a
+            href="login.html"
+            class="login-popup-btn">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+
+<section class="why-section" id="why-choose-us">
+
+    <div class="why-container">
+
+        <div class="why-header">
+
+            <div class="why-header-left">
+
+                <span class="why-eyebrow">
+                    WHY CHOOSE US
+                </span>
+
+                <h2>
+                    Care designed around
+                    <span>every patient.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="why-header-right">
+
+                <p>
+                    At Lumbini City Hospital, we bring together compassionate
+                    people, dependable medical services and thoughtful care
+                    to create a healthcare experience patients can trust.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="why-list">
+
+
+            <article class="why-item">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="why-content">
+
+                    <span class="why-small-title">
+                        PATIENT CARE
+                    </span>
+
+                    <h3>
+                        Your Needs Come First
+                    </h3>
+
+                    <p>
+                        We take time to listen, understand your concerns and
+                        explain your care clearly. Every interaction is guided
+                        by respect, comfort and attention to the individual
+                        needs of each patient and family.
+                    </p>
+
+                </div>
+
+                <div class="why-arrow">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </article>
+
+
+            <article class="why-item">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+
+                <div class="why-content">
+
+                    <span class="why-small-title">
+                        OUR TEAM
+                    </span>
+
+                    <h3>
+                        Professionals Who Care
+                    </h3>
+
+                    <p>
+                        Our doctors, nurses and healthcare professionals work
+                        together with dedication and responsibility. Their
+                        experience, communication and commitment help create
+                        a supportive environment throughout your treatment.
+                    </p>
+
+                </div>
+
+                <div class="why-arrow">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </article>
+
+
+            <article class="why-item">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+
+                <div class="why-content">
+
+                    <span class="why-small-title">
+                        MEDICAL SERVICES
+                    </span>
+
+                    <h3>
+                        Reliable Healthcare Services
+                    </h3>
+
+                    <p>
+                        From consultation and diagnostics to pharmacy and
+                        follow-up support, our services are organized to make
+                        healthcare easier to access while helping professionals
+                        provide appropriate guidance for your needs.
+                    </p>
+
+                </div>
+
+                <div class="why-arrow">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </article>
+
+
+            <article class="why-item">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <div class="why-content">
+
+                    <span class="why-small-title">
+                        CONTINUED SUPPORT
+                    </span>
+
+                    <h3>
+                        Care That Continues
+                    </h3>
+
+                    <p>
+                        Our relationship with patients goes beyond a single
+                        appointment. Through follow-up guidance and continued
+                        support, we aim to make your healthcare journey clearer,
+                        more comfortable and easier to manage.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DEPARTMENTS — INTERACTIVE HUMAN BODY
+========================================================= -->
+
+<section class="departments-section" id="departments">
+
+    <div class="departments-bg-lines"></div>
+
+    <div class="departments-container">
+
+        <div class="departments-header">
+
+            <div class="departments-label">
+                <span></span>
+                OUR MEDICAL DEPARTMENTS
+            </div>
+
+            <h2>
+                Specialized care,
+                <em>connected together.</em>
+            </h2>
+
+            <p>
+                Explore our medical departments through an interactive
+                human-body medical map. Select a department to discover
+                how it supports patient care.
+            </p>
+
+        </div>
+
+
+        <div class="body-medical-map">
+
+
+            <div class="human-body">
+
+                <svg
+                    viewBox="0 0 300 760"
+                    preserveAspectRatio="xMidYMid meet"
+                    aria-label="Human body medical map">
+
+
+                    <path
+                        class="body-outline"
+                        d="
+                        M150 35
+
+                        C120 35 105 55 105 85
+                        C105 115 120 130 135 140
+
+                        L135 175
+
+                        C115 185 90 195 75 220
+
+                        L55 300
+                        L85 310
+
+                        L105 250
+                        L110 380
+
+                        L90 520
+                        L120 520
+
+                        L150 390
+
+                        L180 520
+                        L210 520
+
+                        L190 380
+                        L195 250
+
+                        L215 310
+                        L245 300
+
+                        L225 220
+
+                        C210 195 185 185 165 175
+
+                        L165 140
+
+                        C180 130 195 115 195 85
+
+                        C195 55 180 35 150 35
+
+                        Z
+                        ">
+                    </path>
+
+
+                    <path
+                        class="body-detail"
+                        d="
+                        M135 175
+                        C150 185 165 185 165 175
+
+                        M110 250
+                        C130 265 170 265 190 250
+
+                        M110 380
+                        C130 390 170 390 190 380
+                        ">
+                    </path>
+
+
+                    <path
+                        class="brain-organ"
+                        d="
+                        M132 78
+                        C125 70 130 58 142 58
+                        C148 48 165 50 169 62
+                        C181 65 181 80 171 86
+                        C162 94 145 92 132 78
+                        ">
+                    </path>
+
+
+                    <path
+                        class="heart-organ"
+                        d="
+                        M150 218
+                        C138 202 118 212 123 228
+                        C128 243 150 256 150 256
+                        C150 256 172 243 177 228
+                        C182 212 162 202 150 218
+                        Z
+                        ">
+                    </path>
+
+
+                    <path
+                        class="lung-organ"
+                        d="
+                        M146 210
+                        C130 200 115 212 116 235
+                        C118 255 130 265 146 255
+
+                        M154 210
+                        C170 200 185 212 184 235
+                        C182 255 170 265 154 255
+                        ">
+                    </path>
+
+
+                    <path
+                        class="pelvis-organ"
+                        d="
+                        M125 340
+                        C135 350 165 350 175 340
+
+                        M125 340
+                        C125 365 138 380 150 380
+
+                        C162 380 175 365 175 340
+                        ">
+                    </path>
+
+
+                    <circle
+                        class="body-point point-neuro"
+                        cx="150"
+                        cy="80"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-ent"
+                        cx="150"
+                        cy="145"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-cardio"
+                        cx="150"
+                        cy="230"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-respiratory"
+                        cx="125"
+                        cy="225"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-ortho"
+                        cx="105"
+                        cy="350"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-pediatric"
+                        cx="150"
+                        cy="280"
+                        r="5">
+                    </circle>
+
+
+                    <circle
+                        class="body-point point-diagnostic"
+                        cx="150"
+                        cy="340"
+                        r="5">
+                    </circle>
+
+                </svg>
+
+            </div>
+
+
+            <div
+                class="department-node node-neurology"
+                data-department="neurology">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>01</span>
+
+                    <strong>
+                        Neurology
+                    </strong>
+
+                    <small>
+                        Brain & nervous system
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-ent"
+                data-department="ent">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-ear-listen"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>02</span>
+
+                    <strong>
+                        ENT
+                    </strong>
+
+                    <small>
+                        Ear, nose & throat
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-cardiology"
+                data-department="cardiology">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>03</span>
+
+                    <strong>
+                        Cardiology
+                    </strong>
+
+                    <small>
+                        Heart & circulation
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-respiratory"
+                data-department="respiratory">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-lungs"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>04</span>
+
+                    <strong>
+                        Respiratory
+                    </strong>
+
+                    <small>
+                        Lungs & breathing
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-orthopedics"
+                data-department="orthopedics">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-bone"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>05</span>
+
+                    <strong>
+                        Orthopedics
+                    </strong>
+
+                    <small>
+                        Bones & joints
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-pediatrics"
+                data-department="pediatrics">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-child"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>06</span>
+
+                    <strong>
+                        Pediatrics
+                    </strong>
+
+                    <small>
+                        Children's care
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div
+                class="department-node node-diagnostics"
+                data-department="diagnostics">
+
+                <div class="department-icon">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+
+                <div class="department-info">
+
+                    <span>07</span>
+
+                    <strong>
+                        Diagnostics
+                    </strong>
+
+                    <small>
+                        Testing & evaluation
+                    </small>
+
+                </div>
+
+                <div class="department-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <span class="connection-line line-neuro"></span>
+
+            <span class="connection-line line-ent"></span>
+
+            <span class="connection-line line-cardio"></span>
+
+            <span class="connection-line line-respiratory"></span>
+
+            <span class="connection-line line-ortho"></span>
+
+            <span class="connection-line line-pediatric"></span>
+
+            <span class="connection-line line-diagnostic"></span>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GRAND DEPARTMENT DETAIL VIEW
+========================================================= -->
+
+<div
+    class="department-grand-view"
+    id="departmentDetail">
+
+    <div class="grand-content">
+
+        <button
+            class="grand-close"
+            id="detailClose"
+            type="button"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <div class="grand-left">
+
+            <div class="grand-department-label">
+
+                <span class="grand-dot"></span>
+
+                LUMBINI CITY HOSPITAL
+
+            </div>
+
+
+            <div
+                class="grand-number-small"
+                id="detailSmallNumber">
+
+                01 / 07
+
+            </div>
+
+
+            <div
+                class="grand-icon"
+                id="detailIcon">
+            </div>
+
+
+            <h2 id="detailTitle">
+                Neurology
+            </h2>
+
+
+            <div class="grand-line"></div>
+
+
+            <p id="detailDescription">
+
+                Neurology provides specialized care for disorders involving
+                the brain, spinal cord and nervous system.
+
+            </p>
+
+
+            <div
+                class="grand-tags"
+                id="detailTags">
+
+                <span>
+                    Specialized Care
+                </span>
+
+                <span>
+                    Medical Evaluation
+                </span>
+
+                <span>
+                    Patient Support
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MEDICAL SPECIALISTS
+========================================================= -->
+
+<section class="specialists-section" id="doctors">
+
+    <div class="specialists-header">
+
+        <span class="specialists-label">
+            OUR MEDICAL TEAM
+        </span>
+
+        <h2>
+            Meet Our <span>Medical Specialists</span>
+        </h2>
+
+        <p>
+            Experienced professionals dedicated to your health,
+            comfort and complete care.
+        </p>
+
+    </div>
+
+
+    <div class="specialists-wrapper">
+
+        <button
+            class="specialist-arrow specialist-prev"
+            id="specialistPrev">
+
+            <span>‹</span>
+
+        </button>
+
+
+        <div class="specialists-window">
+
+            <div
+                class="specialists-track"
+                id="specialistsTrack">
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/doctor1-removebg-preview (1).png"
+                            alt="Dr. Anish Sharma">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol cardiology-symbol">
+                                ♡
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Cardiology
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Anish Sharma
+                        </h3>
+
+                        <p>
+                            MBBS, MD
+                            <span class="info-separator">•</span>
+                            12+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/doctor3-removebg-preview (1).png"
+                            alt="Dr. Rohan Thapa">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol neurology-symbol">
+                                ◉
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Neurology
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Rohan Thapa
+                        </h3>
+
+                        <p>
+                            MBBS, DM
+                            <span class="info-separator">•</span>
+                            10+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/Dr.-Ankur-Bhandari-removebg-preview.png"
+                            alt="Dr. Sushmita KC">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol pediatrics-symbol">
+                                ✚
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Pediatrics
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Sushmita KC
+                        </h3>
+
+                        <p>
+                            MBBS, MD
+                            <span class="info-separator">•</span>
+                            8+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/doctor7-removebg-preview.png"
+                            alt="Dr. Prakash Adhikari">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol orthopedic-symbol">
+                                ✚
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Orthopedics
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Prakash Adhikari
+                        </h3>
+
+                        <p>
+                            MBBS, MS
+                            <span class="info-separator">•</span>
+                            11+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/doctor_6-removebg-preview.png"
+                            alt="Dr. Nisha Gurung">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol ent-symbol">
+                                ◇
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                ENT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Nisha Gurung
+                        </h3>
+
+                        <p>
+                            MBBS, MS
+                            <span class="info-separator">•</span>
+                            9+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/Dr-Krishna-Raj-Khanal-removebg-preview.png"
+                            alt="Dr. Bibek Poudel">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol respiratory-symbol">
+                                ≋
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Respiratory
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Bibek Poudel
+                        </h3>
+
+                        <p>
+                            MBBS, MD
+                            <span class="info-separator">•</span>
+                            10+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="specialist-card">
+
+                    <div class="specialist-photo">
+
+                        <img
+                            src="image/doctor4-removebg-preview (1).png"
+                            alt="Dr. Aarav Shrestha">
+
+                        <div class="specialist-department">
+
+                            <div class="department-symbol diagnostic-symbol">
+                                ⊕
+                            </div>
+
+                            <div class="department-line"></div>
+
+                            <span>
+                                Diagnostics
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="specialist-info">
+
+                        <h3>
+                            Dr. Aarav Shrestha
+                        </h3>
+
+                        <p>
+                            MBBS, MD
+                            <span class="info-separator">•</span>
+                            7+ Years
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="specialist-arrow specialist-next"
+            id="specialistNext">
+
+            <span>›</span>
+
+        </button>
+
+    </div>
+
+
+    <div class="specialists-navigation">
+
+        <div class="specialist-counter">
+
+            <strong id="specialistCurrent">
+                01
+            </strong>
+
+            <span>/</span>
+
+            <span>
+                07
+            </span>
+
+        </div>
+
+        <div class="specialist-progress">
+
+            <div
+                class="specialist-progress-fill"
+                id="specialistProgress">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOSPITAL STATS
+========================================================= -->
+
+<section class="hospital-stats">
+
+    <video
+        class="stats-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source
+            src="assets/66598-518836673_medium.mp4"
+            type="video/mp4">
+
+    </video>
+
+
+    <div class="stats-overlay"></div>
+
+
+    <div class="stats-content">
+
+        <div class="stats-heading">
+
+            <span>
+                OUR ACHIEVEMENTS
+            </span>
+
+            <h2>
+                Care That Makes a Difference
+            </h2>
+
+            <p>
+                Trusted healthcare, dedicated professionals, and better
+                outcomes for our community.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+
+                    <span
+                        class="counter"
+                        data-target="5000">
+                        0
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </div>
+
+                <h3>
+                    Patients Served
+                </h3>
+
+                <p>
+                    People cared for with compassion
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+
+                    <span
+                        class="counter"
+                        data-target="50">
+                        0
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </div>
+
+                <h3>
+                    Doctors & Staff
+                </h3>
+
+                <p>
+                    Dedicated healthcare professionals
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+
+                    <span
+                        class="counter"
+                        data-target="20">
+                        0
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </div>
+
+                <h3>
+                    Departments
+                </h3>
+
+                <p>
+                    Specialized medical services
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+
+                    <span
+                        class="counter"
+                        data-target="10">
+                        0
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </div>
+
+                <h3>
+                    Years of Excellence
+                </h3>
+
+                <p>
+                    Committed to better healthcare
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MEDICAL SERVICES
+========================================================= -->
+
+<section class="medical-services" id="services">
+
+    <div class="services-heading">
+
+        <span>
+            ESSENTIAL CARE
+        </span>
+
+        <h2>
+            Explore Our Services
+        </h2>
+
+        <p>
+            Connected care for every stage of your health journey.
+        </p>
+
+    </div>
+
+
+    <div class="services-orbit">
+
+        <div class="orbit-ring ring-one"></div>
+
+        <div class="orbit-ring ring-two"></div>
+
+
+        <svg
+            class="service-connections"
+            viewBox="0 0 1000 720"
+            aria-hidden="true">
+
+            <path class="connection-base" d="M500 360 L500 55" />
+            <path class="connection-flow" d="M500 360 L500 55" />
+
+            <path class="connection-base" d="M500 360 L716 144" />
+            <path class="connection-flow" d="M500 360 L716 144" />
+
+            <path class="connection-base" d="M500 360 L805 360" />
+            <path class="connection-flow" d="M500 360 L805 360" />
+
+            <path class="connection-base" d="M500 360 L716 576" />
+            <path class="connection-flow" d="M500 360 L716 576" />
+
+            <path class="connection-base" d="M500 360 L500 665" />
+            <path class="connection-flow" d="M500 360 L500 665" />
+
+            <path class="connection-base" d="M500 360 L284 576" />
+            <path class="connection-flow" d="M500 360 L284 576" />
+
+            <path class="connection-base" d="M500 360 L195 360" />
+            <path class="connection-flow" d="M500 360 L195 360" />
+
+            <path class="connection-base" d="M500 360 L284 144" />
+            <path class="connection-flow" d="M500 360 L284 144" />
+
+        </svg>
+
+
+        <div class="service-center">
+
+            <div class="center-glow"></div>
+
+            <div class="center-heart">
+                ♥
+            </div>
+
+            <span>
+                CARE
+            </span>
+
+            <strong>
+                CONNECTED
+            </strong>
+
+            <small>
+                Lumbini City Hospital
+            </small>
+
+        </div>
+
+
+        <a
+            href="./service.html#blood-bank"
+            class="service-circle service-1">
+
+            <span class="service-number">
+                01
+            </span>
+
+            <span class="service-icon">
+                🩸
+            </span>
+
+            <strong>
+                Blood Bank
+            </strong>
+
+            <small>
+                Blood support
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#ambulance"
+            class="service-circle service-2">
+
+            <span class="service-number">
+                02
+            </span>
+
+            <span class="service-icon">
+                🚑
+            </span>
+
+            <strong>
+                Ambulance
+            </strong>
+
+            <small>
+                Rapid response
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#laboratory"
+            class="service-circle service-3">
+
+            <span class="service-number">
+                03
+            </span>
+
+            <span class="service-icon">
+                🧪
+            </span>
+
+            <strong>
+                Laboratory
+            </strong>
+
+            <small>
+                Medical testing
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./pharmacy.html"
+            class="service-circle service-4">
+
+            <span class="service-number">
+                04
+            </span>
+
+            <span class="service-icon">
+                💊
+            </span>
+
+            <strong>
+                24/7 Pharmacy
+            </strong>
+
+            <small>
+                Medicines &amp; care
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#emergency"
+            class="service-circle service-5">
+
+            <span class="service-number">
+                05
+            </span>
+
+            <span class="service-icon">
+                🚨
+            </span>
+
+            <strong>
+                Emergency
+            </strong>
+
+            <small>
+                Immediate care
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#diagnostics"
+            class="service-circle service-6">
+
+            <span class="service-number">
+                06
+            </span>
+
+            <span class="service-icon">
+                🩻
+            </span>
+
+            <strong>
+                Diagnostics
+            </strong>
+
+            <small>
+                Advanced imaging
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#cardiology"
+            class="service-circle service-7">
+
+            <span class="service-number">
+                07
+            </span>
+
+            <span class="service-icon">
+                ❤️
+            </span>
+
+            <strong>
+                Cardiology
+            </strong>
+
+            <small>
+                Heart care
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+
+        <a
+            href="./service.html#general-medicine"
+            class="service-circle service-8">
+
+            <span class="service-number">
+                08
+            </span>
+
+            <span class="service-icon">
+                🩺
+            </span>
+
+            <strong>
+                General Medicine
+            </strong>
+
+            <small>
+                Medical care
+            </small>
+
+            <i>
+                ↗
+            </i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTERNATIONAL PATIENT CARE
+========================================================= -->
+
+<section class="international-banner">
+
+    <div class="global-map">
+
+        <img
+            src="image/world_map-removebg-preview (1).png"
+            alt="World Map"
+            class="world-map">
+
+        <div class="map-glow"></div>
+
+        <span class="plane plane-1">
+            ✈
+        </span>
+
+        <span class="plane plane-2">
+            ✈
+        </span>
+
+        <span class="plane plane-3">
+            ✈
+        </span>
+
+        <span class="plane plane-4">
+            ✈
+        </span>
+
+        <span class="plane plane-5">
+            ✈
+        </span>
+
+    </div>
+
+
+    <div class="international-info">
+
+        <div class="info-line"></div>
+
+        <span class="info-label">
+            INTERNATIONAL PATIENT CARE
+        </span>
+
+        <h2>
+            Healthcare Without Borders.
+        </h2>
+
+        <p>
+            Patients from around the world can access trusted medical
+            care at Lumbini City Hospital. From appointment coordination
+            and specialist consultation to diagnostics, treatment and
+            follow-up care, our team is here to make every step simple,
+            comfortable and connected.
+        </p>
+
+
+        <!-- INTERNATIONAL APPOINTMENT TRIGGER -->
+
+        <a
+            href="#"
+            class="book-btn open-appointment-modal">
+
+            Book an Appointment
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PATIENT REVIEWS
+========================================================= -->
+
+<section
+    class="patient-reviews"
+    id="patient-reviews">
+
+    <div class="reviews-container">
+
+
+        <div class="reviews-left">
+
+            <div class="reviews-heading">
+
+                <span>
+                    PATIENT STORIES
+                </span>
+
+                <h2>
+                    What our patients say.
+                </h2>
+
+            </div>
+
+
+            <div class="patient-profiles">
+
+                <button
+                    class="patient-profile active"
+                    data-review="0">
+
+                    <img
+                        src="image/photo1.jpg"
+                        alt="Patient">
+
+                </button>
+
+
+                <button
+                    class="patient-profile"
+                    data-review="1">
+
+                    <img
+                        src="image/photo3.jpg"
+                        alt="Patient">
+
+                </button>
+
+
+                <button
+                    class="patient-profile"
+                    data-review="2">
+
+                    <img
+                        src="image/photo2.jpg"
+                        alt="Patient">
+
+                </button>
+
+
+                <button
+                    class="patient-profile"
+                    data-review="3">
+
+                    <img
+                        src="image/photo4.jpg"
+                        alt="Patient">
+
+                </button>
+
+
+                <button
+                    class="patient-profile"
+                    data-review="4">
+
+                    <img
+                        src="image/photo5.jpg"
+                        alt="Patient">
+
+                </button>
+
+
+                <button
+                    class="patient-profile"
+                    data-review="5">
+
+                    <img
+                        src="image/photo7.webp"
+                        alt="Patient">
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-content">
+
+            <div class="review-top">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <div class="review-number">
+
+                    <span id="currentReview">
+                        01
+                    </span>
+
+                    / 06
+
+                </div>
+
+            </div>
+
+
+            <div class="review-quote">
+                “
+            </div>
+
+
+            <p
+                class="review-text"
+                id="reviewText">
+
+                I was honestly nervous when I first came to the hospital because
+                I had been dealing with chest pain for several days. From the
+                reception desk to the doctor, everyone explained what was
+                happening and never made me feel rushed. The doctor took time
+                to answer all my questions, and that gave me a lot of confidence.
+                I am really thankful to the whole team for taking such good care
+                of me.
+
+            </p>
+
+
+            <div class="review-person">
+
+                <img
+                    id="reviewPersonImage"
+                    src="image/photo1.jpg"
+                    alt="Patient">
+
+                <div>
+
+                    <h3 id="reviewPersonName">
+                        Priya Thapa
+                    </h3>
+
+                    <span id="reviewPersonDepartment">
+                        Cardiology Patient
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="review-progress">
+
+                <span id="reviewProgress"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOSPITAL FLOOR LAYOUT
+========================================================= -->
+
+<section class="hospital-layout">
+
+    <div class="layout-header">
+
+        <div>
+
+            <span class="layout-label">
+                LUMBINI CITY HOSPITAL
+            </span>
+
+            <h2>
+                Hospital Floor Layout
+            </h2>
+
+        </div>
+
+
+        <div class="floor-switcher">
+
+            <button
+                class="floor-btn active"
+                data-floor="floor1">
+
+                FLOOR 1
+
+            </button>
+
+            <button
+                class="floor-btn"
+                data-floor="floor2">
+
+                FLOOR 2
+
+            </button>
+
+            <button
+                class="floor-btn"
+                data-floor="floor3">
+
+                FLOOR 3
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="plan-scroll">
+
+
+        <div
+            class="floor-plan active-floor"
+            id="floor1">
+
+            <div class="floor-name">
+                GROUND FLOOR
+            </div>
+
+            <div class="room emergency">
+
+                <strong>
+                    EMERGENCY
+                </strong>
+
+                <span>
+                    24 HOURS
+                </span>
+
+            </div>
+
+
+            <div class="room reception">
+
+                <strong>
+                    RECEPTION
+                </strong>
+
+                <span>
+                    MAIN DESK
+                </span>
+
+            </div>
+
+
+            <div class="room pharmacy">
+
+                <strong>
+                    PHARMACY
+                </strong>
+
+                <span>
+                    MEDICINES
+                </span>
+
+            </div>
+
+
+            <div class="room laboratory">
+
+                <strong>
+                    LABORATORY
+                </strong>
+
+                <span>
+                    DIAGNOSTICS
+                </span>
+
+            </div>
+
+
+            <div class="room consultation">
+
+                <strong>
+                    CONSULTATION
+                </strong>
+
+                <span>
+                    DOCTOR ROOMS
+                </span>
+
+            </div>
+
+
+            <div class="room cardiology">
+
+                <strong>
+                    CARDIOLOGY
+                </strong>
+
+                <span>
+                    HEART CARE
+                </span>
+
+            </div>
+
+
+            <div class="room medicine">
+
+                <strong>
+                    GENERAL MEDICINE
+                </strong>
+
+                <span>
+                    OPD
+                </span>
+
+            </div>
+
+
+            <div class="room billing">
+
+                <strong>
+                    BILLING
+                </strong>
+
+            </div>
+
+
+            <div class="room waiting">
+
+                <strong>
+                    WAITING AREA
+                </strong>
+
+            </div>
+
+
+            <div class="room toilet">
+
+                <strong>
+                    TOILETS
+                </strong>
+
+            </div>
+
+
+            <div class="room stairs">
+
+                <strong>
+                    STAIRS
+                </strong>
+
+            </div>
+
+
+            <div class="room elevator">
+
+                <strong>
+                    ELEVATOR
+                </strong>
+
+            </div>
+
+
+            <div class="main-corridor">
+
+                <span>
+                    MAIN CORRIDOR
+                </span>
+
+                <div class="corridor-light light-1"></div>
+
+                <div class="corridor-light light-2"></div>
+
+                <div class="corridor-light light-3"></div>
+
+            </div>
+
+
+            <div class="entrance">
+                MAIN ENTRANCE
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="floor-plan"
+            id="floor2">
+
+            <div class="floor-name">
+                FIRST FLOOR
+            </div>
+
+
+            <div class="room pediatrics">
+
+                <strong>
+                    PEDIATRICS
+                </strong>
+
+                <span>
+                    CHILD CARE
+                </span>
+
+            </div>
+
+
+            <div class="room orthopedics">
+
+                <strong>
+                    ORTHOPEDICS
+                </strong>
+
+                <span>
+                    BONE & JOINT
+                </span>
+
+            </div>
+
+
+            <div class="room gynecology">
+
+                <strong>
+                    GYNECOLOGY
+                </strong>
+
+                <span>
+                    WOMEN'S CARE
+                </span>
+
+            </div>
+
+
+            <div class="room neurology">
+
+                <strong>
+                    NEUROLOGY
+                </strong>
+
+                <span>
+                    BRAIN & NERVES
+                </span>
+
+            </div>
+
+
+            <div class="room surgery">
+
+                <strong>
+                    SURGERY
+                </strong>
+
+                <span>
+                    SURGICAL UNIT
+                </span>
+
+            </div>
+
+
+            <div class="room nurses">
+
+                <strong>
+                    NURSES STATION
+                </strong>
+
+                <span>
+                    CARE UNIT
+                </span>
+
+            </div>
+
+
+            <div class="room waiting">
+
+                <strong>
+                    WAITING AREA
+                </strong>
+
+            </div>
+
+
+            <div class="room toilet">
+
+                <strong>
+                    TOILETS
+                </strong>
+
+            </div>
+
+
+            <div class="room stairs">
+
+                <strong>
+                    STAIRS
+                </strong>
+
+            </div>
+
+
+            <div class="room elevator">
+
+                <strong>
+                    ELEVATOR
+                </strong>
+
+            </div>
+
+
+            <div class="main-corridor">
+
+                <span>
+                    MAIN CORRIDOR
+                </span>
+
+                <div class="corridor-light light-1"></div>
+
+                <div class="corridor-light light-2"></div>
+
+                <div class="corridor-light light-3"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="floor-plan"
+            id="floor3">
+
+            <div class="floor-name">
+                SECOND FLOOR
+            </div>
+
+
+            <div class="room icu">
+
+                <strong>
+                    ICU
+                </strong>
+
+                <span>
+                    INTENSIVE CARE
+                </span>
+
+            </div>
+
+
+            <div class="room operation">
+
+                <strong>
+                    OPERATION THEATRE
+                </strong>
+
+                <span>
+                    SURGICAL UNIT
+                </span>
+
+            </div>
+
+
+            <div class="room recovery">
+
+                <strong>
+                    RECOVERY ROOM
+                </strong>
+
+                <span>
+                    POST OPERATION
+                </span>
+
+            </div>
+
+
+            <div class="room private">
+
+                <strong>
+                    PRIVATE ROOMS
+                </strong>
+
+                <span>
+                    INPATIENT
+                </span>
+
+            </div>
+
+
+            <div class="room ward">
+
+                <strong>
+                    GENERAL WARD
+                </strong>
+
+                <span>
+                    INPATIENT CARE
+                </span>
+
+            </div>
+
+
+            <div class="room nurses">
+
+                <strong>
+                    NURSES STATION
+                </strong>
+
+                <span>
+                    CARE UNIT
+                </span>
+
+            </div>
+
+
+            <div class="room toilet">
+
+                <strong>
+                    TOILETS
+                </strong>
+
+            </div>
+
+
+            <div class="room stairs">
+
+                <strong>
+                    STAIRS
+                </strong>
+
+            </div>
+
+
+            <div class="room elevator">
+
+                <strong>
+                    ELEVATOR
+                </strong>
+
+            </div>
+
+
+            <div class="main-corridor">
+
+                <span>
+                    MAIN CORRIDOR
+                </span>
+
+                <div class="corridor-light light-1"></div>
+
+                <div class="corridor-light light-2"></div>
+
+                <div class="corridor-light light-3"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VISION
+========================================================= -->
+
+<section class="vision-section">
+
+    <div class="vision-page">
+
+        <div class="vision-header">
+
+            <span class="vision-label">
+                LUMBINI CITY HOSPITAL
+            </span>
+
+            <h2>
+                Our Vision
+            </h2>
+
+            <div class="vision-line"></div>
+
+        </div>
+
+
+        <div class="vision-content">
+
+            <p>
+                To be recognized as a trusted and leading healthcare institution
+                dedicated to delivering compassionate, safe, accessible, and
+                patient-centered care.
+            </p>
+
+            <p>
+                We envision a future where every individual can receive quality
+                healthcare with dignity, respect, and confidence. Through modern
+                medical technology, continuous improvement, skilled healthcare
+                professionals, and a strong commitment to ethical practice, we aim
+                to create a healthcare environment where patients feel supported
+                at every stage of their journey.
+            </p>
+
+            <p>
+                Our vision extends beyond treating illness. We strive to promote
+                healthier communities through preventive care, health awareness,
+                early diagnosis, and responsible medical practices.
+            </p>
+
+            <p>
+                We aspire to build a hospital where
+                <strong>
+                    advanced healthcare meets human compassion
+                </strong>,
+                where innovation supports better outcomes, and where every patient
+                is treated not simply as a case, but as a person whose health,
+                comfort, and well-being truly matter.
+            </p>
+
+        </div>
+
+
+        <div class="vision-footer">
+
+            <span></span>
+
+            <em>
+                “Compassionate Care, Better Health.”
+            </em>
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HEALTH JOURNEY
+========================================================= -->
+
+<section
+    class="health-journey"
+    id="healthJourney">
+
+    <div class="journey-heading">
+
+        <span>
+            YOUR HEALTH JOURNEY
+        </span>
+
+        <h2>
+            From Care to <b>Better Health</b>
+        </h2>
+
+    </div>
+
+
+    <div class="journey-wrapper">
+
+        <div class="journey-line">
+
+            <div class="journey-progress"></div>
+
+            <div class="journey-dot"></div>
+
+        </div>
+
+
+        <div class="journey-step active">
+
+            <div class="journey-node">
+                01
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    BEGIN
+                </small>
+
+                <h3>
+                    YOU
+                </h3>
+
+                <p>
+                    Your health journey begins here.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step">
+
+            <div class="journey-node">
+                02
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    STEP TWO
+                </small>
+
+                <h3>
+                    APPOINTMENT
+                </h3>
+
+                <p>
+                    Choose the care you need.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step">
+
+            <div class="journey-node">
+                03
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    STEP THREE
+                </small>
+
+                <h3>
+                    CONSULTATION
+                </h3>
+
+                <p>
+                    Meet the right healthcare professional.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step">
+
+            <div class="journey-node">
+                04
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    STEP FOUR
+                </small>
+
+                <h3>
+                    CHECK-UP &amp; DIAGNOSIS
+                </h3>
+
+                <p>
+                    Understand your health condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step">
+
+            <div class="journey-node">
+                05
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    STEP FIVE
+                </small>
+
+                <h3>
+                    TREATMENT
+                </h3>
+
+                <p>
+                    Receive care designed for you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step">
+
+            <div class="journey-node">
+                06
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    STEP SIX
+                </small>
+
+                <h3>
+                    RECOVERY
+                </h3>
+
+                <p>
+                    Move forward with continued support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-step final">
+
+            <div class="journey-node">
+                07
+            </div>
+
+            <div class="journey-info">
+
+                <small>
+                    YOUR DESTINATION
+                </small>
+
+                <h3>
+                    HEALTHIER YOU
+                </h3>
+
+                <p>
+                    A step toward better health.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div
+    class="dna-background"
+    aria-hidden="true">
+
+    <div class="dna-helix">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FAQ SECTION
+========================================================= -->
+
+<section class="faq-section" id="faq">
+
+    <div class="faq-heading">
+
+        <span>
+            PATIENT INFORMATION
+        </span>
+
+        <h2>
+            Frequently Asked <strong>Questions</strong>
+        </h2>
+
+        <p>
+            Clear answers to common questions about appointments,
+            hospital services, consultations, and patient care.
+        </p>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    01
+                </span>
+
+                <span class="faq-question-text">
+                    How can I book an appointment?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        You can book an appointment by contacting the hospital
+                        reception or by using the appointment option available
+                        on the website. Provide your name, contact information,
+                        preferred department or doctor, and your preferred date
+                        and time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    02
+                </span>
+
+                <span class="faq-question-text">
+                    Is emergency care available 24 hours a day?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        Emergency services are intended for patients who need
+                        immediate medical attention. In a serious or potentially
+                        life-threatening situation, seek emergency medical care
+                        without waiting for a regular appointment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    03
+                </span>
+
+                <span class="faq-question-text">
+                    What should I bring to my hospital appointment?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        Bring a valid identification document, previous medical
+                        reports, prescriptions, laboratory or imaging reports,
+                        and a list of medicines you currently take.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    04
+                </span>
+
+                <span class="faq-question-text">
+                    How can I find the right department or doctor?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        Explain your main health concern to the hospital
+                        reception team. They can guide you to the appropriate
+                        department or healthcare professional.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    05
+                </span>
+
+                <span class="faq-question-text">
+                    How can I get my laboratory or diagnostic report?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        Reports are provided according to the hospital's
+                        reporting process and the type of test performed.
+                        Patients can collect reports from the designated
+                        laboratory or diagnostic department.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-card">
+
+            <button
+                class="faq-button"
+                type="button">
+
+                <span class="faq-count">
+                    06
+                </span>
+
+                <span class="faq-question-text">
+                    Can I cancel or reschedule my appointment?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-content">
+
+                <div class="faq-content-inner">
+
+                    <p>
+                        Yes. If you need to cancel or change your appointment,
+                        contact the hospital as early as possible and provide
+                        your appointment details. The reception team can help
+                        you find another suitable date or time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOSPITAL LOCATION
+========================================================= -->
+
+<section
+    class="hospital-location"
+    id="location">
+
+    <div class="location-heading">
+
+        <span>
+            OUR LOCATION
+        </span>
+
+        <h2>
+            Find <b>Lumbini City Hospital</b>
+        </h2>
+
+        <p>
+            Visit us for compassionate care and trusted healthcare
+            services in a comfortable and accessible environment.
+        </p>
+
+    </div>
+
+
+    <div class="location-main">
+
+
+        <div class="location-map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Butwal,Nepal&output=embed"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+
+            <div class="map-location-tag">
+
+                <span></span>
+
+                Lumbini City Hospital
+
+            </div>
+
+        </div>
+
+
+        <div class="location-card">
+
+            <div class="location-card-top">
+
+                <span class="location-mini-title">
+                    LUMBINI CITY HOSPITAL
+                </span>
+
+                <h3>
+                    We're here<br>
+                    <b>for your health.</b>
+                </h3>
+
+                <p>
+                    Find us easily, plan your visit, and get directions
+                    to our hospital.
+                </p>
+
+            </div>
+
+
+            <div class="location-address">
+
+                <div class="address-icon">
+                    <span>⌖</span>
+                </div>
+
+                <div class="address-text">
+
+                    <span>
+                        ADDRESS
+                    </span>
+
+                    <strong>
+                        Butwal, Lumbini Province, Nepal
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="location-direction"
+                id="locationDirection"
+                type="button">
+
+                <span>
+                    Get Directions
+                </span>
+
+                <span class="direction-icon">
+                    ↗
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+<section id="contact">
+
+    <div class="location-contact-bar">
+
+        <div class="contact-item">
+
+            <div class="contact-icon">
+                ☎
+            </div>
+
+            <div>
+
+                <span>
+                    PHONE
+                </span>
+
+                <strong>
+                    +977 71 000000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-separator"></div>
+
+
+        <div class="contact-item">
+
+            <div class="contact-icon">
+                ✉
+            </div>
+
+            <div>
+
+                <span>
+                    EMAIL
+                </span>
+
+                <strong>
+                    info@lumbinicityhospital.com
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-separator"></div>
+
+
+        <div class="contact-item">
+
+            <div class="contact-icon">
+                ◷
+            </div>
+
+            <div>
+
+                <span>
+                    HOURS
+                </span>
+
+                <strong>
+                    Open 24 Hours
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     HIDDEN UNTIL BOOK AN APPOINTMENT IS CLICKED
+========================================================= -->
+
+<div
+    class="appointment-modal"
+    id="appointmentModal"
+    aria-hidden="true">
+
+
+    <div
+        class="appointment-modal-overlay"
+        id="appointmentModalOverlay">
+    </div>
+
+
+    <div
+        class="appointment-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="appointmentModalTitle">
+
+
+        <button
+            class="appointment-modal-close"
+            id="closeAppointment"
+            type="button"
+            aria-label="Close appointment form">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <!-- APPOINTMENT FORM VIEW -->
+
+        <div
+            class="appointment-form-view"
+            id="appointmentFormView">
+
+
+            <div class="appointment-modal-header">
+
+                <div class="appointment-header-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="appointment-header-label">
+                        LUMBINI CITY HOSPITAL
+                    </span>
+
+                    <h2 id="appointmentModalTitle">
+                        Book an Appointment
+                    </h2>
+
+                    <p>
+                        Please provide your details and preferred
+                        appointment information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="appointmentForm"
+                novalidate>
+
+
+                <!-- PATIENT INFORMATION -->
+
+                <div class="appointment-form-section">
+
+                    <div class="appointment-section-heading">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Patient Information
+                            </h3>
+
+                            <p>
+                                Tell us a little about the patient.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-form-grid">
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentName">
+                                Full Name
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="appointmentName"
+                                    name="fullName"
+                                    placeholder="Enter full name"
+                                    autocomplete="name"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentPhone">
+                                Phone Number
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="appointmentPhone"
+                                    name="phone"
+                                    placeholder="Enter phone number"
+                                    autocomplete="tel"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentEmail">
+                                Email
+                                <small>
+                                    Optional
+                                </small>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="appointmentEmail"
+                                    name="email"
+                                    placeholder="Enter email address"
+                                    autocomplete="email">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentPatientType">
+                                Patient Type
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-user-group"></i>
+
+                                <select
+                                    id="appointmentPatientType"
+                                    name="patientType"
+                                    required>
+
+                                    <option value="">
+                                        Select patient type
+                                    </option>
+
+                                    <option value="New Patient">
+                                        New Patient
+                                    </option>
+
+                                    <option value="Existing Patient">
+                                        Existing Patient
+                                    </option>
+
+                                    <option value="International Patient">
+                                        International Patient
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentAge">
+                                Age
+                                <small>
+                                    Optional
+                                </small>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                <input
+                                    type="number"
+                                    id="appointmentAge"
+                                    name="age"
+                                    min="0"
+                                    max="120"
+                                    placeholder="Enter age">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentGender">
+                                Gender
+                                <small>
+                                    Optional
+                                </small>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-person"></i>
+
+                                <select
+                                    id="appointmentGender"
+                                    name="gender">
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                    <option value="Prefer not to say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- APPOINTMENT DETAILS -->
+
+                <div class="appointment-form-section">
+
+                    <div class="appointment-section-heading">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Appointment Details
+                            </h3>
+
+                            <p>
+                                Select your preferred department,
+                                doctor, date and time.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-form-grid">
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentDepartment">
+                                Department
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-hospital"></i>
+
+                                <select
+                                    id="appointmentDepartment"
+                                    name="department"
+                                    required>
+
+                                    <option value="">
+                                        Select department
+                                    </option>
+
+                                    <option value="Cardiology">
+                                        Cardiology
+                                    </option>
+
+                                    <option value="Neurology">
+                                        Neurology
+                                    </option>
+
+                                    <option value="Pediatrics">
+                                        Pediatrics
+                                    </option>
+
+                                    <option value="Orthopedics">
+                                        Orthopedics
+                                    </option>
+
+                                    <option value="ENT">
+                                        ENT
+                                    </option>
+
+                                    <option value="Respiratory">
+                                        Respiratory
+                                    </option>
+
+                                    <option value="Diagnostics">
+                                        Diagnostics
+                                    </option>
+
+                                    <option value="General Medicine">
+                                        General Medicine
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentDoctor">
+                                Doctor
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                                <select
+                                    id="appointmentDoctor"
+                                    name="doctor"
+                                    required
+                                    disabled>
+
+                                    <option value="">
+                                        Select department first
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentDate">
+                                Preferred Date
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    name="date"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="appointmentTime">
+                                Preferred Time
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-input-wrap">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                <select
+                                    id="appointmentTime"
+                                    name="time"
+                                    required>
+
+                                    <option value="">
+                                        Select preferred time
+                                    </option>
+
+                                    <option value="08:00 AM">
+                                        08:00 AM
+                                    </option>
+
+                                    <option value="09:00 AM">
+                                        09:00 AM
+                                    </option>
+
+                                    <option value="10:00 AM">
+                                        10:00 AM
+                                    </option>
+
+                                    <option value="11:00 AM">
+                                        11:00 AM
+                                    </option>
+
+                                    <option value="12:00 PM">
+                                        12:00 PM
+                                    </option>
+
+                                    <option value="01:00 PM">
+                                        01:00 PM
+                                    </option>
+
+                                    <option value="02:00 PM">
+                                        02:00 PM
+                                    </option>
+
+                                    <option value="03:00 PM">
+                                        03:00 PM
+                                    </option>
+
+                                    <option value="04:00 PM">
+                                        04:00 PM
+                                    </option>
+
+                                    <option value="05:00 PM">
+                                        05:00 PM
+                                    </option>
+
+                                    <option value="06:00 PM">
+                                        06:00 PM
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field appointment-field-full">
+
+                            <label for="appointmentType">
+                                Appointment Type
+                                <span>*</span>
+                            </label>
+
+                            <div class="appointment-type-options">
+
+
+                                <label class="appointment-type-option">
+
+                                    <input
+                                        type="radio"
+                                        name="appointmentType"
+                                        value="In-Person Visit"
+                                        required>
+
+                                    <span class="appointment-type-box">
+
+                                        <i class="fa-solid fa-hospital-user"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                In-Person Visit
+                                            </strong>
+
+                                            <small>
+                                                Visit the hospital
+                                            </small>
+
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+                                <label class="appointment-type-option">
+
+                                    <input
+                                        type="radio"
+                                        name="appointmentType"
+                                        value="Consultation Request">
+
+                                    <span class="appointment-type-box">
+
+                                        <i class="fa-solid fa-video"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                Consultation Request
+                                            </strong>
+
+                                            <small>
+                                                Request a consultation
+                                            </small>
+
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REASON -->
+
+                <div class="appointment-form-section">
+
+                    <div class="appointment-section-heading">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Reason for Visit
+                            </h3>
+
+                            <p>
+                                Briefly describe why you would like
+                                an appointment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-field">
+
+                        <label for="appointmentReason">
+                            Reason for Visit
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="appointmentReason"
+                            name="reason"
+                            rows="4"
+                            placeholder="Tell us briefly about your reason for visiting..."
+                            required>
+                        </textarea>
+
+                    </div>
+
+
+                    <div class="appointment-field">
+
+                        <label for="appointmentAddress">
+                            Address
+                            <small>
+                                Optional
+                            </small>
+                        </label>
+
+                        <div class="appointment-input-wrap">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="appointmentAddress"
+                                name="address"
+                                placeholder="Enter your address"
+                                autocomplete="street-address">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONSENT -->
+
+                <div class="appointment-consent">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="appointmentConsent"
+                            name="consent"
+                            required>
+
+                        <span>
+                            I confirm that the information provided is
+                            correct and I understand that this is an
+                            appointment request for the hospital website
+                            prototype.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- FORM ERROR -->
+
+                <div
+                    class="appointment-form-error"
+                    id="appointmentFormError"
+                    role="alert">
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <div class="appointment-submit-area">
+
+                    <p>
+                        <i class="fa-solid fa-shield-heart"></i>
+
+                        Your information is used only for this
+                        appointment request prototype.
+
+                    </p>
+
+
+                    <button
+                        type="submit"
+                        class="appointment-submit-btn"
+                        id="appointmentSubmitBtn">
+
+                        <span class="submit-text">
+                            Request Appointment
+                        </span>
+
+                        <span
+                            class="submit-loading"
+                            id="appointmentSubmitLoading">
+
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+
+                            Processing...
+
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right submit-arrow"></i>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             APPOINTMENT SUCCESS VIEW
+        ====================================================== -->
+
+        <div
+            class="appointment-success-view"
+            id="appointmentSuccessView"
+            hidden>
+
+
+            <div class="appointment-success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+
+            <span class="appointment-success-label">
+                REQUEST RECEIVED
+            </span>
+
+
+            <h2>
+                Appointment Request Submitted
+            </h2>
+
+
+            <p>
+                Your appointment request has been recorded in this
+                website prototype. Please contact the hospital directly
+                for real appointment confirmation.
+            </p>
+
+
+            <div class="appointment-success-details">
+
+                <div>
+
+                    <span>
+                        Reference
+                    </span>
+
+                    <strong id="appointmentReference">
+                        LCH-000000
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Patient
+                    </span>
+
+                    <strong id="successPatientName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Department
+                    </span>
+
+                    <strong id="successDepartment">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Date &amp; Time
+                    </span>
+
+                    <strong id="successDateTime">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="appointment-success-close"
+                id="appointmentSuccessClose">
+
+                Done
+
+                <i class="fa-solid fa-check"></i>
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="hospital-footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-mark">
+
+                    <span>
+                        +
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        LUMBINI CITY
+                    </strong>
+
+                    <small>
+                        HOSPITAL
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer-description">
+
+                Compassionate, safe, accessible, and patient-centered
+                healthcare dedicated to helping every patient move
+                toward better health.
+
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#" aria-label="Facebook">
+                    <span>f</span>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <span>◎</span>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <span>𝕏</span>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <span>▶</span>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <span>in</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#why-choose-us">
+                About Us
+            </a>
+
+            <a href="#services">
+                Our Services
+            </a>
+
+            <a href="#departments">
+                Departments
+            </a>
+
+            <a href="#faq">
+                FAQs
+            </a>
+
+            <a href="#location">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Patient Care
+            </h3>
+
+            <a
+                href="#"
+                class="open-appointment-modal">
+
+                Appointments
+
+            </a>
+
+            <a href="pharmacy.html">
+                Pharmacy
+            </a>
+
+            <a href="#doctors">
+                Our Doctors
+            </a>
+
+            <a href="#healthJourney">
+                Health Journey
+            </a>
+
+            <a href="#location">
+                Find Us
+            </a>
+
+            <a href="#faq">
+                Patient Information
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Hospital
+            </h3>
+
+            <a href="#vision">
+                Our Vision
+            </a>
+
+            <a href="#layout">
+                Hospital Layout
+            </a>
+
+            <a href="#departments">
+                Specialties
+            </a>
+
+            <a href="#patient-reviews">
+                Patient Reviews
+            </a>
+
+            <a href="#location">
+                Get In Touch
+            </a>
+
+            <a href="#faq">
+                Help Center
+            </a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>
+                Need Help?
+            </h3>
+
+
+            <div class="footer-emergency">
+
+                <span>
+                    24/7 EMERGENCY
+                </span>
+
+                <strong>
+                    +977 71 000000
+                </strong>
+
+            </div>
+
+
+            <div class="footer-contact-item">
+
+                <span class="footer-contact-icon">
+                    ☎
+                </span>
+
+                <div>
+
+                    <small>
+                        PHONE
+                    </small>
+
+                    <strong>
+                        +977 71 000000
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-contact-item">
+
+                <span class="footer-contact-icon">
+                    ✉
+                </span>
+
+                <div>
+
+                    <small>
+                        EMAIL
+                    </small>
+
+                    <strong>
+                        info@lumbinicityhospital.com
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-contact-item">
+
+                <span class="footer-contact-icon">
+                    ⌖
+                </span>
+
+                <div>
+
+                    <small>
+                        LOCATION
+                    </small>
+
+                    <strong>
+                        Butwal, Lumbini Province, Nepal
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-newsletter">
+
+        <div class="newsletter-content">
+
+            <span class="newsletter-label">
+                STAY CONNECTED
+            </span>
+
+            <h3>
+                Get useful health updates
+                <b>from us.</b>
+            </h3>
+
+            <p>
+                Receive hospital updates, health information,
+                and important announcements.
+            </p>
+
+        </div>
+
+
+        <form
+            class="newsletter-form"
+            id="newsletterForm">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required>
+
+            <button type="submit">
+
+                Subscribe
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="footer-copyright">
+
+            © 2026 Lumbini City Hospital.
+            All rights reserved.
+
+        </div>
+
+
+        <div class="footer-legal">
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <span></span>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+            <span></span>
+
+            <a href="#">
+                Accessibility
+            </a>
+
+        </div>
+
+
+        <button
+            class="back-top"
+            id="backToTop"
+            type="button"
+            aria-label="Back to top">
+
+            ↑
+
+        </button>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="index.js"></script>
+
+
+</body>
+
+</html>
