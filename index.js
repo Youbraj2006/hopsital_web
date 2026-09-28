@@ -1,3 +1,4 @@
+/*
 // =========================================================
 // INTRO / LOADER
 // =========================================================
@@ -199,30 +200,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+*/
+
 
 // =========================================================
-// MOBILE MENU
+// LUMBINI CITY HOSPITAL
+// MOBILE MENU JAVASCRIPT
+//
+// FINAL BEHAVIOR:
+// 1. Mobile navbar shows ☰ when menu is closed
+// 2. Clicking ☰ opens the left mobile menu
+// 3. Navbar ☰ hides while menu is open
+// 4. Orange X appears inside the mobile menu
+// 5. Clicking X closes the mobile menu
+// 6. Navbar ☰ comes back after closing
+// 7. Clicking overlay closes the menu
+// 8. Clicking mobile navigation links closes the menu
+// 9. Mobile Login stays inside the mobile menu
+// 10. Desktop layout remains unchanged
 // =========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    const mobileLogin = document.getElementById("floatingAuthBtn");
 
-    const mobileMenu =
-        document.getElementById("mobileMenu");
+    // Stop if required elements are missing
+    if (!menuToggle || !mobileMenu) {
+        return;
+    }
 
-    const closeMenu =
-        document.getElementById("closeMenu");
-
-    const mobileOverlay =
-        document.getElementById("mobileOverlay");
-
-    if (!menuToggle || !mobileMenu) return;
-
-    const menuIcon =
-        menuToggle.querySelector("i");
-
+    // =========================================================
+    // OPEN MOBILE MENU
+    // =========================================================
 
     function openMobileMenu() {
 
@@ -232,154 +245,187 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileOverlay.classList.add("show");
         }
 
-        document.body.style.overflow =
-            "hidden";
+        document.body.style.overflow = "hidden";
 
-        if (menuIcon) {
+        // Update accessibility
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close menu");
 
-            menuIcon.classList.remove(
-                "fa-bars"
-            );
-
-            menuIcon.classList.add(
-                "fa-xmark"
-            );
-        }
+        // Hide navbar ☰
+        menuToggle.classList.add("menu-open");
     }
 
+
+    // =========================================================
+    // CLOSE MOBILE MENU
+    // =========================================================
 
     function closeMobileMenu() {
 
         mobileMenu.classList.remove("show");
 
         if (mobileOverlay) {
-            mobileOverlay.classList.remove(
-                "show"
-            );
+            mobileOverlay.classList.remove("show");
         }
 
-        document.body.style.overflow =
-            "";
+        document.body.style.overflow = "";
 
-        if (menuIcon) {
+        // Update accessibility
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
 
-            menuIcon.classList.remove(
-                "fa-xmark"
-            );
-
-            menuIcon.classList.add(
-                "fa-bars"
-            );
-        }
+        // Show navbar ☰ again
+        menuToggle.classList.remove("menu-open");
     }
 
 
-    menuToggle.addEventListener(
-        "click",
-        function () {
+    // =========================================================
+    // NAVBAR ☰ BUTTON
+    // =========================================================
 
-            if (
-                mobileMenu.classList.contains(
-                    "show"
-                )
-            ) {
+    menuToggle.addEventListener("click", function (event) {
 
-                closeMobileMenu();
+        event.preventDefault();
+        event.stopPropagation();
 
-            } else {
-
-                openMobileMenu();
-
-            }
-
+        if (mobileMenu.classList.contains("show")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
         }
-    );
-
-
-    if (closeMenu) {
-
-        closeMenu.addEventListener(
-            "click",
-            closeMobileMenu
-        );
-
-    }
-
-
-    if (mobileOverlay) {
-
-        mobileOverlay.addEventListener(
-            "click",
-            closeMobileMenu
-        );
-
-    }
-
-
-    const mobileLinks =
-        document.querySelectorAll(
-            ".mobile-links a"
-        );
-
-
-    mobileLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                if (
-                    !link.classList.contains(
-                        "open-appointment-modal"
-                    )
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
 
     });
 
 
-    const mobileLogin =
-        document.getElementById(
-            "floatingAuthBtn"
-        );
+    // =========================================================
+    // INSIDE MENU X BUTTON
+    // =========================================================
 
+    if (closeMenu) {
 
-    if (mobileLogin) {
+        closeMenu.addEventListener("click", function (event) {
 
-        mobileLogin.addEventListener(
-            "click",
-            function () {
+            event.preventDefault();
+            event.stopPropagation();
 
-                closeMobileMenu();
+            closeMobileMenu();
 
-            }
-        );
+        });
 
     }
 
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    // =========================================================
+    // OVERLAY
+    // =========================================================
 
-            if (
-                event.key === "Escape"
-            ) {
+    if (mobileOverlay) {
 
-                closeMobileMenu();
+        mobileOverlay.addEventListener("click", function () {
 
-            }
+            closeMobileMenu();
 
-        }
+        });
+
+    }
+
+
+    // =========================================================
+    // MOBILE NAVIGATION LINKS
+    // =========================================================
+
+    const mobileLinks = document.querySelectorAll(
+        ".mobile-links a"
     );
 
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            // Appointment opens its own modal
+            if (
+                link.classList.contains(
+                    "open-appointment-modal"
+                )
+            ) {
+                return;
+            }
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+
+    // =========================================================
+    // MOBILE LOGIN
+    // =========================================================
+
+    if (mobileLogin) {
+
+        mobileLogin.addEventListener("click", function () {
+
+            closeMobileMenu();
+
+        });
+
+    }
+
+
+    // =========================================================
+    // ESC KEY
+    // =========================================================
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            mobileMenu.classList.contains("show")
+        ) {
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    // =========================================================
+    // DESKTOP RESIZE
+    // =========================================================
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 850) {
+
+            closeMobileMenu();
+
+        }
+
+    });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // =========================================================

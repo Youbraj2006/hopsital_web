@@ -1,93 +1,293 @@
-/* =========================
-   LOADER
-========================= */
+/* =========================================================
+   LUMBINI CITY HOSPITAL
+   PREMIUM SERVICES PAGE JAVASCRIPT
+   ========================================================= */
 
-const loader = document.getElementById("loader");
 
-window.addEventListener("load", () => {
 
-    setTimeout(() => {
-        loader.classList.add("hide");
-    }, 900);
+   // =========================================================
+// LUMBINI CITY HOSPITAL — PHARMACY PAGE
+// LOADER
+// =========================================================
+
+window.addEventListener("load", function () {
+
+    const pageLoader = document.getElementById("pageLoader");
+
+    if (pageLoader) {
+
+        setTimeout(function () {
+
+            pageLoader.classList.add("hide");
+
+        }, 600);
+
+    }
 
 });
 
-setTimeout(() => {
 
-    if (loader) {
-        loader.classList.add("hide");
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+const navbar =
+    document.getElementById("navbar");
+
+
+function updateNavbar() {
+
+    if (!navbar) {
+        return;
     }
 
-}, 3500);
-
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll", () => {
 
     if (window.scrollY > 30) {
+
         navbar.classList.add("scrolled");
+
     } else {
+
         navbar.classList.remove("scrolled");
+
     }
 
-});
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateNavbar
+);
+
+
+updateNavbar();
 
 
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+const menuToggle =
+    document.getElementById("menuToggle");
 
-menuToggle.addEventListener("click", () => {
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-    navMenu.classList.toggle("show");
+const closeMenu =
+    document.getElementById("closeMenu");
 
-    const icon = menuToggle.querySelector("i");
+const mobileOverlay =
+    document.getElementById("mobileOverlay");
 
-    if (navMenu.classList.contains("show")) {
 
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
+function openMobileMenu() {
 
-    } else {
+    if (!mobileMenu) {
+        return;
+    }
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+
+    mobileMenu.classList.add("show");
+
+
+    if (mobileOverlay) {
+
+        mobileOverlay.classList.add("show");
 
     }
 
-});
+
+    document.body.classList.add("no-scroll");
 
 
-document.querySelectorAll(".nav-menu a").forEach(link => {
+    if (menuToggle) {
 
-    link.addEventListener("click", () => {
+        menuToggle.classList.add("menu-open");
 
-        navMenu.classList.remove("show");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
 
-        const icon = menuToggle.querySelector("i");
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close menu"
+        );
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+    }
+
+}
+
+
+function closeMobileMenu() {
+
+    if (!mobileMenu) {
+        return;
+    }
+
+
+    mobileMenu.classList.remove("show");
+
+
+    if (mobileOverlay) {
+
+        mobileOverlay.classList.remove("show");
+
+    }
+
+
+    document.body.classList.remove("no-scroll");
+
+
+    if (menuToggle) {
+
+        menuToggle.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open menu"
+        );
+
+    }
+
+}
+
+
+
+/* NAVBAR MENU BUTTON */
+
+if (menuToggle) {
+
+    menuToggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            if (
+                mobileMenu &&
+                mobileMenu.classList.contains("show")
+            ) {
+
+                closeMobileMenu();
+
+            } else {
+
+                openMobileMenu();
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* MOBILE X */
+
+if (closeMenu) {
+
+    closeMenu.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeMobileMenu();
+
+        }
+    );
+
+}
+
+
+
+/* OVERLAY */
+
+if (mobileOverlay) {
+
+    mobileOverlay.addEventListener(
+        "click",
+        closeMobileMenu
+    );
+
+}
+
+
+
+/* MOBILE LINKS */
+
+document
+    .querySelectorAll(".mobile-links a")
+    .forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                closeMobileMenu();
+
+            }
+        );
 
     });
 
-});
+
+
+/* ESCAPE */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            mobileMenu &&
+            mobileMenu.classList.contains("show")
+        ) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
 
 
 
-/* =========================
+/* CLOSE MOBILE MENU ON DESKTOP */
+
+window.addEventListener(
+    "resize",
+    function () {
+
+        if (window.innerWidth > 850) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
    SERVICE DATA
-========================= */
+========================================================= */
 
 const services = {
 
@@ -97,19 +297,27 @@ const services = {
 
         category: "BLOOD BANK",
 
-        title: "Blood support when every moment matters.",
+        title:
+            "Blood support when every moment matters.",
 
-        icon: "fa-droplet",
+        icon:
+            "fa-droplet",
 
         description:
             "Blood bank services support patients who require blood or blood components during emergency care, surgery, medical treatment and other clinical situations.",
 
         features: [
+
             "Blood grouping and compatibility support",
+
             "Blood collection and storage support",
+
             "Blood availability information",
+
             "Transfusion-related support",
+
             "Emergency blood support when required"
+
         ]
 
     },
@@ -121,19 +329,27 @@ const services = {
 
         category: "AMBULANCE",
 
-        title: "Rapid response when every second counts.",
+        title:
+            "Rapid response when every second counts.",
 
-        icon: "fa-truck-medical",
+        icon:
+            "fa-truck-medical",
 
         description:
             "Ambulance services support emergency transportation and patient transfers when timely and safe movement to medical care is required.",
 
         features: [
+
             "Emergency transportation support",
+
             "Patient transfer support",
+
             "Urgent transportation coordination",
+
             "Patient safety during transport",
+
             "Connection with emergency medical care"
+
         ]
 
     },
@@ -145,19 +361,27 @@ const services = {
 
         category: "LABORATORY",
 
-        title: "Reliable testing for better medical decisions.",
+        title:
+            "Reliable testing for better medical decisions.",
 
-        icon: "fa-flask",
+        icon:
+            "fa-flask",
 
         description:
             "Laboratory services provide diagnostic information that can help healthcare professionals understand a patient's condition, support diagnosis and monitor treatment.",
 
         features: [
+
             "Hematology investigations",
+
             "Biochemistry testing",
+
             "Routine urine investigations",
+
             "Clinical laboratory testing",
+
             "Diagnostic testing support"
+
         ]
 
     },
@@ -169,19 +393,27 @@ const services = {
 
         category: "EMERGENCY CARE",
 
-        title: "Immediate care when you need it most.",
+        title:
+            "Immediate care when you need it most.",
 
-        icon: "fa-truck-medical",
+        icon:
+            "fa-truck-medical",
 
         description:
             "Emergency care is intended for urgent medical situations where prompt assessment and appropriate medical attention are required.",
 
         features: [
+
             "Urgent medical assessment",
+
             "Emergency medical support",
+
             "Time-sensitive care coordination",
+
             "Emergency transportation support",
+
             "Immediate access to appropriate medical care"
+
         ]
 
     },
@@ -193,19 +425,27 @@ const services = {
 
         category: "DIAGNOSTICS",
 
-        title: "Clearer answers through diagnostic care.",
+        title:
+            "Clearer answers through diagnostic care.",
 
-        icon: "fa-x-ray",
+        icon:
+            "fa-x-ray",
 
         description:
             "Diagnostic services help healthcare professionals investigate symptoms, understand medical conditions and support treatment decisions through appropriate investigations.",
 
         features: [
+
             "Diagnostic imaging support",
+
             "X-ray investigations",
+
             "Ultrasound investigations",
+
             "ECG and heart-related investigations",
+
             "Clinical diagnostic support"
+
         ]
 
     },
@@ -217,19 +457,27 @@ const services = {
 
         category: "CARDIOLOGY",
 
-        title: "Dedicated care for heart health.",
+        title:
+            "Dedicated care for heart health.",
 
-        icon: "fa-heart-pulse",
+        icon:
+            "fa-heart-pulse",
 
         description:
             "Cardiology services focus on cardiovascular health, evaluation of heart-related symptoms and appropriate medical follow-up for patients requiring heart health support.",
 
         features: [
+
             "Cardiovascular health assessment",
+
             "Heart-related medical consultation",
+
             "ECG support where appropriate",
+
             "Evaluation of cardiovascular symptoms",
+
             "Ongoing cardiovascular care and follow-up"
+
         ]
 
     },
@@ -241,19 +489,27 @@ const services = {
 
         category: "GENERAL MEDICINE",
 
-        title: "Everyday healthcare, thoughtfully delivered.",
+        title:
+            "Everyday healthcare, thoughtfully delivered.",
 
-        icon: "fa-stethoscope",
+        icon:
+            "fa-stethoscope",
 
         description:
             "General medicine provides support for common health concerns, medical consultations, health assessments, chronic condition management and continuing healthcare needs.",
 
         features: [
+
             "General medical consultation",
+
             "Health assessment and evaluation",
+
             "Common health condition support",
+
             "Chronic condition follow-up",
+
             "Preventive healthcare support"
+
         ]
 
     }
@@ -262,22 +518,36 @@ const services = {
 
 
 
-/* =========================
+/* =========================================================
    MODAL ELEMENTS
-========================= */
+========================================================= */
 
-const modal = document.getElementById("serviceModal");
-const modalOverlay = document.getElementById("modalOverlay");
-const modalClose = document.getElementById("modalClose");
+const modal =
+    document.getElementById("serviceModal");
 
-const modalIcon = document.getElementById("modalIcon");
-const modalCategory = document.getElementById("modalCategory");
-const modalTitle = document.getElementById("modalTitle");
+const modalOverlay =
+    document.getElementById("modalOverlay");
 
-const modalDescription = document.getElementById("modalDescription");
-const modalFeatures = document.getElementById("modalFeatures");
+const modalClose =
+    document.getElementById("modalClose");
 
-const serviceName = document.getElementById("serviceName");
+const modalIcon =
+    document.getElementById("modalIcon");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalFeatures =
+    document.getElementById("modalFeatures");
+
+const serviceName =
+    document.getElementById("serviceName");
 
 const registrationForm =
     document.getElementById("registrationForm");
@@ -290,220 +560,594 @@ const successClose =
 
 
 
-/* =========================
-   OPEN MODAL
-========================= */
+/* =========================================================
+   OPEN SERVICE MODAL
+========================================================= */
 
-document.querySelectorAll(".service-action").forEach(button => {
+document
+    .querySelectorAll(".service-action")
+    .forEach(function (button) {
 
-    button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            function () {
 
-        const serviceId = button.dataset.service;
-
-        const service = services[serviceId];
-
-        if (!service) return;
-
-
-        modalIcon.innerHTML =
-            `<i class="fa-solid ${service.icon}"></i>`;
-
-        modalCategory.textContent =
-            service.category;
-
-        modalTitle.textContent =
-            service.title;
-
-        modalDescription.textContent =
-            service.description;
+                const serviceId =
+                    button.dataset.service;
 
 
-        modalFeatures.innerHTML = "";
+                const service =
+                    services[serviceId];
 
 
-        service.features.forEach(feature => {
+                if (
+                    !service ||
+                    !modal
+                ) {
 
-            const item = document.createElement("div");
+                    return;
 
-            item.innerHTML = `
-                <i class="fa-solid fa-check"></i>
-                <span>${feature}</span>
-            `;
-
-            modalFeatures.appendChild(item);
-
-        });
+                }
 
 
-        serviceName.value =
-            service.category;
+                if (modalIcon) {
+
+                    modalIcon.innerHTML =
+                        `<i class="fa-solid ${service.icon}"></i>`;
+
+                }
 
 
-        registrationForm.style.display = "block";
+                if (modalCategory) {
 
-        formSuccess.classList.remove("show");
+                    modalCategory.textContent =
+                        service.category;
+
+                }
 
 
-        modal.classList.add("show");
+                if (modalTitle) {
 
-        document.body.classList.add("modal-open");
+                    modalTitle.textContent =
+                        service.title;
+
+                }
+
+
+                if (modalDescription) {
+
+                    modalDescription.textContent =
+                        service.description;
+
+                }
+
+
+                if (modalFeatures) {
+
+                    modalFeatures.innerHTML =
+                        "";
+
+                    service.features.forEach(
+                        function (feature) {
+
+                            const item =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            item.innerHTML = `
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    ${feature}
+                                </span>
+
+                            `;
+
+
+                            modalFeatures.appendChild(
+                                item
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                if (serviceName) {
+
+                    serviceName.value =
+                        service.category;
+
+                }
+
+
+                if (registrationForm) {
+
+                    registrationForm.style.display =
+                        "block";
+
+                }
+
+
+                if (formSuccess) {
+
+                    formSuccess.classList.remove(
+                        "show"
+                    );
+
+                }
+
+
+                modal.classList.add("show");
+
+                document.body.classList.add(
+                    "modal-open"
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        const patientName =
+                            document.getElementById(
+                                "patientName"
+                            );
+
+                        if (patientName) {
+
+                            patientName.focus();
+
+                        }
+
+                    },
+                    300
+                );
+
+            }
+        );
 
     });
 
-});
 
 
-
-/* =========================
+/* =========================================================
    CLOSE MODAL
-========================= */
+========================================================= */
 
 function closeModal() {
 
+    if (!modal) {
+        return;
+    }
+
+
     modal.classList.remove("show");
 
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove(
+        "modal-open"
+    );
 
 }
 
 
-modalClose.addEventListener("click", closeModal);
+if (modalClose) {
 
-modalOverlay.addEventListener("click", closeModal);
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
 
-successClose.addEventListener("click", closeModal);
+}
+
+
+if (modalOverlay) {
+
+    modalOverlay.addEventListener(
+        "click",
+        closeModal
+    );
+
+}
+
+
+if (successClose) {
+
+    successClose.addEventListener(
+        "click",
+        closeModal
+    );
+
+}
 
 
 
-/* =========================
-   ESCAPE KEY
-========================= */
+/* =========================================================
+   ESCAPE KEY FOR MODAL
+========================================================= */
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-    if (event.key === "Escape" &&
-        modal.classList.contains("show")) {
+        if (
+            event.key === "Escape" &&
+            modal &&
+            modal.classList.contains("show")
+        ) {
 
-        closeModal();
+            closeModal();
+
+        }
 
     }
-
-});
-
+);
 
 
-/* =========================
+
+/* =========================================================
    REGISTRATION FORM
-========================= */
+========================================================= */
 
-registrationForm.addEventListener("submit", event => {
+if (registrationForm) {
 
-    event.preventDefault();
+    registrationForm.addEventListener(
+        "submit",
+        function (event) {
 
-
-    registrationForm.style.display = "none";
-
-    formSuccess.classList.add("show");
-
-});
+            event.preventDefault();
 
 
+            registrationForm.style.display =
+                "none";
 
-/* =========================
+
+            if (formSuccess) {
+
+                formSuccess.classList.add(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
    SCROLL REVEAL
-========================= */
+========================================================= */
 
 const revealElements =
     document.querySelectorAll(".reveal");
 
 
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
+if (
+    "IntersectionObserver"
+    in window
+) {
 
-            entries.forEach(entry => {
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
 
-                if (entry.isIntersecting) {
+                entries.forEach(
+                    function (entry) {
 
-                    entry.target.classList.add("visible");
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
-                }
 
-            });
+                            revealObserver.unobserve(
+                                entry.target
+                            );
 
-        },
-        {
-            threshold: 0.12
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            revealObserver.observe(
+                element
+            );
+
         }
     );
 
+} else {
 
-revealElements.forEach(element => {
+    revealElements.forEach(
+        function (element) {
 
-    revealObserver.observe(element);
+            element.classList.add(
+                "visible"
+            );
 
-});
+        }
+    );
+
+}
 
 
 
-/* =========================
-   QUICK NAV ACTIVE STATE
-========================= */
+/* =========================================================
+   QUICK SERVICE ACTIVE STATE
+========================================================= */
 
 const serviceSections =
     document.querySelectorAll(
         ".service-section"
     );
 
+
 const quickLinks =
     document.querySelectorAll(
-        ".quick-grid a[href^='#']"
+        ".quick-card[href^='#']"
     );
 
 
-const sectionObserver =
-    new IntersectionObserver(
-        entries => {
+if (
+    "IntersectionObserver"
+    in window
+) {
 
-            entries.forEach(entry => {
+    const sectionObserver =
+        new IntersectionObserver(
+            function (entries) {
 
-                if (entry.isIntersecting) {
-
-                    const id =
-                        entry.target.id;
-
-                    quickLinks.forEach(link => {
-
-                        link.classList.remove("active");
+                entries.forEach(
+                    function (entry) {
 
                         if (
-                            link.getAttribute("href") ===
-                            `#${id}`
+                            entry.isIntersecting
                         ) {
 
-                            link.classList.add("active");
+                            const id =
+                                entry.target.id;
+
+
+                            quickLinks.forEach(
+                                function (link) {
+
+                                    link.classList.remove(
+                                        "active"
+                                    );
+
+
+                                    if (
+                                        link.getAttribute(
+                                            "href"
+                                        ) ===
+                                        `#${id}`
+                                    ) {
+
+                                        link.classList.add(
+                                            "active"
+                                        );
+
+                                    }
+
+                                }
+                            );
 
                         }
 
-                    });
+                    }
+                );
 
-                }
+            },
+            {
+                rootMargin:
+                    "-30% 0px -55% 0px"
+            }
+        );
 
-            });
 
-        },
-        {
-            rootMargin: "-30% 0px -55% 0px"
+    serviceSections.forEach(
+        function (section) {
+
+            sectionObserver.observe(
+                section
+            );
+
         }
     );
 
+}
 
-serviceSections.forEach(section => {
 
-    sectionObserver.observe(section);
 
-});
+/* =========================================================
+   QUICK LINK SMOOTH SCROLL
+========================================================= */
+
+quickLinks.forEach(
+    function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                const navbarHeight =
+                    navbar
+                        ? navbar.offsetHeight
+                        : 80;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    navbarHeight -
+                    10;
+
+
+                window.scrollTo({
+
+                    top:
+                        targetPosition,
+
+                    behavior:
+                        "smooth"
+
+                });
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   PREVENT PAST DATES
+========================================================= */
+
+const preferredDate =
+    document.getElementById(
+        "preferredDate"
+    );
+
+
+if (preferredDate) {
+
+    const today =
+        new Date();
+
+
+    const year =
+        today.getFullYear();
+
+
+    const month =
+        String(
+            today.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    const day =
+        String(
+            today.getDate()
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    preferredDate.min =
+        `${year}-${month}-${day}`;
+
+}
+
+
+
+/* =========================================================
+   PHONE NUMBER INPUT
+========================================================= */
+
+const patientPhone =
+    document.getElementById(
+        "patientPhone"
+    );
+
+
+if (patientPhone) {
+
+    patientPhone.addEventListener(
+        "input",
+        function () {
+
+            this.value =
+                this.value.replace(
+                    /[^0-9+\-\s]/g,
+                    ""
+                );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   CLOSE MODAL WITH BACKGROUND CLICK
+========================================================= */
+
+if (modal) {
+
+    modal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === modal
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        updateNavbar();
+
+    }
+);

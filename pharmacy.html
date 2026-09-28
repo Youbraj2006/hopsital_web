@@ -2,496 +2,820 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Pharmacy | Lumbini City Hospital</title>
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta
+        name="description"
+        content="Lumbini City Hospital Pharmacy - trusted medicines and professional pharmacy services."
+    >
 
-    <link rel="stylesheet" href="pharmacy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="pharmacy.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================================================
-         PAGE LOADER
-    ========================================================= -->
 
-    <div class="page-loader" id="pageLoader">
+<!-- =========================================================
+     PAGE LOADER
+========================================================= -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+
+    <div class="loader-content">
 
         <div class="loader-logo">
 
-            <img src="image/logo-removebg-preview.png"
-                alt="Lumbini City Hospital">
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital"
+            >
 
         </div>
 
         <div class="loader-ring"></div>
 
-        <p>Loading Pharmacy...</p>
+        <p>
+            Preparing Pharmacy
+        </p>
 
     </div>
 
+</div>
 
-    <!-- =========================================================
-         NAVBAR
-    ========================================================= -->
 
-    <header class="navbar" id="navbar">
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
 
-        <div class="nav-container">
+<div
+    class="mobile-overlay"
+    id="mobileOverlay"
+></div>
 
-            <a href="index.html#home" class="logo">
 
-                <img src="image/logo-removebg-preview.png"
-                    alt="Lumbini City Hospital Logo">
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
+<header
+    class="navbar"
+    id="navbar"
+>
+
+    <div class="nav-container">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital"
+            >
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Home
             </a>
 
-
-            <nav class="nav-menu">
-
-                <a href="index.html#home">
-                    Home
-                </a>
-
-                <a href="index.html#why-choose-us">
-                    About
-                </a>
-
-                <a href="index.html#departments">
-                    Departments
-                </a>
-
-                <a href="pharmacy.html" class="active">
-                    Pharmacy
-                </a>
-
-                <a href="service.html">
-                    Services
-                </a>
-
-                <a href="index.html#contact">
-                    Contact
-                </a>
-
-            </nav>
-
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                type="button">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         MOBILE OVERLAY
-    ========================================================= -->
-
-    <div
-        class="mobile-overlay"
-        id="mobileOverlay">
-    </div>
-
-
-    <!-- =========================================================
-         MOBILE SIDE MENU
-    ========================================================= -->
-
-    <aside
-        class="mobile-menu"
-        id="mobileMenu">
-
-        <div class="mobile-menu-header">
-
-            <a
-                href="index.html#home"
-                class="mobile-logo">
-
-                <img
-                    src="image/logo-removebg-preview.png"
-                    alt="Lumbini City Hospital Logo">
-
+            <a href="about.html">
+                About
             </a>
 
-
-            <button
-                class="close-menu"
-                id="closeMenu"
-                type="button">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-        </div>
-
-
-        <nav class="mobile-links">
-
-            <a href="index.html#home">
-
-                <i class="fa-solid fa-house"></i>
-
-                <span>Home</span>
-
+            <a href="department.html">
+                Departments
             </a>
-
-
-            <a href="index.html#why-choose-us">
-
-                <i class="fa-solid fa-hospital"></i>
-
-                <span>About</span>
-
-            </a>
-
-
-            <a href="index.html#departments">
-
-                <i class="fa-solid fa-stethoscope"></i>
-
-                <span>Departments</span>
-
-            </a>
-
-
-            <a href="pharmacy.html">
-
-                <i class="fa-solid fa-pills"></i>
-
-                <span>Pharmacy</span>
-
-            </a>
-
 
             <a href="service.html">
-
-                <i class="fa-solid fa-hand-holding-medical"></i>
-
-                <span>Services</span>
-
+                Services
             </a>
 
+            <a href="pharmacy.html">
+                Pharmacy
+            </a>
 
-            <a href="index.html#contact">
-
-                <i class="fa-solid fa-phone"></i>
-
-                <span>Contact</span>
-
+            <a href="contact.html">
+                Contact
             </a>
 
         </nav>
 
 
-        <div class="mobile-footer">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
 
-            <i class="fa-solid fa-heart-pulse"></i>
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<aside
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-head">
+
+        <a
+            href="index.html"
+            class="mobile-logo"
+        >
+
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital"
+            >
+
+        </a>
+
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button"
+            aria-label="Close menu"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <nav class="mobile-links">
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-house"></i>
 
             <span>
-                Compassionate Care, Better Health
+                Home
+            </span>
+
+        </a>
+
+
+        <a href="about.html">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                About
+            </span>
+
+        </a>
+
+
+        <a href="department.html">
+
+            <i class="fa-solid fa-hospital-user"></i>
+
+            <span>
+                Departments
+            </span>
+
+        </a>
+
+
+        <a href="service.html">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+        <a href="pharmacy.html">
+
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            <span>
+                Pharmacy
+            </span>
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+                Contact
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="mobile-menu-footer">
+
+        <span>
+            EMERGENCY ASSISTANCE
+        </span>
+
+        <strong>
+            102
+        </strong>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     PHARMACY HERO
+========================================================= -->
+
+<section
+    class="pharmacy-hero"
+    id="home"
+>
+
+    <div class="hero-background">
+
+        <img
+            src="image/pharmacy.jpg"
+            alt="Hospital Pharmacy"
+            onerror="this.style.display='none'"
+        >
+
+    </div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content-wrap">
+
+        <div class="hero-main-content">
+
+            <div class="hero-kicker">
+
+                <span></span>
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                Lumbini City Hospital Pharmacy
+
+            </div>
+
+
+            <h1>
+
+                Medicines you can
+                <em>trust.</em>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Reliable access to essential medicines,
+                prescription support and professional
+                pharmacy assistance from your hospital.
+
+            </p>
+
+
+            <div class="medicine-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search medicine or generic name..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="searchButton"
+                    type="button"
+                >
+
+                    Search
+
+                </button>
+
+            </div>
+
+
+            <div class="hero-notice">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Genuine medicines
+                <span>•</span>
+                Professional guidance
+                <span>•</span>
+                Safe dispensing
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-pharmacy-info">
+
+            <span class="hero-info-label">
+                PHARMACY SERVICES
+            </span>
+
+            <div class="hero-info-line"></div>
+
+            <h3>
+                Care beyond the prescription.
+            </h3>
+
+            <p>
+
+                Our hospital pharmacy is designed around
+                convenience, safety and responsible medicine use.
+
+            </p>
+
+
+            <a
+                href="#products"
+                class="hero-browse"
+            >
+
+                Explore Medicines
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom-line">
+
+        <span>
+            LUMBINI CITY HOSPITAL
+        </span>
+
+        <span>
+            COMPASSIONATE CARE, BETTER HEALTH
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PHARMACY SERVICE BAR
+========================================================= -->
+
+<section class="pharmacy-services">
+
+    <div class="services-container">
+
+
+        <div class="service-item">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-pills"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Genuine Medicines
+                </strong>
+
+                <span>
+                    Quality-focused supply
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-file-prescription"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Prescription Support
+                </strong>
+
+                <span>
+                    Safe prescription handling
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Professional Guidance
+                </strong>
+
+                <span>
+                    Pharmacy assistance
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Convenient Service
+                </strong>
+
+                <span>
+                    Simple request process
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="pharmacy-intro">
+
+    <div class="section-container">
+
+        <div class="intro-label-row">
+
+            <span class="intro-label">
+                PHARMACY CARE
+            </span>
+
+            <span class="intro-rule"></span>
+
+            <span class="intro-location">
+                LUMBINI CITY HOSPITAL
             </span>
 
         </div>
 
-    </aside>
+
+        <div class="intro-grid">
+
+            <div>
+
+                <h2>
+
+                    Medicines with
+                    <span>
+                        care and confidence.
+                    </span>
+
+                </h2>
+
+            </div>
 
 
-    <!-- =========================================================
-         PHARMACY HERO
-    ========================================================= -->
-
-    <main>
-
-        <section class="pharmacy-hero">
-
-            <div class="hero-content">
-
-                <span class="hero-small">
-                    LUMBINI CITY HOSPITAL PHARMACY
-                </span>
-
-                <h1>
-                    Medicines You Can
-                    <span>Trust</span>
-                </h1>
+            <div class="intro-copy">
 
                 <p>
-                    Browse medicines, healthcare products and
-                    supplements available through our hospital pharmacy.
+
+                    The Lumbini City Hospital Pharmacy provides
+                    convenient access to essential medicines
+                    while keeping patient safety and professional
+                    support at the center of the experience.
+
                 </p>
 
 
-                <div class="medicine-search">
+                <p>
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search the catalogue, explore medicine
+                    information, create a pharmacy request and
+                    provide your prescription when required.
 
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Search medicine, brand or category...">
-
-                    <button id="searchButton">
-                        Search
-                    </button>
-
-                </div>
-
-
-                <div class="hero-notice">
-
-                    <i class="fa-solid fa-shield-heart"></i>
-
-                    <span>
-                        Prescription medicines require a valid prescription.
-                    </span>
-
-                </div>
+                </p>
 
             </div>
 
+        </div>
 
-            <div class="hero-visual">
+    </div>
 
-                <div class="hero-circle"></div>
-
-                <div class="medicine-box">
-
-                    <i class="fa-solid fa-prescription-bottle-medical"></i>
-
-                    <strong>
-                        Hospital Pharmacy
-                    </strong>
-
-                    <span>
-                        Safe • Reliable • Convenient
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
+</section>
 
 
-        <!-- =====================================================
-             PHARMACY INFO
-        ===================================================== -->
+<!-- =========================================================
+     CATEGORY SECTION
+========================================================= -->
 
-        <section class="pharmacy-info">
+<section
+    class="category-section"
+    id="categories"
+>
 
-            <div class="info-card">
+    <div class="section-container">
 
-                <div class="info-icon">
-                    <i class="fa-solid fa-certificate"></i>
-                </div>
+        <div class="section-heading">
 
-                <div>
-                    <strong>Quality Products</strong>
-                    <span>Carefully sourced medicines</span>
-                </div>
+            <div>
 
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    <i class="fa-solid fa-truck-medical"></i>
-                </div>
-
-                <div>
-                    <strong>Hospital Pickup</strong>
-                    <span>Convenient collection service</span>
-                </div>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    <i class="fa-solid fa-user-doctor"></i>
-                </div>
-
-                <div>
-                    <strong>Prescription Support</strong>
-                    <span>Prescription verification</span>
-                </div>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-
-                <div>
-                    <strong>Pharmacy Assistance</strong>
-                    <span>Help when you need it</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CATEGORY SECTION
-        ===================================================== -->
-
-        <section class="category-section">
-
-            <div class="section-heading">
-
-                <span>EXPLORE PHARMACY</span>
+                <span class="section-eyebrow">
+                    MEDICINE CATEGORIES
+                </span>
 
                 <h2>
-                    Shop by Category
+                    Find what you need.
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Explore the pharmacy catalogue by medicine
+                category or search directly for a product.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="category-list"
+            id="categoryList"
+        >
+
+            <button
+                class="category-btn active"
+                type="button"
+                data-category="all"
+            >
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                All Medicines
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="pain"
+            >
+
+                <i class="fa-solid fa-hand-holding-medical"></i>
+
+                Pain Relief
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="stomach"
+            >
+
+                <i class="fa-solid fa-stomach"></i>
+
+                Gastrointestinal
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="allergy"
+            >
+
+                <i class="fa-solid fa-wind"></i>
+
+                Allergy
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="antibiotic"
+            >
+
+                <i class="fa-solid fa-capsules"></i>
+
+                Antibiotics
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="diabetes"
+            >
+
+                <i class="fa-solid fa-droplet"></i>
+
+                Diabetes
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="heart"
+            >
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                Cardiovascular
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="vitamin"
+            >
+
+                <i class="fa-solid fa-lemon"></i>
+
+                Vitamins
+
+            </button>
+
+
+            <button
+                class="category-btn"
+                type="button"
+                data-category="other"
+            >
+
+                <i class="fa-solid fa-kit-medical"></i>
+
+                General Care
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUCT CATALOGUE
+========================================================= -->
+
+<section
+    class="products-section"
+    id="products"
+>
+
+    <div class="section-container">
+
+
+        <div class="products-top">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    PHARMACY CATALOGUE
+                </span>
+
+                <h2>
+                    Available Medicines
                 </h2>
 
                 <p>
-                    Find medicines and healthcare products
-                    according to your needs.
+
+                    Select a medicine to view its details
+                    or add it to your pharmacy request.
+
                 </p>
 
             </div>
 
 
-            <div class="category-list" id="categoryList">
-
-                <button
-                    class="category-btn active"
-                    data-category="all">
-
-                    <i class="fa-solid fa-border-all"></i>
-
-                    <span>All Medicines</span>
-
-                </button>
+            <div class="catalogue-actions">
 
 
-                <button
-                    class="category-btn"
-                    data-category="pain">
+                <label class="sort-control">
 
-                    <i class="fa-solid fa-hand-dots"></i>
-
-                    <span>Pain Relief</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="gastro">
-
-                    <i class="fa-solid fa-stomach"></i>
-
-                    <span>Stomach Care</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="vitamins">
-
-                    <i class="fa-solid fa-capsules"></i>
-
-                    <span>Vitamins</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="respiratory">
-
-                    <i class="fa-solid fa-lungs"></i>
-
-                    <span>Respiratory</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="diabetes">
-
-                    <i class="fa-solid fa-droplet"></i>
-
-                    <span>Diabetes</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="cardiac">
-
-                    <i class="fa-solid fa-heart-pulse"></i>
-
-                    <span>Heart Care</span>
-
-                </button>
-
-
-                <button
-                    class="category-btn"
-                    data-category="other">
-
-                    <i class="fa-solid fa-prescription-bottle"></i>
-
-                    <span>Other</span>
-
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PRODUCT AREA
-        ===================================================== -->
-
-        <section class="products-section">
-
-            <div class="products-top">
-
-                <div>
-
-                    <span class="products-label">
-                        PHARMACY CATALOGUE
+                    <span>
+                        Sort
                     </span>
-
-                    <h2>
-                        Medicines & Healthcare
-                    </h2>
-
-                </div>
-
-
-                <div class="products-actions">
 
                     <select id="sortSelect">
 
                         <option value="default">
-                            Sort by
+                            Recommended
                         </option>
 
                         <option value="low">
@@ -503,74 +827,90 @@
                         </option>
 
                         <option value="name">
-                            Name: A-Z
+                            Name A-Z
+                        </option>
+
+                        <option value="newest">
+                            Newest
                         </option>
 
                     </select>
 
+                </label>
 
-                    <button
-                        class="cart-button"
-                        id="cartButton">
 
-                        <i class="fa-solid fa-cart-shopping"></i>
+                <button
+                    class="cart-button"
+                    id="cartButton"
+                    type="button"
+                >
 
-                        <span>
-                            Cart
-                        </span>
+                    <i class="fa-solid fa-bag-shopping"></i>
 
-                        <b id="cartCount">
-                            0
-                        </b>
+                    <span>
+                        My Request
+                    </span>
 
-                    </button>
+                    <b id="cartCount">
+                        0
+                    </b>
 
-                </div>
+                </button>
 
             </div>
 
-
-            <div
-                class="product-grid"
-                id="productGrid">
-            </div>
+        </div>
 
 
-            <div
-                class="no-products"
-                id="noProducts">
+        <div
+            class="product-grid"
+            id="productGrid"
+        ></div>
+
+
+        <div
+            class="no-products"
+            id="noProducts"
+        >
+
+            <div class="no-products-icon">
 
                 <i class="fa-solid fa-magnifying-glass"></i>
 
-                <h3>
-                    No medicines found
-                </h3>
-
-                <p>
-                    Try another medicine name or category.
-                </p>
-
             </div>
 
-        </section>
+            <h3>
+                No medicines found
+            </h3>
+
+            <p>
+                Try another medicine name or category.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- =====================================================
-             PRESCRIPTION BANNER
-        ===================================================== -->
+<!-- =========================================================
+     PRESCRIPTION SECTION
+========================================================= -->
 
-        <section class="prescription-banner">
+<section
+    class="prescription-section"
+    id="prescription"
+>
 
-            <div class="prescription-icon">
+    <div class="section-container">
 
-                <i class="fa-solid fa-file-prescription"></i>
-
-            </div>
+        <div class="prescription-panel">
 
 
             <div class="prescription-content">
 
-                <span>
+                <span class="section-eyebrow">
                     PRESCRIPTION SERVICE
                 </span>
 
@@ -579,84 +919,317 @@
                 </h2>
 
                 <p>
-                    Upload your prescription and submit a medicine
-                    request to our pharmacy team.
+
+                    Include your prescription while submitting
+                    a medicine request. This helps our pharmacy
+                    team review the requested medicines properly.
+
                 </p>
+
+
+                <button
+                    class="prescription-button"
+                    id="prescriptionButton"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-file-arrow-up"></i>
+
+                    Start Medicine Request
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
 
-            <button
-                class="prescription-btn"
-                id="prescriptionButton">
+            <div class="prescription-visual">
 
-                Upload Prescription
+                <div class="prescription-document">
 
-                <i class="fa-solid fa-arrow-right"></i>
+                    <div class="document-top">
 
-            </button>
+                        <div>
 
-        </section>
+                            <small>
+                                LUMBINI CITY HOSPITAL
+                            </small>
 
-    </main>
+                            <strong>
+                                Prescription
+                            </strong>
+
+                        </div>
+
+                        <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+                    </div>
 
 
-    <!-- =========================================================
-         PRODUCT DETAILS MODAL
-    ========================================================= -->
+                    <div class="document-lines">
 
-    <div
-        class="modal-overlay"
-        id="productModal">
+                        <span></span>
 
-        <div class="product-modal">
+                        <span></span>
 
-            <button
-                class="modal-close"
-                id="productModalClose">
+                        <span></span>
 
-                <i class="fa-solid fa-xmark"></i>
+                        <span></span>
 
-            </button>
+                    </div>
+
+
+                    <div class="document-signature">
+
+                        <span></span>
+
+                        <small>
+                            Doctor's Signature
+                        </small>
+
+                    </div>
+
+
+                    <div class="document-check">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INFORMATION
+========================================================= -->
+
+<section class="pharmacy-information">
+
+    <div class="section-container">
+
+        <div class="information-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    PHARMACY INFORMATION
+                </span>
+
+                <h2>
+                    Important things to know.
+                </h2>
+
+            </div>
+
+            <p>
+
+                Responsible medicine use starts with
+                reliable information and professional advice.
+
+            </p>
+
+        </div>
+
+
+        <div class="information-grid">
+
+
+            <article class="information-block">
+
+                <span class="information-number">
+                    01
+                </span>
+
+                <div class="information-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <h3>
+                    Safe Medicine Use
+                </h3>
+
+                <p>
+
+                    Always use medicines according to the
+                    instructions provided by your healthcare
+                    professional or medicine label.
+
+                </p>
+
+            </article>
+
+
+            <article class="information-block">
+
+                <span class="information-number">
+                    02
+                </span>
+
+                <div class="information-icon">
+
+                    <i class="fa-solid fa-file-prescription"></i>
+
+                </div>
+
+                <h3>
+                    Prescription Medicines
+                </h3>
+
+                <p>
+
+                    Medicines marked as prescription medicines
+                    may require appropriate medical authorization
+                    before dispensing.
+
+                </p>
+
+            </article>
+
+
+            <article class="information-block">
+
+                <span class="information-number">
+                    03
+                </span>
+
+                <div class="information-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+                <h3>
+                    Professional Guidance
+                </h3>
+
+                <p>
+
+                    If you are unsure about a medicine, speak
+                    with a qualified healthcare professional
+                    before using it.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     PRODUCT DETAILS MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="productModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="product-modal-box">
+
+        <button
+            class="modal-close"
+            id="productModalClose"
+            type="button"
+            aria-label="Close medicine details"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="product-modal-grid">
 
 
             <div
                 class="modal-product-image"
-                id="modalProductImage">
-            </div>
+                id="modalProductImage"
+            ></div>
 
 
-            <div class="modal-product-content">
+            <div class="modal-product-details">
 
                 <span
                     class="modal-category"
-                    id="modalCategory">
-                </span>
+                    id="modalCategory"
+                ></span>
 
-                <h2 id="modalName">
-                </h2>
+
+                <h2 id="modalName"></h2>
+
 
                 <p
                     class="modal-generic"
-                    id="modalGeneric">
-                </p>
+                    id="modalGeneric"
+                ></p>
 
 
-                <div class="modal-details">
+                <div class="modal-meta">
+
 
                     <div>
-                        <small>Strength</small>
+
+                        <span>
+                            Strength
+                        </span>
+
                         <strong id="modalStrength"></strong>
+
                     </div>
 
+
                     <div>
-                        <small>Manufacturer</small>
+
+                        <span>
+                            Manufacturer
+                        </span>
+
                         <strong id="modalManufacturer"></strong>
+
                     </div>
 
+
                     <div>
-                        <small>Availability</small>
+
+                        <span>
+                            Availability
+                        </span>
+
                         <strong id="modalStock"></strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Prescription
+                        </span>
+
+                        <strong id="modalPrescription"></strong>
+
                     </div>
 
                 </div>
@@ -664,34 +1237,43 @@
 
                 <p
                     class="modal-description"
-                    id="modalDescription">
-                </p>
+                    id="modalDescription"
+                ></p>
 
 
-                <div class="modal-price-row">
-
-                    <strong id="modalPrice">
-                    </strong>
-
-                    <span id="modalPrescription">
-                    </span>
-
-                </div>
+                <div class="modal-purchase">
 
 
-                <div class="modal-actions">
+                    <div>
+
+                        <span>
+                            Price
+                        </span>
+
+                        <strong id="modalPrice">
+                            NPR 0
+                        </strong>
+
+                    </div>
+
 
                     <div class="quantity-control">
 
-                        <button id="modalMinus">
-                            -
+                        <button
+                            id="modalMinus"
+                            type="button"
+                        >
+                            −
                         </button>
 
                         <span id="modalQuantity">
                             1
                         </span>
 
-                        <button id="modalPlus">
+                        <button
+                            id="modalPlus"
+                            type="button"
+                        >
                             +
                         </button>
 
@@ -699,12 +1281,14 @@
 
 
                     <button
-                        class="modal-cart-btn"
-                        id="modalCartButton">
+                        class="modal-cart-button"
+                        id="modalCartButton"
+                        type="button"
+                    >
 
                         <i class="fa-solid fa-cart-plus"></i>
 
-                        Add to Cart
+                        Add to Pharmacy Cart
 
                     </button>
 
@@ -716,241 +1300,290 @@
 
     </div>
 
-
-    <!-- =========================================================
-         CART MODAL
-    ========================================================= -->
-
-    <div
-        class="modal-overlay"
-        id="cartModal">
-
-        <div class="cart-modal">
-
-            <button
-                class="modal-close"
-                id="cartModalClose">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
+</div>
 
 
-            <div class="cart-header">
+<!-- =========================================================
+     CART MODAL
+========================================================= -->
 
-                <span>
-                    YOUR PHARMACY CART
+<div
+    class="modal"
+    id="cartModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="cart-modal-box">
+
+
+        <div class="cart-modal-head">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    PHARMACY REQUEST
                 </span>
 
                 <h2>
-                    Medicine Request
+                    My Medicine Request
                 </h2>
 
             </div>
 
 
-            <div
-                class="cart-items"
-                id="cartItems">
+            <button
+                class="modal-close"
+                id="cartModalClose"
+                type="button"
+                aria-label="Close cart"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        ></div>
+
+
+        <div
+            class="empty-cart"
+            id="emptyCart"
+        >
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <h3>
+                Your request is empty
+            </h3>
+
+            <p>
+                Add medicines to your request to continue.
+            </p>
+
+        </div>
+
+
+        <div
+            class="cart-summary"
+            id="cartSummary"
+        >
+
+            <div class="cart-total-row">
+
+                <span>
+                    Estimated Total
+                </span>
+
+                <strong id="cartSubtotal">
+                    NPR 0
+                </strong>
+
             </div>
 
 
-            <div
-                class="empty-cart"
-                id="emptyCart">
+            <p class="cart-note">
 
-                <i class="fa-solid fa-cart-shopping"></i>
+                Final availability and dispensing requirements
+                may be confirmed by the pharmacy team.
 
-                <h3>
-                    Your cart is empty
-                </h3>
-
-                <p>
-                    Add medicines to continue.
-                </p>
-
-            </div>
+            </p>
 
 
-            <div
-                class="cart-summary"
-                id="cartSummary">
+            <button
+                class="request-medicine-button"
+                id="requestMedicineButton"
+                type="button"
+            >
 
-                <div>
+                <i class="fa-solid fa-arrow-right"></i>
 
-                    <span>
-                        Subtotal
-                    </span>
+                Continue Medicine Request
 
-                    <strong id="cartSubtotal">
-                        Rs. 0
-                    </strong>
-
-                </div>
-
-
-                <button
-                    class="request-btn"
-                    id="requestMedicineButton">
-
-                    Continue to Request
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </button>
-
-            </div>
+            </button>
 
         </div>
 
     </div>
 
-
-    <!-- =========================================================
-         MEDICINE REQUEST MODAL
-    ========================================================= -->
-
-    <div
-        class="modal-overlay"
-        id="requestModal">
-
-        <div class="request-modal">
-
-            <button
-                class="modal-close"
-                id="requestModalClose">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
+</div>
 
 
-            <div class="request-heading">
+<!-- =========================================================
+     REQUEST MODAL
+========================================================= -->
 
-                <span>
-                    MEDICINE REQUEST
+<div
+    class="modal"
+    id="requestModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="request-modal-box">
+
+
+        <div class="request-modal-head">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    PATIENT INFORMATION
                 </span>
 
                 <h2>
-                    Submit Your Request
+                    Submit Medicine Request
                 </h2>
 
                 <p>
-                    This prototype does not process real payments.
-                    Your request would be reviewed by the pharmacy.
+                    Please provide the information below.
                 </p>
 
             </div>
 
 
-            <form id="requestForm">
+            <button
+                class="modal-close"
+                id="requestModalClose"
+                type="button"
+                aria-label="Close request form"
+            >
 
-                <div class="form-grid">
+                <i class="fa-solid fa-xmark"></i>
 
-                    <div class="form-group">
+            </button>
 
-                        <label>
-                            Patient Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="patientName"
-                            required
-                            placeholder="Enter patient name">
-
-                    </div>
+        </div>
 
 
-                    <div class="form-group">
+        <form
+            class="request-form"
+            id="requestForm"
+        >
 
-                        <label>
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="patientPhone"
-                            required
-                            placeholder="98XXXXXXXX">
-
-                    </div>
+            <div class="form-grid">
 
 
-                    <div class="form-group full">
+                <div class="form-group">
 
-                        <label>
-                            Address
-                        </label>
+                    <label for="patientName">
+                        Patient Name *
+                    </label>
 
-                        <input
-                            type="text"
-                            id="patientAddress"
-                            required
-                            placeholder="Enter delivery or pickup address">
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Medicine Collection
-                        </label>
-
-                        <select id="collectionMethod">
-
-                            <option>
-                                Hospital Pickup
-                            </option>
-
-                            <option>
-                                Delivery Request
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Prescription
-                        </label>
-
-                        <input
-                            type="file"
-                            id="prescriptionFile"
-                            accept=".jpg,.jpeg,.png,.pdf">
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label>
-                            Additional Notes
-                        </label>
-
-                        <textarea
-                            id="patientNotes"
-                            rows="4"
-                            placeholder="Any additional information..."></textarea>
-
-                    </div>
+                    <input
+                        type="text"
+                        id="patientName"
+                        required
+                        placeholder="Enter patient name"
+                    >
 
                 </div>
 
 
-                <div class="request-total">
+                <div class="form-group">
+
+                    <label for="patientPhone">
+                        Phone Number *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="patientPhone"
+                        required
+                        placeholder="Enter phone number"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="patientAddress">
+                        Address *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="patientAddress"
+                        required
+                        placeholder="Enter your address"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="collectionMethod">
+                        Collection Method
+                    </label>
+
+                    <select id="collectionMethod">
+
+                        <option value="hospital">
+                            Hospital Pharmacy Collection
+                        </option>
+
+                        <option value="counter">
+                            Pharmacy Counter
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="prescriptionFile">
+                        Prescription
+                    </label>
+
+                    <input
+                        type="file"
+                        id="prescriptionFile"
+                        accept="image/*,.pdf"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="patientNotes">
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        id="patientNotes"
+                        placeholder="Any additional information..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="request-form-bottom">
+
+                <div>
 
                     <span>
                         Estimated Total
                     </span>
 
                     <strong id="requestTotal">
-                        Rs. 0
+                        NPR 0
                     </strong>
 
                 </div>
@@ -958,28 +1591,47 @@
 
                 <button
                     class="submit-request"
-                    type="submit">
+                    type="submit"
+                >
 
                     <i class="fa-solid fa-paper-plane"></i>
 
-                    Submit Medicine Request
+                    Submit Request
 
                 </button>
 
-            </form>
+            </div>
 
-        </div>
+        </form>
 
     </div>
 
+</div>
 
-    <!-- =========================================================
-         SUCCESS MESSAGE
-    ========================================================= -->
 
-    <div
-        class="success-message"
-        id="successMessage">
+<!-- =========================================================
+     SUCCESS MESSAGE
+========================================================= -->
+
+<div
+    class="success-message"
+    id="successMessage"
+>
+
+    <div class="success-box">
+
+
+        <button
+            class="success-close"
+            id="successClose"
+            type="button"
+            aria-label="Close"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
 
         <div class="success-icon">
 
@@ -987,22 +1639,37 @@
 
         </div>
 
-        <h3>
+
+        <h2>
             Request Submitted
-        </h3>
+        </h2>
+
 
         <p>
-            Your medicine request prototype has been submitted.
+
+            Your medicine request has been recorded successfully.
+            Our pharmacy team can review the request and confirm
+            the next steps.
+
         </p>
 
-        <button id="successClose">
+
+        <button
+            class="success-button"
+            id="successDone"
+            type="button"
+        >
+
             Done
+
         </button>
 
     </div>
 
+</div>
 
-    <script src="pharmacy.js"></script>
+
+<script src="pharmacy.js"></script>
 
 </body>
 

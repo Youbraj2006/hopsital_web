@@ -1,88 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Services | Lumbini City Hospital</title>
+    <title>Medical Services | Lumbini City Hospital</title>
 
+    <meta
+        name="description"
+        content="Explore medical services at Lumbini City Hospital including emergency care, ambulance, laboratory, diagnostics, cardiology, blood bank and general medicine."
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- SERVICE CSS -->
     <link rel="stylesheet" href="service.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<!-- ================= LOADER ================= -->
 
-<div class="loader" id="loader">
-
+    <div class="page-loader" id="pageLoader">
     <div class="loader-content">
-
         <div class="loader-logo">
-            <img src="image/logo-removebg-preview.png"
-                 alt="Lumbini City Hospital Logo">
+            <img src="image/logo-removebg-preview.png" alt="Lumbini City Hospital">
         </div>
 
-        <div class="loader-symbol">
-            <i class="fa-solid fa-heart-pulse"></i>
-        </div>
+        <div class="loader-ring"></div>
 
-        <h2>Lumbini City Hospital</h2>
-
-        <p>Compassionate Care, Better Health</p>
-
-        <div class="loader-line">
-            <span></span>
-        </div>
-
+        <p>Preparing services</p>
     </div>
-
 </div>
 
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
 <header class="navbar" id="navbar">
 
     <div class="nav-container">
 
-        <a href="index.html#home" class="logo">
-            <img src="image/logo-removebg-preview.png"
-                 alt="Lumbini City Hospital">
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html#home"
+            class="logo"
+            aria-label="Lumbini City Hospital Home"
+        >
+
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital Logo"
+            >
+
         </a>
 
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open Menu">
 
-            <i class="fa-solid fa-bars"></i>
+        <!-- DESKTOP NAVIGATION -->
 
-        </button>
-
-
-        <nav class="nav-menu" id="navMenu">
+        <nav class="nav-menu">
 
             <a href="index.html#home">
                 Home
             </a>
 
-            <a href="index.html#about">
+            <a href="index.html#why-choose-us">
                 About
-            </a>
-
-            <a href="index.html#services" class="active">
-                Services
-            </a>
-
-            <a href="index.html#pharmacy">
-                Pharmacy
             </a>
 
             <a href="index.html#departments">
                 Departments
+            </a>
+
+            <a href="pharmacy.html">
+                Pharmacy
+            </a>
+
+            <a
+                href="service.html"
+                class="active"
+            >
+                Services
             </a>
 
             <a href="index.html#contact">
@@ -91,50 +99,255 @@
 
         </nav>
 
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
     </div>
 
 </header>
 
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
 
-<section class="service-hero">
+<div
+    class="mobile-overlay"
+    id="mobileOverlay"
+></div>
 
-    <div class="hero-content">
 
-        <span class="hero-label">
+
+<!-- =========================================================
+     MOBILE SIDE MENU
+========================================================= -->
+
+<aside
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-header">
+
+        <a
+            href="index.html#home"
+            class="mobile-logo"
+        >
+
+            <img
+                src="image/logo-removebg-preview.png"
+                alt="Lumbini City Hospital Logo"
+            >
+
+        </a>
+
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button"
+            aria-label="Close menu"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <nav class="mobile-links">
+
+        <a href="index.html#home">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Home
+            </span>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+
+        <a href="index.html#why-choose-us">
 
             <i class="fa-solid fa-hospital"></i>
 
-            OUR SERVICES
+            <span>
+                About
+            </span>
 
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+
+        <a href="index.html#departments">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <span>
+                Departments
+            </span>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+
+        <a href="pharmacy.html">
+
+            <i class="fa-solid fa-pills"></i>
+
+            <span>
+                Pharmacy
+            </span>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+
+        <a
+            href="service.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-hand-holding-medical"></i>
+
+            <span>
+                Services
+            </span>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+
+        <a href="index.html#contact">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>
+                Contact
+            </span>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </a>
+
+    </nav>
+
+
+
+    <div class="mobile-menu-emergency">
+
+        <div class="mobile-emergency-icon">
+
+            <i class="fa-solid fa-phone-volume"></i>
+
+        </div>
+
+        <div>
+
+            <small>
+                EMERGENCY ASSISTANCE
+            </small>
+
+            <strong>
+                102
+            </strong>
+
+        </div>
+
+        <a href="tel:102">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+
+    <div class="mobile-footer">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <span>
+            Compassionate Care, Better Health
         </span>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="service-hero">
+
+    <div class="hero-background-shape shape-one"></div>
+    <div class="hero-background-shape shape-two"></div>
+
+
+    <div class="hero-content reveal">
+
+        <div class="hero-eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            <i class="fa-solid fa-hospital"></i>
+
+            OUR MEDICAL SERVICES
+
+        </div>
 
 
         <h1>
 
-            Complete care for
-
-            <span>every stage</span>
-
-            of your health.
+            Healthcare built around
+            <span>you.</span>
 
         </h1>
 
 
         <p>
 
-            From emergency response and laboratory testing to heart care,
-            diagnostics and everyday medical support, our services are
-            designed to connect every important part of your healthcare journey.
+            From urgent emergency support to advanced diagnostics,
+            laboratory testing, heart care and everyday medical
+            consultation, Lumbini City Hospital brings essential
+            healthcare services together in one connected experience.
 
         </p>
 
 
         <div class="hero-buttons">
 
-            <a href="#services" class="primary-btn">
+            <a
+                href="#services"
+                class="hero-primary"
+            >
 
                 Explore Services
 
@@ -143,1272 +356,1706 @@
             </a>
 
 
-            <a href="tel:102" class="emergency-btn">
+            <a
+                href="tel:102"
+                class="hero-emergency"
+            >
 
-                <i class="fa-solid fa-phone"></i>
+                <span class="phone-pulse">
 
-                Emergency 102
+                    <i class="fa-solid fa-phone"></i>
 
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-image">
-
-        <img src="image/service.webp"
-             alt="Lumbini City Hospital Services">
-
-
-        <div class="hero-image-card">
-
-            <div class="hero-card-icon">
-
-                <i class="fa-solid fa-heart-pulse"></i>
-
-            </div>
-
-
-            <div>
-
-                <strong>Connected Care</strong>
-
-                <span>
-                    From diagnosis to treatment
                 </span>
 
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= QUICK SERVICES ================= -->
-
-<section class="quick-services">
-
-    <div class="section-heading small-heading">
-
-        <span>
-            CARE AT A GLANCE
-        </span>
-
-        <h2>
-            Explore Our Services
-        </h2>
-
-    </div>
-
-
-    <div class="quick-grid">
-
-        <a href="#blood-bank">
-
-            <i class="fa-solid fa-droplet"></i>
-
-            <span>
-                Blood Bank
-            </span>
-
-        </a>
-
-
-        <a href="#ambulance">
-
-            <i class="fa-solid fa-truck-medical"></i>
-
-            <span>
-                Ambulance
-            </span>
-
-        </a>
-
-
-        <a href="#laboratory">
-
-            <i class="fa-solid fa-flask"></i>
-
-            <span>
-                Laboratory
-            </span>
-
-        </a>
-
-
-        <a href="#emergency">
-
-            <i class="fa-solid fa-truck-medical"></i>
-
-            <span>
-                Emergency
-            </span>
-
-        </a>
-
-
-        <a href="#diagnostics">
-
-            <i class="fa-solid fa-x-ray"></i>
-
-            <span>
-                Diagnostics
-            </span>
-
-        </a>
-
-
-        <a href="#cardiology">
-
-            <i class="fa-solid fa-heart-pulse"></i>
-
-            <span>
-                Cardiology
-            </span>
-
-        </a>
-
-
-        <a href="#general-medicine">
-
-            <i class="fa-solid fa-stethoscope"></i>
-
-            <span>
-                General Medicine
-            </span>
-
-        </a>
-
-
-        <a href="index.html#pharmacy">
-
-            <i class="fa-solid fa-pills"></i>
-
-            <span>
-                Pharmacy
-            </span>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= SERVICES ================= -->
-
-<main id="services">
-
-
-    <!-- ================= BLOOD BANK ================= -->
-
-    <section class="service-section blood-section reveal"
-             id="blood-bank">
-
-        <div class="service-image">
-
-            <img src="image/donation1.jpg"
-                 alt="Blood Bank">
-
-            <div class="service-number">
-                01
-            </div>
-
-            <div class="image-icon blood-icon">
-
-                <i class="fa-solid fa-droplet"></i>
-
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-droplet"></i>
-
-                BLOOD BANK
-
-            </span>
-
-
-            <h2>
-
-                Blood support when
-
                 <span>
-                    every moment matters.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Blood services play an important role in emergency care,
-                surgery, medical treatment and other situations where
-                timely blood support is required.
-
-            </p>
-
-
-            <div class="feature-list">
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    <span>
-                        Blood grouping and compatibility support
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    <span>
-                        Blood collection and storage support
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    <span>
-                        Transfusion-related support
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="blood-availability">
-
-                <div class="availability-heading">
-
-                    <div>
-
-                        <span>
-                            BLOOD STATUS
-                        </span>
-
-                        <h3>
-                            Blood Availability
-                        </h3>
-
-                    </div>
-
-
-                    <div class="status-indicator">
-
-                        <span></span>
-
-                        Updated by hospital
-
-                    </div>
-
-                </div>
-
-
-                <div class="blood-grid">
-
-                    <div class="blood-type available">
-                        <strong>A+</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>A−</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>B+</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>B−</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>O+</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>O−</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>AB+</strong>
-                        <span>Available</span>
-                    </div>
-
-                    <div class="blood-type available">
-                        <strong>AB−</strong>
-                        <span>Available</span>
-                    </div>
-
-                </div>
-
-
-                <p class="availability-note">
-
-                    Blood availability may change throughout the day.
-                    Please contact the hospital before visiting for a
-                    specific blood group.
-
-                </p>
-
-            </div>
-
-
-            <button class="service-action"
-                    data-service="blood-bank">
-
-                View Details & Register
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= AMBULANCE ================= -->
-
-    <section class="service-section reverse reveal"
-             id="ambulance">
-
-        <div class="service-image">
-
-            <img src="image/ambulance1.jpg"
-                 alt="Hospital Ambulance">
-
-            <div class="service-number">
-                02
-            </div>
-
-            <div class="image-icon">
-
-                <i class="fa-solid fa-truck-medical"></i>
-
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-truck-medical"></i>
-
-                AMBULANCE
-
-            </span>
-
-
-            <h2>
-
-                Rapid response when
-
-                <span>
-                    every second counts.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Ambulance services support emergency transportation and
-                patient transfers when safe and timely movement to medical
-                care is required.
-
-            </p>
-
-
-            <div class="icon-feature-grid">
-
-                <div class="icon-feature">
-
-                    <i class="fa-solid fa-bolt"></i>
-
-                    <div>
-
-                        <strong>
-                            Rapid Response
-                        </strong>
-
-                        <span>
-                            Support for urgent transportation
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="icon-feature">
-
-                    <i class="fa-solid fa-user-nurse"></i>
-
-                    <div>
-
-                        <strong>
-                            Patient Support
-                        </strong>
-
-                        <span>
-                            Careful movement during transfer
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="icon-feature">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <div>
-
-                        <strong>
-                            Patient Transfer
-                        </strong>
-
-                        <span>
-                            Transportation to medical care
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="icon-feature">
-
-                    <i class="fa-solid fa-shield-heart"></i>
-
-                    <div>
-
-                        <strong>
-                            Safety Focus
-                        </strong>
-
-                        <span>
-                            Transport with patient safety in mind
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <a href="tel:102"
-               class="large-emergency-button">
-
-                <i class="fa-solid fa-phone-volume"></i>
-
-
-                <div>
 
                     <small>
-                        EMERGENCY NUMBER
+                        Emergency
                     </small>
 
                     <strong>
                         102
                     </strong>
 
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-trust">
+
+            <div class="trust-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Patient-focused care
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Connected services
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Emergency support
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-visual reveal">
+
+        <div class="hero-image-frame">
+
+            <div class="image-glow"></div>
+
+            <img
+                src="image/service.webp"
+                alt="Medical services at Lumbini City Hospital"
+            >
+
+
+            <div class="hero-image-overlay"></div>
+
+
+            <div class="hero-floating-card">
+
+                <div class="floating-card-icon">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
                 </div>
 
+                <div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+                    <strong>
+                        Connected Care
+                    </strong>
+
+                    <span>
+                        From diagnosis to treatment
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-stat-card">
+
+                <strong>
+                    07
+                </strong>
+
+                <span>
+                    Core medical
+                    services
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICE INTRO
+========================================================= -->
+
+<section class="service-intro">
+
+    <div class="intro-container">
+
+
+        <div class="intro-heading reveal">
+
+            <span>
+                CARE AT A GLANCE
+            </span>
+
+            <h2>
+                Everything important,
+                <strong>in one place.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="intro-text reveal">
+
+            <p>
+
+                Our services are designed to support patients
+                across different stages of healthcare — from
+                urgent situations and diagnostic investigations
+                to consultation and continuing care.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     QUICK SERVICE NAVIGATION
+========================================================= -->
+
+<section class="quick-services">
+
+    <div class="quick-container">
+
+
+        <div class="quick-top reveal">
+
+            <div>
+
+                <span>
+                    FIND A SERVICE
+                </span>
+
+                <h2>
+                    Explore our care areas
+                </h2>
+
+            </div>
+
+            <p>
+                Select a service to move directly to its section.
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <a
+                href="#blood-bank"
+                class="quick-card active"
+            >
+
+                <span class="quick-number">
+                    01
+                </span>
+
+                <div class="quick-icon blood">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <strong>
+                    Blood Bank
+                </strong>
+
+                <small>
+                    Blood support
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
 
             </a>
 
 
-            <button class="service-action"
-                    data-service="ambulance">
 
-                View Details & Register
+            <a
+                href="#ambulance"
+                class="quick-card"
+            >
 
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= LABORATORY ================= -->
-
-    <section class="service-section reveal"
-             id="laboratory">
-
-        <div class="service-image">
-
-            <img src="image/lab.jpg"
-                 alt="Hospital Laboratory">
-
-            <div class="service-number">
-                03
-            </div>
-
-            <div class="image-icon">
-
-                <i class="fa-solid fa-flask"></i>
-
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-flask"></i>
-
-                LABORATORY
-
-            </span>
-
-
-            <h2>
-
-                Reliable testing for
-
-                <span>
-                    better medical decisions.
+                <span class="quick-number">
+                    02
                 </span>
 
-            </h2>
+                <div class="quick-icon ambulance">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+
+                <strong>
+                    Ambulance
+                </strong>
+
+                <small>
+                    Emergency transport
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
 
 
-            <p>
 
-                Laboratory testing provides important information that helps
-                healthcare professionals understand a patient's condition,
-                support diagnosis and monitor treatment.
+            <a
+                href="#laboratory"
+                class="quick-card"
+            >
+
+                <span class="quick-number">
+                    03
+                </span>
+
+                <div class="quick-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <strong>
+                    Laboratory
+                </strong>
+
+                <small>
+                    Medical testing
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+
+
+            <a
+                href="#emergency"
+                class="quick-card"
+            >
+
+                <span class="quick-number">
+                    04
+                </span>
+
+                <div class="quick-icon emergency">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+
+                <strong>
+                    Emergency
+                </strong>
+
+                <small>
+                    Urgent medical care
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+
+
+            <a
+                href="#diagnostics"
+                class="quick-card"
+            >
+
+                <span class="quick-number">
+                    05
+                </span>
+
+                <div class="quick-icon">
+                    <i class="fa-solid fa-x-ray"></i>
+                </div>
+
+                <strong>
+                    Diagnostics
+                </strong>
+
+                <small>
+                    Imaging & investigation
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+
+
+            <a
+                href="#cardiology"
+                class="quick-card"
+            >
+
+                <span class="quick-number">
+                    06
+                </span>
+
+                <div class="quick-icon heart">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <strong>
+                    Cardiology
+                </strong>
+
+                <small>
+                    Heart health
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+
+
+            <a
+                href="#general-medicine"
+                class="quick-card"
+            >
+
+                <span class="quick-number">
+                    07
+                </span>
+
+                <div class="quick-icon">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+
+                <strong>
+                    General Medicine
+                </strong>
+
+                <small>
+                    Everyday healthcare
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+
+
+            <a
+                href="pharmacy.html"
+                class="quick-card pharmacy-card"
+            >
+
+                <span class="quick-number">
+                    +
+                </span>
+
+                <div class="quick-icon">
+                    <i class="fa-solid fa-pills"></i>
+                </div>
+
+                <strong>
+                    Pharmacy
+                </strong>
+
+                <small>
+                    Visit pharmacy
+                </small>
+
+                <i class="fa-solid fa-arrow-right quick-arrow"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MAIN SERVICES
+========================================================= -->
+
+<main id="services">
+
+
+
+<!-- =========================================================
+     BLOOD BANK
+========================================================= -->
+
+<section
+    class="service-section blood-section reveal"
+    id="blood-bank"
+>
+
+    <div class="service-media">
+
+        <div class="media-number">
+            01
+        </div>
+
+        <img
+            src="image/donation1.jpg"
+            alt="Blood Bank service"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label">
+
+            <i class="fa-solid fa-droplet"></i>
+
+            Blood Bank
+
+        </div>
+
+    </div>
+
+
+    <div class="service-details">
+
+        <span class="service-eyebrow">
+
+            <i class="fa-solid fa-droplet"></i>
+
+            BLOOD BANK
+
+        </span>
+
+
+        <h2>
+
+            Blood support when
+            <span>every moment matters.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Blood bank services support patients who require
+            blood or blood components during emergency care,
+            surgery, medical treatment and other clinical
+            situations.
+
+        </p>
+
+
+        <div class="service-check-list">
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Blood grouping and compatibility support
+                </span>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Blood collection and storage support
+                </span>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                    Transfusion-related support
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="availability-panel">
+
+            <div class="availability-top">
+
+                <div>
+
+                    <span>
+                        LIVE STATUS
+                    </span>
+
+                    <h3>
+                        Blood Availability
+                    </h3>
+
+                </div>
+
+                <div class="availability-status">
+
+                    <span></span>
+
+                    Hospital updated
+
+                </div>
+
+            </div>
+
+
+            <div class="blood-grid">
+
+                <div class="blood-type available">
+
+                    <strong>A+</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>A−</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>B+</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>B−</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>O+</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>O−</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>AB+</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+                <div class="blood-type available">
+
+                    <strong>AB−</strong>
+
+                    <span>
+                        Available
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="availability-note">
+
+                Availability can change throughout the day.
+                Please contact the hospital before visiting
+                for a specific blood group.
 
             </p>
 
-
-            <div class="lab-items">
-
-                <div>
-
-                    <i class="fa-solid fa-vial"></i>
-
-                    <strong>
-                        Hematology
-                    </strong>
-
-                    <span>
-                        Blood-related investigations
-                    </span>
-
-                </div>
+        </div>
 
 
-                <div>
+        <button
+            class="service-action"
+            data-service="blood-bank"
+        >
 
-                    <i class="fa-solid fa-flask-vial"></i>
-
-                    <strong>
-                        Biochemistry
-                    </strong>
-
-                    <span>
-                        Important biochemical testing
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-prescription-bottle"></i>
-
-                    <strong>
-                        Urine Testing
-                    </strong>
-
-                    <span>
-                        Routine urine investigations
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-microscope"></i>
-
-                    <strong>
-                        Clinical Testing
-                    </strong>
-
-                    <span>
-                        Diagnostic laboratory support
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <button class="service-action"
-                    data-service="laboratory">
-
+            <span>
                 View Details & Register
+            </span>
 
-                <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
 
-            </button>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AMBULANCE
+========================================================= -->
+
+<section
+    class="service-section reverse reveal"
+    id="ambulance"
+>
+
+    <div class="service-media">
+
+        <div class="media-number">
+            02
+        </div>
+
+        <img
+            src="image/ambulance1.jpg"
+            alt="Hospital Ambulance"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label emergency-media-label">
+
+            <i class="fa-solid fa-truck-medical"></i>
+
+            Ambulance
 
         </div>
 
-    </section>
+    </div>
 
 
+    <div class="service-details">
 
-    <!-- ================= EMERGENCY ================= -->
+        <span class="service-eyebrow">
 
-    <section class="service-section emergency-section reverse reveal"
-             id="emergency">
+            <i class="fa-solid fa-truck-medical"></i>
 
-        <div class="service-image emergency-image">
+            AMBULANCE
 
-            <img src="image/emgency.jpg"
-                 alt="Hospital Emergency Department">
+        </span>
 
-            <div class="service-number">
-                04
+
+        <h2>
+
+            Rapid response when
+            <span>every second counts.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Ambulance services support emergency transportation
+            and patient transfers when timely and safe movement
+            to medical care is required.
+
+        </p>
+
+
+        <div class="feature-card-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Rapid Response
+                    </strong>
+
+                    <span>
+                        Support for urgent transportation
+                    </span>
+
+                </div>
+
             </div>
 
-            <div class="image-icon emergency-icon">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-user-nurse"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Patient Support
+                    </strong>
+
+                    <span>
+                        Careful movement during transfer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Patient Transfer
+                    </strong>
+
+                    <span>
+                        Transportation to medical care
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Safety Focus
+                    </strong>
+
+                    <span>
+                        Transport with patient safety in mind
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="tel:102"
+            class="emergency-strip"
+        >
+
+            <div class="emergency-strip-icon">
+
+                <i class="fa-solid fa-phone-volume"></i>
+
+            </div>
+
+            <div>
+
+                <small>
+                    EMERGENCY NUMBER
+                </small>
+
+                <strong>
+                    102
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <button
+            class="service-action"
+            data-service="ambulance"
+        >
+
+            <span>
+                View Details & Register
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LABORATORY
+========================================================= -->
+
+<section
+    class="service-section reveal"
+    id="laboratory"
+>
+
+    <div class="service-media">
+
+        <div class="media-number">
+            03
+        </div>
+
+        <img
+            src="image/lab.jpg"
+            alt="Hospital Laboratory"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label">
+
+            <i class="fa-solid fa-flask"></i>
+
+            Laboratory
+
+        </div>
+
+    </div>
+
+
+    <div class="service-details">
+
+        <span class="service-eyebrow">
+
+            <i class="fa-solid fa-flask"></i>
+
+            LABORATORY
+
+        </span>
+
+
+        <h2>
+
+            Reliable testing for
+            <span>better medical decisions.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Laboratory services provide diagnostic information
+            that can help healthcare professionals understand
+            a patient's condition, support diagnosis and monitor
+            treatment.
+
+        </p>
+
+
+        <div class="service-mini-grid">
+
+            <div class="mini-service-card">
+
+                <i class="fa-solid fa-vial"></i>
+
+                <strong>
+                    Hematology
+                </strong>
+
+                <span>
+                    Blood-related investigations
+                </span>
+
+            </div>
+
+
+            <div class="mini-service-card">
+
+                <i class="fa-solid fa-flask-vial"></i>
+
+                <strong>
+                    Biochemistry
+                </strong>
+
+                <span>
+                    Important biochemical testing
+                </span>
+
+            </div>
+
+
+            <div class="mini-service-card">
+
+                <i class="fa-solid fa-prescription-bottle"></i>
+
+                <strong>
+                    Urine Testing
+                </strong>
+
+                <span>
+                    Routine urine investigations
+                </span>
+
+            </div>
+
+
+            <div class="mini-service-card">
+
+                <i class="fa-solid fa-microscope"></i>
+
+                <strong>
+                    Clinical Testing
+                </strong>
+
+                <span>
+                    Diagnostic laboratory support
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="service-action"
+            data-service="laboratory"
+        >
+
+            <span>
+                View Details & Register
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EMERGENCY
+========================================================= -->
+
+<section
+    class="service-section emergency-section reverse reveal"
+    id="emergency"
+>
+
+    <div class="service-media emergency-media">
+
+        <div class="media-number">
+            04
+        </div>
+
+        <img
+            src="image/emgency.jpg"
+            alt="Hospital Emergency Department"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label emergency-media-label">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Emergency Care
+
+        </div>
+
+        <div class="emergency-image-badge">
+
+            <i class="fa-solid fa-clock"></i>
+
+            Urgent Care
+
+        </div>
+
+    </div>
+
+
+    <div class="service-details">
+
+        <span class="service-eyebrow emergency-eyebrow">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            EMERGENCY CARE
+
+        </span>
+
+
+        <h2>
+
+            Immediate care.
+            <span>When you need it most.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Emergency care is intended for urgent medical
+            situations where prompt assessment and appropriate
+            medical attention are required.
+
+        </p>
+
+
+        <div class="emergency-feature-grid">
+
+            <div>
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <div>
+
+                    <strong>
+                        Urgent Assessment
+                    </strong>
+
+                    <span>
+                        Quick evaluation of urgent conditions
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-kit-medical"></i>
+
+                <div>
+
+                    <strong>
+                        Emergency Support
+                    </strong>
+
+                    <span>
+                        Immediate medical assistance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+
+                    <strong>
+                        Urgent Access
+                    </strong>
+
+                    <span>
+                        Support for time-sensitive situations
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div>
 
                 <i class="fa-solid fa-truck-medical"></i>
 
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category emergency-label">
-
-                <i class="fa-solid fa-triangle-exclamation"></i>
-
-                EMERGENCY CARE
-
-            </span>
-
-
-            <h2>
-
-                Immediate care.
-
-                <span>
-                    When you need it most.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Emergency care focuses on urgent medical situations where
-                prompt assessment and appropriate medical attention are
-                required.
-
-            </p>
-
-
-            <div class="emergency-features">
-
                 <div>
-
-                    <i class="fa-solid fa-heart-pulse"></i>
-
-                    <div>
-
-                        <strong>
-                            Urgent Assessment
-                        </strong>
-
-                        <span>
-                            Quick evaluation of urgent conditions
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-kit-medical"></i>
-
-                    <div>
-
-                        <strong>
-                            Emergency Support
-                        </strong>
-
-                        <span>
-                            Immediate medical assistance
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <div>
-
-                        <strong>
-                            Urgent Access
-                        </strong>
-
-                        <span>
-                            Support for time-sensitive situations
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-ambulance"></i>
-
-                    <div>
-
-                        <strong>
-                            Emergency Transport
-                        </strong>
-
-                        <span>
-                            Ambulance support when required
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <a href="tel:102"
-               class="emergency-call">
-
-                <div class="call-icon">
-
-                    <i class="fa-solid fa-phone"></i>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-                        FOR EMERGENCY ASSISTANCE
-                    </small>
 
                     <strong>
-                        Call 102
-                    </strong>
-
-                </div>
-
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-
-            <button class="service-action light-action"
-                    data-service="emergency">
-
-                Emergency Details
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= DIAGNOSTICS ================= -->
-
-    <section class="service-section reveal"
-             id="diagnostics">
-
-        <div class="service-image">
-
-            <img src="image/daigonosis.jpg"
-                 alt="Medical Diagnostics">
-
-            <div class="service-number">
-                05
-            </div>
-
-            <div class="image-icon">
-
-                <i class="fa-solid fa-x-ray"></i>
-
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-x-ray"></i>
-
-                DIAGNOSTICS
-
-            </span>
-
-
-            <h2>
-
-                Clearer answers through
-
-                <span>
-                    diagnostic care.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Diagnostic services help healthcare professionals investigate
-                symptoms, understand medical conditions and support treatment
-                decisions.
-
-            </p>
-
-
-            <div class="diagnostic-cards">
-
-                <div>
-
-                    <i class="fa-solid fa-x-ray"></i>
-
-                    <strong>
-                        X-Ray
+                        Emergency Transport
                     </strong>
 
                     <span>
-                        Imaging support
+                        Ambulance support when required
                     </span>
 
                 </div>
 
+            </div>
+
+        </div>
+
+
+        <a
+            href="tel:102"
+            class="emergency-main-call"
+        >
+
+            <div class="call-symbol">
+
+                <i class="fa-solid fa-phone"></i>
+
+            </div>
+
+            <div>
+
+                <small>
+                    FOR EMERGENCY ASSISTANCE
+                </small>
+
+                <strong>
+                    Call 102
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <button
+            class="service-action emergency-action"
+            data-service="emergency"
+        >
+
+            <span>
+                Emergency Details
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DIAGNOSTICS
+========================================================= -->
+
+<section
+    class="service-section reveal"
+    id="diagnostics"
+>
+
+    <div class="service-media">
+
+        <div class="media-number">
+            05
+        </div>
+
+        <img
+            src="image/daigonosis.jpg"
+            alt="Medical Diagnostics"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label">
+
+            <i class="fa-solid fa-x-ray"></i>
+
+            Diagnostics
+
+        </div>
+
+    </div>
+
+
+    <div class="service-details">
+
+        <span class="service-eyebrow">
+
+            <i class="fa-solid fa-x-ray"></i>
+
+            DIAGNOSTICS
+
+        </span>
+
+
+        <h2>
+
+            Clearer answers through
+            <span>diagnostic care.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Diagnostic services help healthcare professionals
+            investigate symptoms, understand medical conditions
+            and support treatment decisions through appropriate
+            investigations.
+
+        </p>
+
+
+        <div class="diagnostic-grid">
+
+            <div>
+
+                <div class="diagnostic-icon">
+                    <i class="fa-solid fa-x-ray"></i>
+                </div>
+
+                <strong>
+                    X-Ray
+                </strong>
+
+                <span>
+                    Imaging support
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <div class="diagnostic-icon">
+                    <i class="fa-solid fa-wave-square"></i>
+                </div>
+
+                <strong>
+                    Ultrasound
+                </strong>
+
+                <span>
+                    Diagnostic imaging
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <div class="diagnostic-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <strong>
+                    ECG
+                </strong>
+
+                <span>
+                    Heart activity assessment
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <div class="diagnostic-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <strong>
+                    Clinical Investigation
+                </strong>
+
+                <span>
+                    Diagnostic support
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="service-action"
+            data-service="diagnostics"
+        >
+
+            <span>
+                View Details & Register
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CARDIOLOGY
+========================================================= -->
+
+<section
+    class="service-section reverse reveal"
+    id="cardiology"
+>
+
+    <div class="service-media">
+
+        <div class="media-number">
+            06
+        </div>
+
+        <img
+            src="image/heart.jpg"
+            alt="Cardiology Care"
+        >
+
+        <div class="media-gradient"></div>
+
+        <div class="media-label heart-media-label">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            Cardiology
+
+        </div>
+
+    </div>
+
+
+    <div class="service-details">
+
+        <span class="service-eyebrow heart-eyebrow">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            CARDIOLOGY
+
+        </span>
+
+
+        <h2>
+
+            Dedicated care
+            <span>for heart health.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            Cardiology services focus on cardiovascular health,
+            evaluation of heart-related symptoms and appropriate
+            medical follow-up for patients requiring heart health
+            support.
+
+        </p>
+
+
+        <div class="heart-care-list">
+
+            <div>
+
+                <div class="heart-round-icon">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
 
                 <div>
+
+                    <strong>
+                        Heart Evaluation
+                    </strong>
+
+                    <span>
+                        Assessment of cardiovascular health
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="heart-round-icon">
 
                     <i class="fa-solid fa-wave-square"></i>
 
-                    <strong>
-                        Ultrasound
-                    </strong>
-
-                    <span>
-                        Diagnostic imaging
-                    </span>
-
                 </div>
-
 
                 <div>
 
-                    <i class="fa-solid fa-heart-pulse"></i>
-
                     <strong>
-                        ECG
+                        ECG Support
                     </strong>
 
                     <span>
-                        Heart activity assessment
+                        Heart rhythm investigation where appropriate
                     </span>
 
                 </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <strong>
-                        Clinical Investigation
-                    </strong>
-
-                    <span>
-                        Diagnostic support
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <button class="service-action"
-                    data-service="diagnostics">
-
-                View Details & Register
 
                 <i class="fa-solid fa-arrow-right"></i>
 
-            </button>
+            </div>
+
+
+            <div>
+
+                <div class="heart-round-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Medical Consultation
+                    </strong>
+
+                    <span>
+                        Professional cardiovascular guidance
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
 
         </div>
 
-    </section>
 
+        <button
+            class="service-action"
+            data-service="cardiology"
+        >
 
-
-    <!-- ================= CARDIOLOGY ================= -->
-
-    <section class="service-section reverse reveal"
-             id="cardiology">
-
-        <div class="service-image">
-
-            <img src="image/heart.jpg"
-                 alt="Cardiology Care">
-
-            <div class="service-number">
-                06
-            </div>
-
-            <div class="image-icon heart-icon">
-
-                <i class="fa-solid fa-heart-pulse"></i>
-
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-heart-pulse"></i>
-
-                CARDIOLOGY
-
+            <span>
+                View Details & Register
             </span>
 
+            <i class="fa-solid fa-arrow-right"></i>
 
-            <h2>
+        </button>
 
-                Dedicated care
+    </div>
 
-                <span>
-                    for heart health.
-                </span>
-
-            </h2>
+</section>
 
 
-            <p>
 
-                Cardiology care focuses on cardiovascular health, evaluation
-                of heart-related symptoms and appropriate medical follow-up
-                for patients requiring heart health support.
+<!-- =========================================================
+     GENERAL MEDICINE
+========================================================= -->
 
-            </p>
+<section
+    class="service-section reveal"
+    id="general-medicine"
+>
 
+    <div class="service-media">
 
-            <div class="heart-care">
+        <div class="media-number">
+            07
+        </div>
 
-                <div>
+        <img
+            src="image/medcine.jpg"
+            alt="General Medicine"
+        >
 
-                    <div class="round-icon">
+        <div class="media-gradient"></div>
 
-                        <i class="fa-solid fa-heart"></i>
+        <div class="media-label">
 
-                    </div>
+            <i class="fa-solid fa-stethoscope"></i>
 
-
-                    <div>
-
-                        <strong>
-                            Heart Evaluation
-                        </strong>
-
-                        <span>
-                            Assessment of cardiovascular health
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <div class="round-icon">
-
-                        <i class="fa-solid fa-wave-square"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            ECG Support
-                        </strong>
-
-                        <span>
-                            Heart rhythm investigation where appropriate
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <div class="round-icon">
-
-                        <i class="fa-solid fa-user-doctor"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            Medical Consultation
-                        </strong>
-
-                        <span>
-                            Professional cardiovascular guidance
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button class="service-action"
-                    data-service="cardiology">
-
-                View Details & Register
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
+            General Medicine
 
         </div>
 
-    </section>
+    </div>
 
 
+    <div class="service-details">
 
-    <!-- ================= GENERAL MEDICINE ================= -->
+        <span class="service-eyebrow">
 
-    <section class="service-section reveal"
-             id="general-medicine">
+            <i class="fa-solid fa-stethoscope"></i>
 
-        <div class="service-image">
+            GENERAL MEDICINE
 
-            <img src="image/medcine.jpg"
-                 alt="General Medicine">
+        </span>
 
-            <div class="service-number">
-                07
-            </div>
 
-            <div class="image-icon">
+        <h2>
+
+            Everyday healthcare,
+            <span>thoughtfully delivered.</span>
+
+        </h2>
+
+
+        <p class="service-description">
+
+            General medicine provides support for common health
+            concerns, medical consultations, health assessments,
+            chronic condition management and continuing
+            healthcare needs.
+
+        </p>
+
+
+        <div class="medicine-grid">
+
+            <div>
 
                 <i class="fa-solid fa-stethoscope"></i>
 
-            </div>
-
-        </div>
-
-
-        <div class="service-content">
-
-            <span class="service-category">
-
-                <i class="fa-solid fa-stethoscope"></i>
-
-                GENERAL MEDICINE
-
-            </span>
-
-
-            <h2>
-
-                Everyday healthcare,
-
                 <span>
-                    thoughtfully delivered.
+                    General medical consultation
                 </span>
 
-            </h2>
+            </div>
 
 
-            <p>
+            <div>
 
-                General medicine provides support for common health concerns,
-                medical consultations, health assessments, chronic condition
-                management and ongoing follow-up.
+                <i class="fa-solid fa-notes-medical"></i>
 
-            </p>
-
-
-            <div class="medicine-list">
-
-                <div>
-
-                    <i class="fa-solid fa-stethoscope"></i>
-
-                    <span>
-                        General medical consultation
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-notes-medical"></i>
-
-                    <span>
-                        Health assessment and evaluation
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-calendar-check"></i>
-
-                    <span>
-                        Follow-up and continuing care
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-shield-heart"></i>
-
-                    <span>
-                        Preventive healthcare support
-                    </span>
-
-                </div>
+                <span>
+                    Health assessment and evaluation
+                </span>
 
             </div>
 
 
-            <button class="service-action"
-                    data-service="general-medicine">
+            <div>
 
-                View Details & Register
+                <i class="fa-solid fa-calendar-check"></i>
 
-                <i class="fa-solid fa-arrow-right"></i>
+                <span>
+                    Follow-up and continuing care
+                </span>
 
-            </button>
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <span>
+                    Preventive healthcare support
+                </span>
+
+            </div>
 
         </div>
 
-    </section>
+
+        <button
+            class="service-action"
+            data-service="general-medicine"
+        >
+
+            <span>
+                View Details & Register
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
 
 </main>
 
 
 
-<!-- ================= FINAL CTA ================= -->
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
 
 <section class="final-cta">
 
-    <div class="final-cta-icon">
+    <div class="cta-pattern"></div>
+
+    <div class="cta-heart">
+
+        <span></span>
 
         <i class="fa-solid fa-heart-pulse"></i>
 
     </div>
 
 
-    <div>
+    <div class="cta-content">
 
         <span>
             CONNECTED HEALTHCARE
         </span>
 
         <h2>
-            Your health deserves connected care.
+            Your health deserves
+            connected care.
         </h2>
 
         <p>
-            Explore our services or contact our hospital team
-            for further information.
+
+            Explore our services or contact our hospital
+            team for further information and assistance.
+
         </p>
 
     </div>
 
 
-    <div class="final-buttons">
+    <div class="cta-buttons">
 
-        <a href="index.html#contact"
-           class="primary-btn">
+        <a
+            href="index.html#contact"
+            class="cta-contact"
+        >
 
             Contact Us
 
@@ -1417,8 +2064,10 @@
         </a>
 
 
-        <a href="tel:102"
-           class="emergency-btn">
+        <a
+            href="tel:102"
+            class="cta-emergency"
+        >
 
             <i class="fa-solid fa-phone"></i>
 
@@ -1432,20 +2081,30 @@
 
 
 
-<!-- ================= SERVICE MODAL ================= -->
+<!-- =========================================================
+     SERVICE MODAL
+========================================================= -->
 
-<div class="service-modal"
-     id="serviceModal">
+<div
+    class="service-modal"
+    id="serviceModal"
+>
 
-    <div class="modal-overlay"
-         id="modalOverlay">
-    </div>
+    <div
+        class="modal-overlay"
+        id="modalOverlay"
+    ></div>
 
 
     <div class="modal-container">
 
-        <button class="modal-close"
-                id="modalClose">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Close"
+        >
 
             <i class="fa-solid fa-xmark"></i>
 
@@ -1454,8 +2113,10 @@
 
         <div class="modal-header">
 
-            <div class="modal-icon"
-                 id="modalIcon">
+            <div
+                class="modal-icon"
+                id="modalIcon"
+            >
 
                 <i class="fa-solid fa-heart-pulse"></i>
 
@@ -1477,10 +2138,12 @@
         </div>
 
 
+
         <div class="modal-body">
 
 
             <div class="modal-information">
+
 
                 <div class="modal-block">
 
@@ -1493,17 +2156,20 @@
                 </div>
 
 
+
                 <div class="modal-block">
 
                     <span>
-                        WHAT THIS SERVICE CAN INCLUDE
+                        SERVICE INFORMATION
                     </span>
 
-                    <div class="modal-feature-list"
-                         id="modalFeatures">
-                    </div>
+                    <div
+                        class="modal-feature-list"
+                        id="modalFeatures"
+                    ></div>
 
                 </div>
+
 
 
                 <div class="modal-important">
@@ -1512,9 +2178,9 @@
 
                     <p>
 
-                        Service availability and specific procedures may
-                        vary. Please contact the hospital for current
-                        information.
+                        Service availability and specific procedures
+                        may vary. Please contact the hospital for
+                        current information.
 
                     </p>
 
@@ -1523,7 +2189,9 @@
             </div>
 
 
+
             <div class="registration-box">
+
 
                 <div class="registration-heading">
 
@@ -1537,22 +2205,27 @@
 
                     <p>
 
-                        Fill in the information below and our team can
-                        review your request.
+                        Fill in the information below and our team
+                        can review your request.
 
                     </p>
 
                 </div>
 
 
+
                 <form id="registrationForm">
 
-                    <input type="hidden"
-                           id="serviceName"
-                           name="service">
+
+                    <input
+                        type="hidden"
+                        id="serviceName"
+                        name="service"
+                    >
 
 
                     <div class="form-row">
+
 
                         <div class="form-group">
 
@@ -1560,11 +2233,13 @@
                                 Patient Name
                             </label>
 
-                            <input type="text"
-                                   id="patientName"
-                                   name="patientName"
-                                   placeholder="Enter patient name"
-                                   required>
+                            <input
+                                type="text"
+                                id="patientName"
+                                name="patientName"
+                                placeholder="Enter patient name"
+                                required
+                            >
 
                         </div>
 
@@ -1575,18 +2250,22 @@
                                 Phone Number
                             </label>
 
-                            <input type="tel"
-                                   id="patientPhone"
-                                   name="phone"
-                                   placeholder="Enter phone number"
-                                   required>
+                            <input
+                                type="tel"
+                                id="patientPhone"
+                                name="phone"
+                                placeholder="Enter phone number"
+                                required
+                            >
 
                         </div>
 
                     </div>
 
 
+
                     <div class="form-row">
+
 
                         <div class="form-group">
 
@@ -1600,10 +2279,12 @@
 
                             </label>
 
-                            <input type="email"
-                                   id="patientEmail"
-                                   name="email"
-                                   placeholder="Enter email address">
+                            <input
+                                type="email"
+                                id="patientEmail"
+                                name="email"
+                                placeholder="Enter email address"
+                            >
 
                         </div>
 
@@ -1614,13 +2295,16 @@
                                 Preferred Date
                             </label>
 
-                            <input type="date"
-                                   id="preferredDate"
-                                   name="date">
+                            <input
+                                type="date"
+                                id="preferredDate"
+                                name="date"
+                            >
 
                         </div>
 
                     </div>
+
 
 
                     <div class="form-group">
@@ -1629,16 +2313,21 @@
                             Reason / Message
                         </label>
 
-                        <textarea id="patientMessage"
-                                  name="message"
-                                  rows="4"
-                                  placeholder="Tell us briefly what you need help with..."></textarea>
+                        <textarea
+                            id="patientMessage"
+                            name="message"
+                            rows="4"
+                            placeholder="Tell us briefly what you need help with..."
+                        ></textarea>
 
                     </div>
 
 
-                    <button type="submit"
-                            class="register-button">
+
+                    <button
+                        type="submit"
+                        class="register-button"
+                    >
 
                         Submit Registration
 
@@ -1649,10 +2338,13 @@
                 </form>
 
 
-                <div class="form-success"
-                     id="formSuccess">
 
-                    <div>
+                <div
+                    class="form-success"
+                    id="formSuccess"
+                >
+
+                    <div class="success-icon">
 
                         <i class="fa-solid fa-circle-check"></i>
 
@@ -1666,14 +2358,18 @@
 
                     <p>
 
-                        Your registration request has been recorded for
-                        this prototype. The hospital team can contact the
-                        provided phone number for confirmation.
+                        Your registration request has been recorded
+                        for this prototype. The hospital team can
+                        contact the provided phone number for
+                        confirmation.
 
                     </p>
 
 
-                    <button id="successClose">
+                    <button
+                        id="successClose"
+                        type="button"
+                    >
                         Close
                     </button>
 
@@ -1688,6 +2384,8 @@
 </div>
 
 
+
+<!-- SERVICE JAVASCRIPT -->
 
 <script src="service.js"></script>
 

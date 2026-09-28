@@ -1,737 +1,1136 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================================================
-       LOADER
-    ========================================================= */
-
-    const pageLoader = document.getElementById("pageLoader");
-
-    window.addEventListener("load", function () {
-
-        setTimeout(function () {
-
-            pageLoader.classList.add("hide");
-
-        }, 500);
-
-    });
+/* =========================================================
+   LUMBINI CITY HOSPITAL — PHARMACY PAGE
+   pharmacy.js
+========================================================= */
 
 
-    /* =========================================================
-       NAVBAR
-    ========================================================= */
+/* =========================================================
+   MEDICINE DATA
+========================================================= */
 
-    const navbar = document.getElementById("navbar");
+const medicines = [
 
-    function updateNavbar() {
+    {
+        id:1,
+        name:"PARACETAMOL",
+        generic:"Paracetamol",
+        strength:"500 mg",
+        category:"pain",
+        categoryName:"Pain Relief",
+        manufacturer:"Siddhartha Pharma",
+        price:45,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/7/7d/Paracetamol_500mg.jpg",
+        description:"Used to relieve mild to moderate pain and reduce fever."
+    },
 
-        if (window.scrollY > 30) {
+    {
+        id:2,
+        name:"IBUPROFEN",
+        generic:"Ibuprofen",
+        strength:"400 mg",
+        category:"pain",
+        categoryName:"Pain Relief",
+        manufacturer:"Siddhartha Pharma",
+        price:75,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5c/Ibuprofen_200mg.jpg",
+        description:"A non-steroidal anti-inflammatory medicine used for pain, inflammation and fever."
+    },
 
-            navbar.classList.add("scrolled");
+    {
+        id:3,
+        name:"OMEPRAZOLE",
+        generic:"Omeprazole",
+        strength:"20 mg",
+        category:"stomach",
+        categoryName:"Gastrointestinal",
+        manufacturer:"Siddhartha Pharma",
+        price:120,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/3/3c/Omeprazole_20mg.jpg",
+        description:"Reduces stomach acid and is commonly used for acid reflux and related conditions."
+    },
 
-        } else {
+    {
+        id:4,
+        name:"PANTOPRAZOLE",
+        generic:"Pantoprazole",
+        strength:"40 mg",
+        category:"stomach",
+        categoryName:"Gastrointestinal",
+        manufacturer:"Siddhartha Pharma",
+        price:135,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/4/4f/Pantoprazole_40mg.jpg",
+        description:"A proton pump inhibitor used to reduce excess stomach acid."
+    },
 
-            navbar.classList.remove("scrolled");
+    {
+        id:5,
+        name:"CETIRIZINE",
+        generic:"Cetirizine Hydrochloride",
+        strength:"10 mg",
+        category:"allergy",
+        categoryName:"Allergy",
+        manufacturer:"Siddhartha Pharma",
+        price:60,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/2/2d/Cetirizine_10mg.jpg",
+        description:"An antihistamine commonly used to relieve allergy symptoms."
+    },
 
-        }
+    {
+        id:6,
+        name:"LORATADINE",
+        generic:"Loratadine",
+        strength:"10 mg",
+        category:"allergy",
+        categoryName:"Allergy",
+        manufacturer:"Siddhartha Pharma",
+        price:85,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Loratadine_10mg.jpg",
+        description:"An antihistamine used for symptoms associated with allergic conditions."
+    },
 
+    {
+        id:7,
+        name:"AMOXICILLIN",
+        generic:"Amoxicillin",
+        strength:"500 mg",
+        category:"antibiotic",
+        categoryName:"Antibiotics",
+        manufacturer:"Siddhartha Pharma",
+        price:180,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Amoxicillin_500mg.jpg",
+        description:"A penicillin-type antibiotic used to treat certain bacterial infections."
+    },
+
+    {
+        id:8,
+        name:"AZITHROMYCIN",
+        generic:"Azithromycin",
+        strength:"500 mg",
+        category:"antibiotic",
+        categoryName:"Antibiotics",
+        manufacturer:"Siddhartha Pharma",
+        price:210,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5c/Azithromycin_500mg.jpg",
+        description:"An antibiotic used for selected bacterial infections."
+    },
+
+    {
+        id:9,
+        name:"METFORMIN",
+        generic:"Metformin Hydrochloride",
+        strength:"500 mg",
+        category:"diabetes",
+        categoryName:"Diabetes",
+        manufacturer:"Siddhartha Pharma",
+        price:95,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/6/6c/Metformin_500mg.jpg",
+        description:"A medicine commonly prescribed to help control blood glucose levels in type 2 diabetes."
+    },
+
+    {
+        id:10,
+        name:"GLIMEPIRIDE",
+        generic:"Glimepiride",
+        strength:"2 mg",
+        category:"diabetes",
+        categoryName:"Diabetes",
+        manufacturer:"Siddhartha Pharma",
+        price:110,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5e/Glimepiride_2mg.jpg",
+        description:"An oral medicine prescribed for blood glucose management in type 2 diabetes."
+    },
+
+    {
+        id:11,
+        name:"AMLODIPINE",
+        generic:"Amlodipine",
+        strength:"5 mg",
+        category:"heart",
+        categoryName:"Cardiovascular",
+        manufacturer:"Siddhartha Pharma",
+        price:90,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Amlodipine_5mg.jpg",
+        description:"A calcium-channel blocker commonly prescribed for high blood pressure."
+    },
+
+    {
+        id:12,
+        name:"LOSARTAN",
+        generic:"Losartan Potassium",
+        strength:"50 mg",
+        category:"heart",
+        categoryName:"Cardiovascular",
+        manufacturer:"Siddhartha Pharma",
+        price:125,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/9/9e/Losartan_50mg.jpg",
+        description:"An angiotensin receptor blocker commonly prescribed for hypertension."
+    },
+
+    {
+        id:13,
+        name:"LOADINE",
+        generic:"Loratadine",
+        strength:"10 mg",
+        category:"allergy",
+        categoryName:"Allergy",
+        manufacturer:"Siddhartha Pharma",
+        price:360,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Loratadine_10mg.jpg",
+        description:"An antihistamine used to relieve common allergy symptoms."
+    },
+
+    {
+        id:14,
+        name:"ATORVASTATIN",
+        generic:"Atorvastatin",
+        strength:"20 mg",
+        category:"heart",
+        categoryName:"Cardiovascular",
+        manufacturer:"Siddhartha Pharma",
+        price:145,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/2/2d/Atorvastatin_20mg.jpg",
+        description:"A statin medicine prescribed to help lower cholesterol."
+    },
+
+    {
+        id:15,
+        name:"DOMPERIDONE",
+        generic:"Domperidone",
+        strength:"10 mg",
+        category:"stomach",
+        categoryName:"Gastrointestinal",
+        manufacturer:"Siddhartha Pharma",
+        price:95,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Domperidone_10mg.jpg",
+        description:"A medicine used in selected gastrointestinal conditions under medical guidance."
+    },
+
+    {
+        id:16,
+        name:"ORS",
+        generic:"Oral Rehydration Salts",
+        strength:"21 g",
+        category:"other",
+        categoryName:"General Care",
+        manufacturer:"Siddhartha Pharma",
+        price:25,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5f/Oral_rehydration_salts.jpg",
+        description:"Used to help replace fluids and electrolytes during dehydration."
+    },
+
+    {
+        id:17,
+        name:"VITAMIN C",
+        generic:"Ascorbic Acid",
+        strength:"500 mg",
+        category:"vitamin",
+        categoryName:"Vitamins",
+        manufacturer:"Siddhartha Pharma",
+        price:150,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Vitamin_C_tablets.jpg",
+        description:"A vitamin supplement containing ascorbic acid."
+    },
+
+    {
+        id:18,
+        name:"MULTIVITAMIN",
+        generic:"Multivitamin Tablets",
+        strength:"Daily Formula",
+        category:"vitamin",
+        categoryName:"Vitamins",
+        manufacturer:"Siddhartha Pharma",
+        price:280,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/4/4e/Multivitamin_tablets.jpg",
+        description:"A combination vitamin supplement for general nutritional support."
+    },
+
+    {
+        id:19,
+        name:"CALCIUM",
+        generic:"Calcium Carbonate",
+        strength:"500 mg",
+        category:"vitamin",
+        categoryName:"Vitamins",
+        manufacturer:"Siddhartha Pharma",
+        price:175,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/3/3f/Calcium_tablets.jpg",
+        description:"A calcium supplement used when additional calcium intake is required."
+    },
+
+    {
+        id:20,
+        name:"VITAMIN D3",
+        generic:"Cholecalciferol",
+        strength:"1000 IU",
+        category:"vitamin",
+        categoryName:"Vitamins",
+        manufacturer:"Siddhartha Pharma",
+        price:220,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5d/Vitamin_D3.jpg",
+        description:"A vitamin D supplement that supports normal calcium and bone metabolism."
+    },
+
+    {
+        id:21,
+        name:"COUGH SYRUP",
+        generic:"Cough Relief Syrup",
+        strength:"100 ml",
+        category:"other",
+        categoryName:"General Care",
+        manufacturer:"Siddhartha Pharma",
+        price:145,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/4/4d/Cough_syrup.jpg",
+        description:"A cough preparation intended for symptomatic relief."
+    },
+
+    {
+        id:22,
+        name:"ANTACID",
+        generic:"Aluminium Hydroxide + Magnesium Hydroxide",
+        strength:"170 ml",
+        category:"stomach",
+        categoryName:"Gastrointestinal",
+        manufacturer:"Siddhartha Pharma",
+        price:130,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/8/8f/Antacid_suspension.jpg",
+        description:"An antacid preparation used to neutralize excess stomach acid."
+    },
+
+    {
+        id:23,
+        name:"DICLOFENAC",
+        generic:"Diclofenac Sodium",
+        strength:"50 mg",
+        category:"pain",
+        categoryName:"Pain Relief",
+        manufacturer:"Siddhartha Pharma",
+        price:85,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/2/2e/Diclofenac_50mg.jpg",
+        description:"An anti-inflammatory medicine used for selected painful inflammatory conditions."
+    },
+
+    {
+        id:24,
+        name:"MONTELUKAST",
+        generic:"Montelukast",
+        strength:"10 mg",
+        category:"allergy",
+        categoryName:"Allergy",
+        manufacturer:"Siddhartha Pharma",
+        price:190,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/9/9c/Montelukast_10mg.jpg",
+        description:"A medicine prescribed for selected respiratory and allergy-related conditions."
+    },
+
+    {
+        id:25,
+        name:"SYNOREX",
+        generic:"Cold & Allergy Relief",
+        strength:"Standard",
+        category:"other",
+        categoryName:"General Care",
+        manufacturer:"Siddhartha Pharma",
+        price:160,
+        stock:true,
+        prescription:false,
+        image:"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+        description:"A general cold and allergy relief product."
+    },
+
+    {
+        id:26,
+        name:"EYE DROPS",
+        generic:"Lubricating Eye Drops",
+        strength:"10 ml",
+        category:"other",
+        categoryName:"Eye Care",
+        manufacturer:"Siddhartha Pharma",
+        price:125,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/0/0d/Eye_drops.jpg",
+        description:"Lubricating eye drops intended to relieve symptoms of dry or irritated eyes."
+    },
+
+    {
+        id:27,
+        name:"INSULIN",
+        generic:"Human Insulin",
+        strength:"100 IU/ml",
+        category:"diabetes",
+        categoryName:"Diabetes",
+        manufacturer:"Siddhartha Pharma",
+        price:850,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/5/5d/Insulin_vial.jpg",
+        description:"Insulin used for blood glucose management according to a prescribed treatment plan."
+    },
+
+    {
+        id:28,
+        name:"ASPIRIN",
+        generic:"Acetylsalicylic Acid",
+        strength:"75 mg",
+        category:"heart",
+        categoryName:"Cardiovascular",
+        manufacturer:"Siddhartha Pharma",
+        price:65,
+        stock:true,
+        prescription:true,
+        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Aspirin_75mg.jpg",
+        description:"A low-dose aspirin product that may be prescribed for cardiovascular protection."
+    },
+
+    {
+        id:29,
+        name:"BETADINE",
+        generic:"Povidone-Iodine",
+        strength:"10%",
+        category:"other",
+        categoryName:"Antiseptic",
+        manufacturer:"Siddhartha Pharma",
+        price:95,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Povidone-iodine.jpg",
+        description:"An antiseptic preparation used for cleaning and disinfecting skin."
+    },
+
+    {
+        id:30,
+        name:"ZINC",
+        generic:"Zinc Sulphate",
+        strength:"20 mg",
+        category:"vitamin",
+        categoryName:"Vitamins",
+        manufacturer:"Siddhartha Pharma",
+        price:110,
+        stock:true,
+        prescription:false,
+        image:"https://upload.wikimedia.org/wikipedia/commons/3/3b/Zinc_tablets.jpg",
+        description:"A zinc supplement used when additional dietary zinc is required."
     }
 
-    window.addEventListener("scroll", updateNavbar);
-
-    updateNavbar();
+];
 
 
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
+/* =========================================================
+   DOM
+========================================================= */
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+const pageLoader =
+    document.getElementById("pageLoader");
 
-    const mobileMenu =
-        document.getElementById("mobileMenu");
+const navbar =
+    document.getElementById("navbar");
 
-    const closeMenu =
-        document.getElementById("closeMenu");
+const menuToggle =
+    document.getElementById("menuToggle");
 
-    const mobileOverlay =
-        document.getElementById("mobileOverlay");
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-    const menuIcon =
-        menuToggle.querySelector("i");
+const closeMenu =
+    document.getElementById("closeMenu");
+
+const mobileOverlay =
+    document.getElementById("mobileOverlay");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const categoryList =
+    document.getElementById("categoryList");
+
+const sortSelect =
+    document.getElementById("sortSelect");
+
+const cartButton =
+    document.getElementById("cartButton");
+
+const cartCount =
+    document.getElementById("cartCount");
+
+const productGrid =
+    document.getElementById("productGrid");
+
+const noProducts =
+    document.getElementById("noProducts");
 
 
-    function openMobileMenu() {
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
-        mobileMenu.classList.add("show");
-        mobileOverlay.classList.add("show");
+const productModal =
+    document.getElementById("productModal");
 
-        document.body.classList.add("no-scroll");
+const productModalClose =
+    document.getElementById("productModalClose");
 
-        menuIcon.classList.remove("fa-bars");
-        menuIcon.classList.add("fa-xmark");
+const modalProductImage =
+    document.getElementById("modalProductImage");
 
-    }
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalName =
+    document.getElementById("modalName");
+
+const modalGeneric =
+    document.getElementById("modalGeneric");
+
+const modalStrength =
+    document.getElementById("modalStrength");
+
+const modalManufacturer =
+    document.getElementById("modalManufacturer");
+
+const modalStock =
+    document.getElementById("modalStock");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalPrice =
+    document.getElementById("modalPrice");
+
+const modalPrescription =
+    document.getElementById("modalPrescription");
+
+const modalMinus =
+    document.getElementById("modalMinus");
+
+const modalPlus =
+    document.getElementById("modalPlus");
+
+const modalQuantity =
+    document.getElementById("modalQuantity");
+
+const modalCartButton =
+    document.getElementById("modalCartButton");
 
 
-    function closeMobileMenu() {
+/* =========================================================
+   CART MODAL
+========================================================= */
 
-        mobileMenu.classList.remove("show");
-        mobileOverlay.classList.remove("show");
+const cartModal =
+    document.getElementById("cartModal");
 
-        document.body.classList.remove("no-scroll");
+const cartModalClose =
+    document.getElementById("cartModalClose");
 
-        menuIcon.classList.remove("fa-xmark");
-        menuIcon.classList.add("fa-bars");
+const cartItems =
+    document.getElementById("cartItems");
 
-    }
+const emptyCart =
+    document.getElementById("emptyCart");
+
+const cartSummary =
+    document.getElementById("cartSummary");
+
+const cartSubtotal =
+    document.getElementById("cartSubtotal");
+
+const requestMedicineButton =
+    document.getElementById("requestMedicineButton");
 
 
-    menuToggle.addEventListener(
-        "click",
-        function () {
+/* =========================================================
+   REQUEST MODAL
+========================================================= */
 
-            if (mobileMenu.classList.contains("show")) {
+const requestModal =
+    document.getElementById("requestModal");
 
-                closeMobileMenu();
+const requestModalClose =
+    document.getElementById("requestModalClose");
 
-            } else {
+const requestForm =
+    document.getElementById("requestForm");
 
-                openMobileMenu();
+const patientName =
+    document.getElementById("patientName");
 
+const patientPhone =
+    document.getElementById("patientPhone");
+
+const patientAddress =
+    document.getElementById("patientAddress");
+
+const collectionMethod =
+    document.getElementById("collectionMethod");
+
+const prescriptionFile =
+    document.getElementById("prescriptionFile");
+
+const patientNotes =
+    document.getElementById("patientNotes");
+
+const requestTotal =
+    document.getElementById("requestTotal");
+
+const prescriptionButton =
+    document.getElementById("prescriptionButton");
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+const successMessage =
+    document.getElementById("successMessage");
+
+const successClose =
+    document.getElementById("successClose");
+
+const successDone =
+    document.getElementById("successDone");
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let activeCategory = "all";
+
+let activeProduct = null;
+
+let modalQty = 1;
+
+let cart = [];
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+const fallbackImage =
+    "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80";
+
+
+function setImageFallback(image){
+
+    if (!image) return;
+
+    image.addEventListener(
+        "error",
+        function(){
+
+            if (
+                image.dataset.fallbackUsed === "true"
+            ){
+                return;
             }
+
+            image.dataset.fallbackUsed =
+                "true";
+
+            image.src =
+                fallbackImage;
 
         }
     );
 
+}
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        setTimeout(
+            function(){
+
+                if (pageLoader){
+
+                    pageLoader.classList.add("hide");
+
+                }
+
+            },
+            600
+        );
+
+    }
+);
+
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+function updateNavbar(){
+
+    if (!navbar) return;
+
+    if (window.scrollY > 40){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateNavbar
+);
+
+updateNavbar();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function openMobileMenu(){
+
+    if (mobileMenu){
+
+        mobileMenu.classList.add("show");
+
+    }
+
+    if (mobileOverlay){
+
+        mobileOverlay.classList.add("show");
+
+    }
+
+    if (menuToggle){
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+    }
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+function closeMobileMenu(){
+
+    if (mobileMenu){
+
+        mobileMenu.classList.remove("show");
+
+    }
+
+    if (mobileOverlay){
+
+        mobileOverlay.classList.remove("show");
+
+    }
+
+    if (menuToggle){
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+if (menuToggle){
+
+    menuToggle.addEventListener(
+        "click",
+        openMobileMenu
+    );
+
+}
+
+
+if (closeMenu){
 
     closeMenu.addEventListener(
         "click",
         closeMobileMenu
     );
 
+}
+
+
+if (mobileOverlay){
 
     mobileOverlay.addEventListener(
         "click",
         closeMobileMenu
     );
 
+}
 
-    document
-        .querySelectorAll(".mobile-links a")
-        .forEach(function (link) {
+
+document
+    .querySelectorAll(".mobile-links a")
+    .forEach(
+        function(link){
 
             link.addEventListener(
                 "click",
                 closeMobileMenu
             );
 
-        });
-
-
-    /* =========================================================
-       PRODUCT DATA
-    ========================================================= */
-
-    const products = [
-
-        {
-            id: 1,
-            name: "Paracetamol 500",
-            generic: "Paracetamol 500 mg Tablet",
-            strength: "500 mg",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Nepal Pharmaceutical Product",
-            price: 300,
-            stock: true,
-            prescription: false,
-            image: "https://commons.wikimedia.org/wiki/Special:FilePath/200mg%20ibuprofen%20tablets.jpg",
-            description: "Demo catalogue item for the hospital pharmacy prototype."
-        },
-
-        {
-            id: 2,
-            name: "Ibuprofen 400",
-            generic: "Ibuprofen 400 mg Tablet",
-            strength: "400 mg",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Pharmaceutical Product",
-            price: 320,
-            stock: true,
-            prescription: false,
-            image: "https://commons.wikimedia.org/wiki/Special:FilePath/200mg%20ibuprofen%20tablets.jpg",
-            description: "Demo catalogue item for the hospital pharmacy prototype."
-        },
-
-        {
-            id: 3,
-            name: "OMEGARD",
-            generic: "Omeprazole 20 mg Capsule",
-            strength: "20 mg",
-            category: "gastro",
-            categoryName: "Stomach Care",
-            manufacturer: "Siddhartha Pharma",
-            price: 229,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/omegard.jpg",
-            description: "Real product name listed in the Siddhartha Pharma catalogue. Displayed here as a frontend prototype item."
-        },
-
-        {
-            id: 4,
-            name: "PANCURE-40",
-            generic: "Pantoprazole 40 mg Tablet",
-            strength: "40 mg",
-            category: "gastro",
-            categoryName: "Stomach Care",
-            manufacturer: "Siddhartha Pharma",
-            price: 800,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/pancure.jpg",
-            description: "Real product name listed in the Siddhartha Pharma catalogue. Displayed here as a frontend prototype item."
-        },
-
-        {
-            id: 5,
-            name: "FEROMAX",
-            generic: "Iron-III Polymaltose + Folic Acid",
-            strength: "100 mg + 1 mg",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 698,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/feromax.jpg",
-            description: "Real product name listed in the Siddhartha Pharma catalogue. Displayed here as a frontend prototype item."
-        },
-
-        {
-            id: 6,
-            name: "OSTEOCARE",
-            generic: "Calcium Carbonate + Vitamin D3",
-            strength: "500 mg + Vitamin D3",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 450,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/osteocare.jpg",
-            description: "Calcium supplement listed in the Siddhartha Pharma product catalogue."
-        },
-
-        {
-            id: 7,
-            name: "SYNOPLEX",
-            generic: "Vitamin B-Complex Syrup",
-            strength: "100 ml",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 275,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synoplex.jpg",
-            description: "Vitamin B-complex product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 8,
-            name: "SETAFEN",
-            generic: "Ibuprofen + Paracetamol",
-            strength: "Tablet",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Siddhartha Pharma",
-            price: 550,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/setafen.jpg",
-            description: "Combination pain-relief product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 9,
-            name: "SYNOGEL",
-            generic: "Aluminium Hydroxide + Magnesium Hydroxide + Simethicone",
-            strength: "Oral Suspension",
-            category: "gastro",
-            categoryName: "Stomach Care",
-            manufacturer: "Siddhartha Pharma",
-            price: 390,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synogel.jpg",
-            description: "Antacid product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 10,
-            name: "SYNOLIZOR",
-            generic: "Disodium Hydrogen Citrate Syrup",
-            strength: "1.4 gm / 5 ml",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 620,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synolizor.jpg",
-            description: "Real product name listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 11,
-            name: "BREATHEX",
-            generic: "Salbutamol",
-            strength: "Respiratory medicine",
-            category: "respiratory",
-            categoryName: "Respiratory",
-            manufacturer: "Siddhartha Pharma",
-            price: 720,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/breatheX.jpg",
-            description: "Respiratory medicine listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 12,
-            name: "BREATHEX-BORN",
-            generic: "Salbutamol + Bromhexine",
-            strength: "Syrup",
-            category: "respiratory",
-            categoryName: "Respiratory",
-            manufacturer: "Siddhartha Pharma",
-            price: 480,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/breatheX-born.jpg",
-            description: "Respiratory product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 13,
-            name: "LOADINE",
-            generic: "Loratadine 10 mg",
-            strength: "10 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 360,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/loadine.jpg",
-            description: "Antihistamine product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 14,
-            name: "CETUP",
-            generic: "Levocetirizine",
-            strength: "5 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 310,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/cetup.jpg",
-            description: "Antihistamine product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 15,
-            name: "FALSA",
-            generic: "Flavoxate",
-            strength: "200 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 580,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/falsa.jpg",
-            description: "Real product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 16,
-            name: "SYNODOT",
-            generic: "Drotaverine",
-            strength: "40 mg",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Siddhartha Pharma",
-            price: 420,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synodot.jpg",
-            description: "Antispasmodic product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 17,
-            name: "SYNOCIP",
-            generic: "Ciprofloxacin",
-            strength: "500 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 760,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synocip.jpg",
-            description: "Prescription antibacterial product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 18,
-            name: "WISOFLOX",
-            generic: "Ofloxacin",
-            strength: "400 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 690,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/wisoflox.jpg",
-            description: "Prescription antibacterial product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 19,
-            name: "AZIRA",
-            generic: "Azithromycin",
-            strength: "500 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 800,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/azira.jpg",
-            description: "Prescription antibacterial product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 20,
-            name: "MYPAIN",
-            generic: "Tizanidine",
-            strength: "2 mg",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Siddhartha Pharma",
-            price: 530,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/mypain.jpg",
-            description: "Muscle relaxant product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 21,
-            name: "SIGAB",
-            generic: "Pregabalin",
-            strength: "75 mg",
-            category: "pain",
-            categoryName: "Pain Relief",
-            manufacturer: "Siddhartha Pharma",
-            price: 850,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/sigab.jpg",
-            description: "Prescription medicine listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 22,
-            name: "RABRA-20",
-            generic: "Rabeprazole",
-            strength: "20 mg",
-            category: "gastro",
-            categoryName: "Stomach Care",
-            manufacturer: "Siddhartha Pharma",
-            price: 620,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/rabra.jpg",
-            description: "Proton-pump inhibitor product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 23,
-            name: "SYNOPLEX FORTE",
-            generic: "Vitamin B-Complex + Folic Acid",
-            strength: "Capsule",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 430,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synoplex-forte.jpg",
-            description: "Vitamin supplement listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 24,
-            name: "S.P. TONE",
-            generic: "Iron + Vitamin B-Complex",
-            strength: "200 ml",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 510,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/sp-tone.jpg",
-            description: "Haematinic supplement listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 25,
-            name: "SYNOREX",
-            generic: "Diphenhydramine + Ammonium Chloride + Sodium Citrate + Menthol",
-            strength: "Syrup",
-            category: "respiratory",
-            categoryName: "Respiratory",
-            manufacturer: "Siddhartha Pharma",
-            price: 390,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synorex.jpg",
-            description: "Cough/expectorant product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 26,
-            name: "SYNOHIST",
-            generic: "Promethazine + Dextromethorphan",
-            strength: "Syrup",
-            category: "respiratory",
-            categoryName: "Respiratory",
-            manufacturer: "Siddhartha Pharma",
-            price: 450,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synohist.jpg",
-            description: "Cough product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 27,
-            name: "SYNOZYME",
-            generic: "Papain + Fungal Diastase",
-            strength: "Digestive Enzyme",
-            category: "gastro",
-            categoryName: "Stomach Care",
-            manufacturer: "Siddhartha Pharma",
-            price: 570,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/synozyme.jpg",
-            description: "Digestive enzyme product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 28,
-            name: "REARTH-500",
-            generic: "Glucosamine",
-            strength: "500 mg",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 800,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/rearth.jpg",
-            description: "Product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 29,
-            name: "FOLSID",
-            generic: "Folic Acid",
-            strength: "5 mg",
-            category: "vitamins",
-            categoryName: "Vitamins",
-            manufacturer: "Siddhartha Pharma",
-            price: 229,
-            stock: true,
-            prescription: false,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/folsid.jpg",
-            description: "Folic acid product listed in the Siddhartha Pharma catalogue."
-        },
-
-        {
-            id: 30,
-            name: "TRASI",
-            generic: "Itraconazole",
-            strength: "Capsule",
-            category: "other",
-            categoryName: "Other",
-            manufacturer: "Siddhartha Pharma",
-            price: 698,
-            stock: true,
-            prescription: true,
-            image: "https://www.siddharthapharma.com.np/wp-content/uploads/2023/08/trasi.jpg",
-            description: "Prescription antifungal product listed in the Siddhartha Pharma catalogue."
         }
-
-    ];
-
-
-    /* =========================================================
-       ELEMENTS
-    ========================================================= */
-
-    const productGrid =
-        document.getElementById("productGrid");
-
-    const noProducts =
-        document.getElementById("noProducts");
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-    const searchButton =
-        document.getElementById("searchButton");
-
-    const categoryButtons =
-        document.querySelectorAll(".category-btn");
-
-    const sortSelect =
-        document.getElementById("sortSelect");
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    const cartButton =
-        document.getElementById("cartButton");
+    );
 
 
-    /* =========================================================
-       STATE
-    ========================================================= */
+/* =========================================================
+   CATEGORY BUTTONS
+========================================================= */
 
-    let selectedCategory = "all";
+document
+    .querySelectorAll(".category-btn")
+    .forEach(
+        function(button){
 
-    let searchTerm = "";
+            button.addEventListener(
+                "click",
+                function(){
 
-    let cart = [];
+                    document
+                        .querySelectorAll(".category-btn")
+                        .forEach(
+                            function(btn){
 
-    let currentProduct = null;
+                                btn.classList.remove(
+                                    "active"
+                                );
 
-    let modalQuantity = 1;
+                            }
+                        );
 
 
-    /* =========================================================
-       FORMAT PRICE
-    ========================================================= */
+                    this.classList.add(
+                        "active"
+                    );
 
-    function formatPrice(price) {
 
-        return "Rs. " + price.toLocaleString("en-IN");
+                    activeCategory =
+                        this.dataset.category ||
+                        "all";
+
+
+                    renderProducts();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   FORMAT PRICE
+========================================================= */
+
+function formatPrice(price){
+
+    return (
+        "NPR " +
+        Number(price).toLocaleString()
+    );
+
+}
+
+
+/* =========================================================
+   FILTER PRODUCTS
+========================================================= */
+
+function getFilteredProducts(){
+
+    let result =
+        [...medicines];
+
+
+    const searchTerm =
+        searchInput
+            ? searchInput.value
+                .trim()
+                .toLowerCase()
+            : "";
+
+
+    if (
+        activeCategory !== "all"
+    ){
+
+        result =
+            result.filter(
+                function(medicine){
+
+                    return (
+                        medicine.category ===
+                        activeCategory
+                    );
+
+                }
+            );
 
     }
 
 
-    /* =========================================================
-       RENDER PRODUCTS
-    ========================================================= */
+    if (searchTerm !== ""){
 
-    function renderProducts() {
+        result =
+            result.filter(
+                function(medicine){
 
-        let filtered = products.filter(function (product) {
+                    return (
 
-            const categoryMatch =
-                selectedCategory === "all" ||
-                product.category === selectedCategory;
+                        medicine.name
+                            .toLowerCase()
+                            .includes(searchTerm)
 
-            const searchMatch =
-                product.name.toLowerCase().includes(searchTerm) ||
-                product.generic.toLowerCase().includes(searchTerm) ||
-                product.categoryName.toLowerCase().includes(searchTerm);
+                        ||
 
-            return categoryMatch && searchMatch;
+                        medicine.generic
+                            .toLowerCase()
+                            .includes(searchTerm)
 
-        });
+                        ||
 
+                        medicine.categoryName
+                            .toLowerCase()
+                            .includes(searchTerm)
 
-        const sortValue = sortSelect.value;
+                        ||
 
+                        medicine.manufacturer
+                            .toLowerCase()
+                            .includes(searchTerm)
 
-        if (sortValue === "low") {
+                    );
 
-            filtered.sort(function (a, b) {
-                return a.price - b.price;
-            });
+                }
+            );
 
-        }
-
-
-        if (sortValue === "high") {
-
-            filtered.sort(function (a, b) {
-                return b.price - a.price;
-            });
-
-        }
+    }
 
 
-        if (sortValue === "name") {
+    if (sortSelect){
 
-            filtered.sort(function (a, b) {
-                return a.name.localeCompare(b.name);
-            });
-
-        }
+        const sortValue =
+            sortSelect.value;
 
 
-        productGrid.innerHTML = "";
+        if (
+            sortValue === "low" ||
+            sortValue === "price-low"
+        ){
 
+            result.sort(
+                function(a,b){
 
-        if (filtered.length === 0) {
+                    return a.price - b.price;
 
-            noProducts.classList.add("show");
-
-            return;
+                }
+            );
 
         }
 
 
-        noProducts.classList.remove("show");
+        else if (
+            sortValue === "high" ||
+            sortValue === "price-high"
+        ){
+
+            result.sort(
+                function(a,b){
+
+                    return b.price - a.price;
+
+                }
+            );
+
+        }
 
 
-        filtered.forEach(function (product) {
+        else if (
+            sortValue === "name"
+        ){
+
+            result.sort(
+                function(a,b){
+
+                    return a.name.localeCompare(
+                        b.name
+                    );
+
+                }
+            );
+
+        }
+
+
+        else if (
+            sortValue === "newest"
+        ){
+
+            result.sort(
+                function(a,b){
+
+                    return b.id - a.id;
+
+                }
+            );
+
+        }
+
+    }
+
+
+    return result;
+
+}
+
+
+/* =========================================================
+   RENDER PRODUCTS
+========================================================= */
+
+function renderProducts(){
+
+    if (!productGrid) return;
+
+
+    const products =
+        getFilteredProducts();
+
+
+    productGrid.innerHTML = "";
+
+
+    if (products.length === 0){
+
+        if (noProducts){
+
+            noProducts.classList.add(
+                "show"
+            );
+
+        }
+
+        return;
+
+    }
+
+
+    if (noProducts){
+
+        noProducts.classList.remove(
+            "show"
+        );
+
+    }
+
+
+    products.forEach(
+        function(medicine){
 
             const card =
-                document.createElement("article");
+                document.createElement(
+                    "article"
+                );
 
-            card.className = "product-card";
+
+            card.className =
+                "product-card";
+
+
+            card.dataset.productId =
+                medicine.id;
 
 
             card.innerHTML = `
 
                 <div class="product-image">
 
-                    <img
-                        src="${product.image}"
-                        alt="${product.name}"
-                        loading="lazy"
-                        onerror="this.src='https://placehold.co/500x500/f3fafc/087ba3?text=Medicine'">
-
-                    <span class="product-badge ${product.prescription ? "rx" : ""}">
-                        ${product.prescription ? "Prescription" : "Available"}
+                    <span class="product-badge ${medicine.prescription ? "rx" : ""}">
+                        ${medicine.prescription ? "Prescription" : "Available"}
                     </span>
+
+                    <img
+                        src="${medicine.image}"
+                        alt="${medicine.name}"
+                        loading="lazy"
+                    >
 
                 </div>
 
@@ -739,32 +1138,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="product-body">
 
                     <span class="product-category">
-                        ${product.categoryName}
+                        ${medicine.categoryName}
                     </span>
 
+
                     <h3 class="product-name">
-                        ${product.name}
+                        ${medicine.name}
                     </h3>
 
+
                     <p class="product-generic">
-                        ${product.generic}
+                        ${medicine.generic}
                     </p>
 
+
                     <p class="product-strength">
-                        ${product.strength}
+                        Strength: ${medicine.strength}
                     </p>
 
 
                     <div class="product-bottom">
 
                         <strong class="product-price">
-                            ${formatPrice(product.price)}
+                            ${formatPrice(medicine.price)}
                         </strong>
+
 
                         <button
                             class="view-btn"
-                            data-view="${product.id}">
-                            Details
+                            type="button"
+                            data-view="${medicine.id}"
+                        >
+                            View Details
                         </button>
 
                     </div>
@@ -772,11 +1177,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <button
                         class="add-btn"
-                        data-add="${product.id}">
+                        type="button"
+                        data-add="${medicine.id}"
+                    >
 
                         <i class="fa-solid fa-cart-plus"></i>
 
-                        Add to Cart
+                        <span>
+                            Add to Pharmacy Cart
+                        </span>
 
                     </button>
 
@@ -785,129 +1194,161 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
 
-            productGrid.appendChild(card);
+            productGrid.appendChild(
+                card
+            );
 
-        });
+
+            const image =
+                card.querySelector("img");
 
 
-        document
-            .querySelectorAll("[data-view]")
-            .forEach(function (button) {
+            setImageFallback(
+                image
+            );
+
+        }
+    );
+
+
+    attachProductButtons();
+
+    restoreAddedButtonStates();
+
+}
+
+
+/* =========================================================
+   RESTORE ADD BUTTON STATE
+========================================================= */
+
+function restoreAddedButtonStates(){
+
+    cart.forEach(
+        function(cartItem){
+
+            const button =
+                document.querySelector(
+                    `[data-add="${cartItem.id}"]`
+                );
+
+
+            if (!button) return;
+
+
+            button.classList.add(
+                "added"
+            );
+
+
+            button.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                <span>Added to Cart</span>
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   PRODUCT BUTTON EVENTS
+========================================================= */
+
+function attachProductButtons(){
+
+    document
+        .querySelectorAll("[data-view]")
+        .forEach(
+            function(button){
 
                 button.addEventListener(
                     "click",
-                    function () {
+                    function(){
 
                         const id =
-                            Number(button.dataset.view);
+                            Number(
+                                this.dataset.view
+                            );
 
                         openProductModal(id);
 
                     }
                 );
 
-            });
+            }
+        );
 
 
-        document
-            .querySelectorAll("[data-add]")
-            .forEach(function (button) {
+    document
+        .querySelectorAll("[data-add]")
+        .forEach(
+            function(button){
 
                 button.addEventListener(
                     "click",
-                    function () {
+                    function(){
 
                         const id =
-                            Number(button.dataset.add);
+                            Number(
+                                this.dataset.add
+                            );
 
-                        addToCart(id, 1);
+
+                        addToCart(
+                            id,
+                            1,
+                            this
+                        );
 
                     }
                 );
 
-            });
-
-    }
-
-
-    /* =========================================================
-       CATEGORY FILTER
-    ========================================================= */
-
-    categoryButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                categoryButtons.forEach(function (item) {
-                    item.classList.remove("active");
-                });
-
-                button.classList.add("active");
-
-                selectedCategory =
-                    button.dataset.category;
-
-                renderProducts();
-
             }
         );
 
-    });
+}
 
 
-    /* =========================================================
-       SEARCH
-    ========================================================= */
+/* =========================================================
+   SEARCH
+========================================================= */
 
-    function performSearch() {
-
-        searchTerm =
-            searchInput.value
-                .trim()
-                .toLowerCase();
-
-        renderProducts();
-
-        document
-            .querySelector(".products-section")
-            .scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-    }
-
+if (searchButton){
 
     searchButton.addEventListener(
         "click",
-        performSearch
-    );
+        function(){
+
+            renderProducts();
 
 
-    searchInput.addEventListener(
-        "keydown",
-        function (event) {
+            const productsSection =
+                document.getElementById(
+                    "products"
+                );
 
-            if (event.key === "Enter") {
 
-                performSearch();
+            if (productsSection){
+
+                productsSection.scrollIntoView({
+                    behavior:"smooth"
+                });
 
             }
 
         }
     );
 
+}
+
+
+if (searchInput){
 
     searchInput.addEventListener(
         "input",
-        function () {
-
-            searchTerm =
-                searchInput.value
-                    .trim()
-                    .toLowerCase();
+        function(){
 
             renderProducts();
 
@@ -915,455 +1356,790 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =========================================================
-       SORT
-    ========================================================= */
+    searchInput.addEventListener(
+        "keydown",
+        function(event){
 
-    sortSelect.addEventListener(
-        "change",
-        renderProducts
-    );
+            if (
+                event.key === "Enter"
+            ){
 
-
-    /* =========================================================
-       PRODUCT MODAL
-    ========================================================= */
-
-    const productModal =
-        document.getElementById("productModal");
-
-    const productModalClose =
-        document.getElementById("productModalClose");
-
-    const modalProductImage =
-        document.getElementById("modalProductImage");
-
-    const modalCategory =
-        document.getElementById("modalCategory");
-
-    const modalName =
-        document.getElementById("modalName");
-
-    const modalGeneric =
-        document.getElementById("modalGeneric");
-
-    const modalStrength =
-        document.getElementById("modalStrength");
-
-    const modalManufacturer =
-        document.getElementById("modalManufacturer");
-
-    const modalStock =
-        document.getElementById("modalStock");
-
-    const modalDescription =
-        document.getElementById("modalDescription");
-
-    const modalPrice =
-        document.getElementById("modalPrice");
-
-    const modalPrescription =
-        document.getElementById("modalPrescription");
-
-    const modalQuantityElement =
-        document.getElementById("modalQuantity");
-
-    const modalMinus =
-        document.getElementById("modalMinus");
-
-    const modalPlus =
-        document.getElementById("modalPlus");
-
-    const modalCartButton =
-        document.getElementById("modalCartButton");
+                event.preventDefault();
 
 
-    function openProductModal(id) {
-
-        currentProduct =
-            products.find(function (product) {
-                return product.id === id;
-            });
+                renderProducts();
 
 
-        if (!currentProduct) return;
+                const productsSection =
+                    document.getElementById(
+                        "products"
+                    );
 
 
-        modalQuantity = 1;
+                if (productsSection){
 
-        modalQuantityElement.textContent =
-            modalQuantity;
+                    productsSection.scrollIntoView({
+                        behavior:"smooth"
+                    });
 
-
-        modalProductImage.innerHTML = `
-
-            <img
-                src="${currentProduct.image}"
-                alt="${currentProduct.name}"
-                onerror="this.src='https://placehold.co/500x500/f3fafc/087ba3?text=Medicine'">
-
-        `;
-
-
-        modalCategory.textContent =
-            currentProduct.categoryName;
-
-        modalName.textContent =
-            currentProduct.name;
-
-        modalGeneric.textContent =
-            currentProduct.generic;
-
-        modalStrength.textContent =
-            currentProduct.strength;
-
-        modalManufacturer.textContent =
-            currentProduct.manufacturer;
-
-        modalStock.textContent =
-            currentProduct.stock
-                ? "In Stock"
-                : "Out of Stock";
-
-        modalDescription.textContent =
-            currentProduct.description;
-
-        modalPrice.textContent =
-            formatPrice(currentProduct.price);
-
-        modalPrescription.textContent =
-            currentProduct.prescription
-                ? "Prescription Required"
-                : "Non-Prescription";
-
-
-        productModal.classList.add("show");
-
-        document.body.classList.add("no-scroll");
-
-    }
-
-
-    function closeProductModal() {
-
-        productModal.classList.remove("show");
-
-        document.body.classList.remove("no-scroll");
-
-    }
-
-
-    productModalClose.addEventListener(
-        "click",
-        closeProductModal
-    );
-
-
-    modalMinus.addEventListener(
-        "click",
-        function () {
-
-            if (modalQuantity > 1) {
-
-                modalQuantity--;
-
-                modalQuantityElement.textContent =
-                    modalQuantity;
+                }
 
             }
 
         }
     );
 
+}
 
-    modalPlus.addEventListener(
-        "click",
-        function () {
 
-            modalQuantity++;
+/* =========================================================
+   SORT
+========================================================= */
 
-            modalQuantityElement.textContent =
-                modalQuantity;
+if (sortSelect){
 
-        }
+    sortSelect.addEventListener(
+        "change",
+        renderProducts
     );
 
+}
 
-    modalCartButton.addEventListener(
-        "click",
-        function () {
 
-            if (!currentProduct) return;
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
-            addToCart(
-                currentProduct.id,
-                modalQuantity
+function openProductModal(id){
+
+    const medicine =
+        medicines.find(
+            function(item){
+
+                return item.id === id;
+
+            }
+        );
+
+
+    if (
+        !medicine ||
+        !productModal
+    ){
+
+        return;
+
+    }
+
+
+    activeProduct =
+        medicine;
+
+
+    modalQty = 1;
+
+
+    if (modalProductImage){
+
+        modalProductImage.innerHTML = "";
+
+
+        const image =
+            document.createElement(
+                "img"
             );
 
-            closeProductModal();
 
-        }
-    );
-
-
-    /* =========================================================
-       CART
-    ========================================================= */
-
-    function addToCart(id, quantity) {
-
-        const product =
-            products.find(function (item) {
-                return item.id === id;
-            });
+        image.src =
+            medicine.image;
 
 
-        if (!product) return;
+        image.alt =
+            medicine.name;
 
 
-        const existing =
-            cart.find(function (item) {
-                return item.id === id;
-            });
+        image.loading =
+            "eager";
 
 
-        if (existing) {
-
-            existing.quantity += quantity;
-
-        } else {
-
-            cart.push({
-                id: id,
-                quantity: quantity
-            });
-
-        }
+        setImageFallback(
+            image
+        );
 
 
-        updateCart();
-
-    }
-
-
-    function removeFromCart(id) {
-
-        cart =
-            cart.filter(function (item) {
-                return item.id !== id;
-            });
-
-        updateCart();
-
-    }
-
-
-    function changeCartQuantity(id, amount) {
-
-        const item =
-            cart.find(function (cartItem) {
-                return cartItem.id === id;
-            });
-
-
-        if (!item) return;
-
-
-        item.quantity += amount;
-
-
-        if (item.quantity <= 0) {
-
-            removeFromCart(id);
-
-            return;
-
-        }
-
-
-        updateCart();
-
-    }
-
-
-    function getCartTotal() {
-
-        return cart.reduce(
-            function (total, item) {
-
-                const product =
-                    products.find(function (product) {
-                        return product.id === item.id;
-                    });
-
-                return total +
-                    (product.price * item.quantity);
-
-            },
-            0
+        modalProductImage.appendChild(
+            image
         );
 
     }
 
 
-    function updateCart() {
+    if (modalCategory){
 
-        const totalQuantity =
-            cart.reduce(
-                function (total, item) {
-                    return total + item.quantity;
-                },
-                0
+        modalCategory.textContent =
+            medicine.categoryName;
+
+    }
+
+
+    if (modalName){
+
+        modalName.textContent =
+            medicine.name;
+
+    }
+
+
+    if (modalGeneric){
+
+        modalGeneric.textContent =
+            medicine.generic;
+
+    }
+
+
+    if (modalStrength){
+
+        modalStrength.textContent =
+            medicine.strength;
+
+    }
+
+
+    if (modalManufacturer){
+
+        modalManufacturer.textContent =
+            medicine.manufacturer;
+
+    }
+
+
+    if (modalStock){
+
+        modalStock.textContent =
+            medicine.stock
+                ? "In Stock"
+                : "Out of Stock";
+
+
+        modalStock.style.color =
+            medicine.stock
+                ? "#18875b"
+                : "#c94b4b";
+
+    }
+
+
+    if (modalDescription){
+
+        modalDescription.textContent =
+            medicine.description;
+
+    }
+
+
+    if (modalPrice){
+
+        modalPrice.textContent =
+            formatPrice(
+                medicine.price
             );
 
+    }
+
+
+    if (modalPrescription){
+
+        modalPrescription.textContent =
+            medicine.prescription
+                ? "Required"
+                : "Not Required";
+
+    }
+
+
+    updateModalQuantity();
+
+
+    productModal.classList.add(
+        "show"
+    );
+
+
+    productModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+function closeProductModal(){
+
+    if (!productModal) return;
+
+
+    productModal.classList.remove(
+        "show"
+    );
+
+
+    productModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+
+    activeProduct = null;
+
+}
+
+
+if (productModalClose){
+
+    productModalClose.addEventListener(
+        "click",
+        closeProductModal
+    );
+
+}
+
+
+if (productModal){
+
+    const backdrop =
+        productModal.querySelector(
+            ".modal-backdrop"
+        );
+
+
+    if (backdrop){
+
+        backdrop.addEventListener(
+            "click",
+            closeProductModal
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL QUANTITY
+========================================================= */
+
+function updateModalQuantity(){
+
+    if (modalQuantity){
+
+        modalQuantity.textContent =
+            modalQty;
+
+    }
+
+}
+
+
+if (modalMinus){
+
+    modalMinus.addEventListener(
+        "click",
+        function(){
+
+            if (modalQty > 1){
+
+                modalQty--;
+
+                updateModalQuantity();
+
+            }
+
+        }
+    );
+
+}
+
+
+if (modalPlus){
+
+    modalPlus.addEventListener(
+        "click",
+        function(){
+
+            if (modalQty < 99){
+
+                modalQty++;
+
+                updateModalQuantity();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(
+    id,
+    quantity,
+    sourceButton = null
+){
+
+    const medicine =
+        medicines.find(
+            function(item){
+
+                return item.id === id;
+
+            }
+        );
+
+
+    if (
+        !medicine ||
+        !medicine.stock
+    ){
+
+        return;
+
+    }
+
+
+    const existing =
+        cart.find(
+            function(item){
+
+                return item.id === id;
+
+            }
+        );
+
+
+    if (existing){
+
+        existing.quantity +=
+            quantity;
+
+    }else{
+
+        cart.push({
+
+            id:medicine.id,
+
+            quantity:quantity
+
+        });
+
+    }
+
+
+    updateCart();
+
+
+    showCartFeedback();
+
+
+    if (sourceButton){
+
+        showAddedButton(
+            sourceButton
+        );
+
+    }
+
+}
+
+
+function showAddedButton(button){
+
+    if (!button) return;
+
+
+    button.classList.add(
+        "added"
+    );
+
+
+    button.innerHTML = `
+        <i class="fa-solid fa-check"></i>
+        <span>Added to Cart</span>
+    `;
+
+
+    setTimeout(
+        function(){
+
+            if (
+                !button.isConnected
+            ){
+
+                return;
+
+            }
+
+
+            button.classList.remove(
+                "added"
+            );
+
+
+            button.innerHTML = `
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to Pharmacy Cart</span>
+            `;
+
+
+            const medicineId =
+                Number(
+                    button.dataset.add
+                );
+
+
+            const stillInCart =
+                cart.some(
+                    function(item){
+
+                        return (
+                            item.id ===
+                            medicineId
+                        );
+
+                    }
+                );
+
+
+            if (stillInCart){
+
+                button.classList.add(
+                    "added"
+                );
+
+
+                button.innerHTML = `
+                    <i class="fa-solid fa-check"></i>
+                    <span>Added to Cart</span>
+                `;
+
+            }
+
+        },
+        1300
+    );
+
+}
+
+
+function showCartFeedback(){
+
+    if (!cartButton) return;
+
+
+    cartButton.classList.remove(
+        "bump"
+    );
+
+
+    void cartButton.offsetWidth;
+
+
+    cartButton.classList.add(
+        "bump"
+    );
+
+
+    setTimeout(
+        function(){
+
+            cartButton.classList.remove(
+                "bump"
+            );
+
+        },
+        500
+    );
+
+}
+
+
+/* =========================================================
+   MODAL ADD TO CART
+========================================================= */
+
+if (modalCartButton){
+
+    modalCartButton.addEventListener(
+        "click",
+        function(){
+
+            if (!activeProduct){
+
+                return;
+
+            }
+
+
+            addToCart(
+                activeProduct.id,
+                modalQty
+            );
+
+
+            this.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                Added to Cart
+            `;
+
+
+            this.disabled = true;
+
+
+            setTimeout(
+                function(){
+
+                    closeProductModal();
+
+
+                    modalCartButton.innerHTML = `
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Add to Pharmacy Cart
+                    `;
+
+
+                    modalCartButton.disabled =
+                        false;
+
+                },
+                600
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE CART
+========================================================= */
+
+function updateCart(){
+
+    let totalQuantity = 0;
+
+    let subtotal = 0;
+
+
+    cart.forEach(
+        function(cartItem){
+
+            const medicine =
+                medicines.find(
+                    function(item){
+
+                        return (
+                            item.id ===
+                            cartItem.id
+                        );
+
+                    }
+                );
+
+
+            if (!medicine) return;
+
+
+            totalQuantity +=
+                cartItem.quantity;
+
+
+            subtotal +=
+                medicine.price *
+                cartItem.quantity;
+
+        }
+    );
+
+
+    if (cartCount){
 
         cartCount.textContent =
             totalQuantity;
 
+    }
 
-        renderCart();
+
+    if (cartSubtotal){
+
+        cartSubtotal.textContent =
+            formatPrice(
+                subtotal
+            );
 
     }
 
 
-    /* =========================================================
-       CART MODAL
-    ========================================================= */
+    if (requestTotal){
 
-    const cartModal =
-        document.getElementById("cartModal");
-
-    const cartModalClose =
-        document.getElementById("cartModalClose");
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const emptyCart =
-        document.getElementById("emptyCart");
-
-    const cartSummary =
-        document.getElementById("cartSummary");
-
-    const cartSubtotal =
-        document.getElementById("cartSubtotal");
-
-
-    function openCart() {
-
-        renderCart();
-
-        cartModal.classList.add("show");
-
-        document.body.classList.add("no-scroll");
+        requestTotal.textContent =
+            formatPrice(
+                subtotal
+            );
 
     }
 
 
-    function closeCart() {
+    renderCart();
 
-        cartModal.classList.remove("show");
-
-        document.body.classList.remove("no-scroll");
-
-    }
+}
 
 
-    cartButton.addEventListener(
-        "click",
-        openCart
-    );
+/* =========================================================
+   RENDER CART
+========================================================= */
+
+function renderCart(){
+
+    if (!cartItems) return;
 
 
-    cartModalClose.addEventListener(
-        "click",
-        closeCart
-    );
+    cartItems.innerHTML = "";
 
 
-    function renderCart() {
+    if (cart.length === 0){
 
-        cartItems.innerHTML = "";
-
-
-        if (cart.length === 0) {
+        if (emptyCart){
 
             emptyCart.style.display =
                 "block";
 
+        }
+
+
+        if (cartSummary){
+
             cartSummary.style.display =
                 "none";
-
-            return;
 
         }
 
 
+        return;
+
+    }
+
+
+    if (emptyCart){
+
         emptyCart.style.display =
             "none";
+
+    }
+
+
+    if (cartSummary){
 
         cartSummary.style.display =
             "block";
 
-
-        cart.forEach(function (item) {
-
-            const product =
-                products.find(function (product) {
-                    return product.id === item.id;
-                });
+    }
 
 
-            const itemElement =
-                document.createElement("div");
+    cart.forEach(
+        function(cartItem){
 
-            itemElement.className =
+            const medicine =
+                medicines.find(
+                    function(item){
+
+                        return (
+                            item.id ===
+                            cartItem.id
+                        );
+
+                    }
+                );
+
+
+            if (!medicine) return;
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
                 "cart-item";
 
 
-            itemElement.innerHTML = `
+            item.innerHTML = `
 
                 <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    onerror="this.src='https://placehold.co/200x200/f3fafc/087ba3?text=Medicine'">
+                    src="${medicine.image}"
+                    alt="${medicine.name}"
+                >
 
 
                 <div>
 
                     <h4>
-                        ${product.name}
+                        ${medicine.name}
                     </h4>
 
+
                     <p>
-                        ${formatPrice(product.price)}
+                        ${formatPrice(medicine.price)}
                     </p>
 
 
                     <div class="cart-quantity">
 
                         <button
-                            data-minus="${product.id}">
-                            -
+                            type="button"
+                            data-cart-minus="${medicine.id}"
+                        >
+                            −
                         </button>
 
+
                         <span>
-                            ${item.quantity}
+                            ${cartItem.quantity}
                         </span>
 
+
                         <button
-                            data-plus="${product.id}">
+                            type="button"
+                            data-cart-plus="${medicine.id}"
+                        >
                             +
                         </button>
 
                     </div>
 
+
                     <button
                         class="remove-cart"
-                        data-remove="${product.id}">
-
+                        type="button"
+                        data-cart-remove="${medicine.id}"
+                    >
                         Remove
-
                     </button>
 
                 </div>
@@ -1371,188 +2147,536 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <strong class="cart-price">
 
-                    ${formatPrice(product.price * item.quantity)}
+                    ${formatPrice(
+                        medicine.price *
+                        cartItem.quantity
+                    )}
 
                 </strong>
 
             `;
 
 
-            cartItems.appendChild(itemElement);
-
-        });
-
-
-        cartSubtotal.textContent =
-            formatPrice(getCartTotal());
+            cartItems.appendChild(
+                item
+            );
 
 
-        cartItems
-            .querySelectorAll("[data-minus]")
-            .forEach(function (button) {
+            setImageFallback(
+                item.querySelector("img")
+            );
+
+        }
+    );
+
+
+    attachCartButtons();
+
+}
+
+
+/* =========================================================
+   CART BUTTON EVENTS
+========================================================= */
+
+function attachCartButtons(){
+
+    document
+        .querySelectorAll("[data-cart-minus]")
+        .forEach(
+            function(button){
 
                 button.addEventListener(
                     "click",
-                    function () {
+                    function(){
+
+                        const id =
+                            Number(
+                                this.dataset.cartMinus
+                            );
+
 
                         changeCartQuantity(
-                            Number(button.dataset.minus),
+                            id,
                             -1
                         );
 
                     }
                 );
 
-            });
+            }
+        );
 
 
-        cartItems
-            .querySelectorAll("[data-plus]")
-            .forEach(function (button) {
+    document
+        .querySelectorAll("[data-cart-plus]")
+        .forEach(
+            function(button){
 
                 button.addEventListener(
                     "click",
-                    function () {
+                    function(){
+
+                        const id =
+                            Number(
+                                this.dataset.cartPlus
+                            );
+
 
                         changeCartQuantity(
-                            Number(button.dataset.plus),
+                            id,
                             1
                         );
 
                     }
                 );
 
-            });
+            }
+        );
 
 
-        cartItems
-            .querySelectorAll("[data-remove]")
-            .forEach(function (button) {
+    document
+        .querySelectorAll("[data-cart-remove]")
+        .forEach(
+            function(button){
 
                 button.addEventListener(
                     "click",
-                    function () {
+                    function(){
 
-                        removeFromCart(
-                            Number(button.dataset.remove)
-                        );
+                        const id =
+                            Number(
+                                this.dataset.cartRemove
+                            );
+
+
+                        removeFromCart(id);
 
                     }
                 );
 
-            });
+            }
+        );
+
+}
+
+
+/* =========================================================
+   CHANGE CART QUANTITY
+========================================================= */
+
+function changeCartQuantity(
+    id,
+    change
+){
+
+    const item =
+        cart.find(
+            function(cartItem){
+
+                return (
+                    cartItem.id ===
+                    id
+                );
+
+            }
+        );
+
+
+    if (!item) return;
+
+
+    item.quantity +=
+        change;
+
+
+    if (item.quantity <= 0){
+
+        cart =
+            cart.filter(
+                function(cartItem){
+
+                    return (
+                        cartItem.id !==
+                        id
+                    );
+
+                }
+            );
 
     }
 
 
-    /* =========================================================
-       REQUEST MODAL
-    ========================================================= */
+    updateCart();
 
-    const requestModal =
-        document.getElementById("requestModal");
-
-    const requestMedicineButton =
-        document.getElementById("requestMedicineButton");
-
-    const requestModalClose =
-        document.getElementById("requestModalClose");
-
-    const requestTotal =
-        document.getElementById("requestTotal");
-
-    const requestForm =
-        document.getElementById("requestForm");
+}
 
 
-    function openRequestModal() {
+/* =========================================================
+   REMOVE CART ITEM
+========================================================= */
 
-        if (cart.length === 0) {
+function removeFromCart(id){
 
-            return;
+    cart =
+        cart.filter(
+            function(item){
 
-        }
+                return (
+                    item.id !== id
+                );
+
+            }
+        );
 
 
-        requestTotal.textContent =
-            formatPrice(getCartTotal());
+    updateCart();
+
+}
 
 
-        closeCart();
+/* =========================================================
+   OPEN CART
+========================================================= */
 
-        requestModal.classList.add("show");
+function openCart(){
 
-        document.body.classList.add("no-scroll");
+    if (!cartModal) return;
+
+
+    updateCart();
+
+
+    cartModal.classList.add(
+        "show"
+    );
+
+
+    cartModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+function closeCart(){
+
+    if (!cartModal) return;
+
+
+    cartModal.classList.remove(
+        "show"
+    );
+
+
+    cartModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+if (cartButton){
+
+    cartButton.addEventListener(
+        "click",
+        openCart
+    );
+
+}
+
+
+if (cartModalClose){
+
+    cartModalClose.addEventListener(
+        "click",
+        closeCart
+    );
+
+}
+
+
+if (cartModal){
+
+    const backdrop =
+        cartModal.querySelector(
+            ".modal-backdrop"
+        );
+
+
+    if (backdrop){
+
+        backdrop.addEventListener(
+            "click",
+            closeCart
+        );
 
     }
 
+}
 
-    function closeRequestModal() {
 
-        requestModal.classList.remove("show");
+/* =========================================================
+   REQUEST MODAL
+========================================================= */
 
-        document.body.classList.remove("no-scroll");
+function openRequestModal(){
 
-    }
+    if (!requestModal) return;
 
+
+    updateRequestTotal();
+
+
+    requestModal.classList.add(
+        "show"
+    );
+
+
+    requestModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+function closeRequestModal(){
+
+    if (!requestModal) return;
+
+
+    requestModal.classList.remove(
+        "show"
+    );
+
+
+    requestModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+if (requestMedicineButton){
 
     requestMedicineButton.addEventListener(
         "click",
-        openRequestModal
+        function(){
+
+            if (
+                cart.length === 0
+            ){
+
+                return;
+
+            }
+
+
+            closeCart();
+
+            openRequestModal();
+
+        }
     );
 
+}
+
+
+if (prescriptionButton){
+
+    prescriptionButton.addEventListener(
+        "click",
+        function(){
+
+            if (cart.length === 0){
+
+                const productsSection =
+                    document.getElementById(
+                        "products"
+                    );
+
+
+                if (productsSection){
+
+                    productsSection.scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                }
+
+
+                return;
+
+            }
+
+
+            openRequestModal();
+
+        }
+    );
+
+}
+
+
+if (requestModalClose){
 
     requestModalClose.addEventListener(
         "click",
         closeRequestModal
     );
 
-
-    /* =========================================================
-       PRESCRIPTION BUTTON
-    ========================================================= */
-
-    const prescriptionButton =
-        document.getElementById("prescriptionButton");
+}
 
 
-    prescriptionButton.addEventListener(
-        "click",
-        function () {
+if (requestModal){
 
-            requestModal.classList.add("show");
+    const backdrop =
+        requestModal.querySelector(
+            ".modal-backdrop"
+        );
 
-            document.body.classList.add("no-scroll");
 
-            requestTotal.textContent =
-                formatPrice(getCartTotal());
+    if (backdrop){
+
+        backdrop.addEventListener(
+            "click",
+            closeRequestModal
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   REQUEST TOTAL
+========================================================= */
+
+function calculateSubtotal(){
+
+    let total = 0;
+
+
+    cart.forEach(
+        function(cartItem){
+
+            const medicine =
+                medicines.find(
+                    function(item){
+
+                        return (
+                            item.id ===
+                            cartItem.id
+                        );
+
+                    }
+                );
+
+
+            if (!medicine) return;
+
+
+            total +=
+                medicine.price *
+                cartItem.quantity;
 
         }
     );
 
 
-    /* =========================================================
-       FORM SUBMISSION
-    ========================================================= */
+    return total;
 
-    const successMessage =
-        document.getElementById("successMessage");
+}
 
-    const successClose =
-        document.getElementById("successClose");
 
+function updateRequestTotal(){
+
+    const total =
+        calculateSubtotal();
+
+
+    if (requestTotal){
+
+        requestTotal.textContent =
+            formatPrice(
+                total
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   REQUEST FORM
+========================================================= */
+
+if (requestForm){
 
     requestForm.addEventListener(
         "submit",
-        function (event) {
+        function(event){
 
             event.preventDefault();
 
 
-            if (cart.length === 0) {
+            if (cart.length === 0){
+
+                return;
+
+            }
+
+
+            const name =
+                patientName
+                    ? patientName.value.trim()
+                    : "";
+
+
+            const phone =
+                patientPhone
+                    ? patientPhone.value.trim()
+                    : "";
+
+
+            const address =
+                patientAddress
+                    ? patientAddress.value.trim()
+                    : "";
+
+
+            if (
+                name === "" ||
+                phone === "" ||
+                address === ""
+            ){
 
                 alert(
-                    "Please add at least one medicine to your cart."
+                    "Please complete all required patient information."
                 );
 
                 return;
@@ -1562,55 +2686,261 @@ document.addEventListener("DOMContentLoaded", function () {
 
             closeRequestModal();
 
-            successMessage.classList.add("show");
+
+            showSuccessMessage();
+
 
             cart = [];
 
+
             updateCart();
+
 
             requestForm.reset();
 
         }
     );
 
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+function showSuccessMessage(){
+
+    if (!successMessage) return;
+
+
+    successMessage.classList.add(
+        "show"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+function closeSuccessMessage(){
+
+    if (!successMessage) return;
+
+
+    successMessage.classList.remove(
+        "show"
+    );
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+if (successClose){
 
     successClose.addEventListener(
         "click",
-        function () {
+        closeSuccessMessage
+    );
 
-            successMessage.classList.remove("show");
+}
+
+
+if (successDone){
+
+    successDone.addEventListener(
+        "click",
+        closeSuccessMessage
+    );
+
+}
+
+
+document
+    .querySelectorAll(".success-close")
+    .forEach(
+        function(button){
+
+            button.addEventListener(
+                "click",
+                closeSuccessMessage
+            );
 
         }
     );
 
 
-    /* =========================================================
-       ESCAPE KEY
-    ========================================================= */
+/* =========================================================
+   ESC KEY
+========================================================= */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+document.addEventListener(
+    "keydown",
+    function(event){
 
-            if (event.key !== "Escape") return;
+        if (
+            event.key !== "Escape"
+        ){
 
-            closeProductModal();
-            closeCart();
-            closeRequestModal();
+            return;
+
+        }
+
+
+        if (
+            mobileMenu &&
+            mobileMenu.classList.contains(
+                "show"
+            )
+        ){
+
             closeMobileMenu();
 
-            successMessage.classList.remove("show");
+            return;
+
+        }
+
+
+        if (
+            productModal &&
+            productModal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeProductModal();
+
+            return;
+
+        }
+
+
+        if (
+            cartModal &&
+            cartModal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeCart();
+
+            return;
+
+        }
+
+
+        if (
+            requestModal &&
+            requestModal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeRequestModal();
+
+            return;
+
+        }
+
+
+        if (
+            successMessage &&
+            successMessage.classList.contains(
+                "show"
+            )
+        ){
+
+            closeSuccessMessage();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MODAL BACKGROUND SCROLL
+========================================================= */
+
+document
+    .querySelectorAll(".modal")
+    .forEach(
+        function(modal){
+
+            modal.addEventListener(
+                "wheel",
+                function(event){
+
+                    const box =
+                        modal.querySelector(
+                            ".product-modal-box, .cart-modal-box, .request-modal-box"
+                        );
+
+
+                    if (!box) return;
+
+
+                    if (
+                        box.scrollHeight <=
+                        box.clientHeight
+                    ){
+
+                        event.preventDefault();
+
+                    }
+
+                },
+                {
+                    passive:false
+                }
+            );
 
         }
     );
 
 
-    /* =========================================================
-       INITIAL RENDER
-    ========================================================= */
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
-    renderProducts();
+renderProducts();
 
-    updateCart();
+updateCart();
 
-});
+
+/* =========================================================
+   GLOBAL IMAGE ERROR HANDLER
+========================================================= */
+
+document.addEventListener(
+    "error",
+    function(event){
+
+        const target =
+            event.target;
+
+
+        if (
+            target &&
+            target.tagName === "IMG" &&
+            target.dataset.fallbackUsed !== "true"
+        ){
+
+            target.dataset.fallbackUsed =
+                "true";
+
+
+            target.src =
+                fallbackImage;
+
+        }
+
+    },
+    true
+);
