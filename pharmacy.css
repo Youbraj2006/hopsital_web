@@ -2673,3 +2673,49 @@ h1,h2,h3,h4{
         transition-duration:.01ms !important;
     }
 }
+
+
+
+/* =========================================================
+   DEMO PRIVACY NOTICE
+========================================================= */
+
+.demo-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 0 30px 20px;
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #eefafa;
+    border: 1px solid rgba(8, 127, 140, 0.20);
+    color: #486568;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.demo-notice i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #087f8c;
+    font-size: 16px;
+}
+
+.demo-notice strong {
+    color: #087f8c;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+
+    .demo-notice {
+        margin: 0 18px 18px;
+        padding: 12px 13px;
+        font-size: 12px;
+    }
+
+    .demo-notice i {
+        font-size: 15px;
+    }
+
+}
