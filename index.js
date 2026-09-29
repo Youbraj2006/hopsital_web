@@ -4223,3 +4223,27 @@ document.addEventListener(
 
     }
 );
+
+
+
+
+/* =========================================================
+   LUMBINI CITY HOSPITAL — 5 SECOND INTRO
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const intro = document.getElementById("hospitalIntro");
+
+    if (!intro) return;
+
+    setTimeout(() => {
+        intro.classList.add("hide");
+
+        setTimeout(() => {
+            intro.remove();
+        }, 1000);
+
+    }, 3500);
+
+});

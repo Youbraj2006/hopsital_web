@@ -18,10 +18,10 @@ const medicines = [
         category:"pain",
         categoryName:"Pain Relief",
         manufacturer:"Siddhartha Pharma",
-        price:45,
+        price:107,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/7/7d/Paracetamol_500mg.jpg",
+        image:"pharmacy/1000124191-removebg-preview.png",
         description:"Used to relieve mild to moderate pain and reduce fever."
     },
 
@@ -33,10 +33,10 @@ const medicines = [
         category:"pain",
         categoryName:"Pain Relief",
         manufacturer:"Siddhartha Pharma",
-        price:75,
+        price:318,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5c/Ibuprofen_200mg.jpg",
+        image:"pharmacy/1000124207-removebg-preview.png",
         description:"A non-steroidal anti-inflammatory medicine used for pain, inflammation and fever."
     },
 
@@ -48,10 +48,10 @@ const medicines = [
         category:"stomach",
         categoryName:"Gastrointestinal",
         manufacturer:"Siddhartha Pharma",
-        price:120,
+        price:202,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/3/3c/Omeprazole_20mg.jpg",
+        image:"pharmacy/1000124209-removebg-preview.png",
         description:"Reduces stomach acid and is commonly used for acid reflux and related conditions."
     },
 
@@ -63,10 +63,10 @@ const medicines = [
         category:"stomach",
         categoryName:"Gastrointestinal",
         manufacturer:"Siddhartha Pharma",
-        price:135,
+        price:305,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/4/4f/Pantoprazole_40mg.jpg",
+        image:"pharmacy/1000124205-removebg-preview.png",
         description:"A proton pump inhibitor used to reduce excess stomach acid."
     },
 
@@ -78,10 +78,10 @@ const medicines = [
         category:"allergy",
         categoryName:"Allergy",
         manufacturer:"Siddhartha Pharma",
-        price:60,
+        price:116,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/2/2d/Cetirizine_10mg.jpg",
+        image:"pharmacy/1000124193-removebg-preview.png",
         description:"An antihistamine commonly used to relieve allergy symptoms."
     },
 
@@ -93,10 +93,10 @@ const medicines = [
         category:"allergy",
         categoryName:"Allergy",
         manufacturer:"Siddhartha Pharma",
-        price:85,
+        price:248,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Loratadine_10mg.jpg",
+        image:"pharmacy/img1-removebg-preview.png",
         description:"An antihistamine used for symptoms associated with allergic conditions."
     },
 
@@ -108,10 +108,10 @@ const medicines = [
         category:"antibiotic",
         categoryName:"Antibiotics",
         manufacturer:"Siddhartha Pharma",
-        price:180,
+        price:463,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Amoxicillin_500mg.jpg",
+        image:"pharmacy/1000124197-removebg-preview.png",
         description:"A penicillin-type antibiotic used to treat certain bacterial infections."
     },
 
@@ -123,10 +123,10 @@ const medicines = [
         category:"antibiotic",
         categoryName:"Antibiotics",
         manufacturer:"Siddhartha Pharma",
-        price:210,
+        price:557,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5c/Azithromycin_500mg.jpg",
+        image:"pharmacy/1000124199-removebg-preview.png",
         description:"An antibiotic used for selected bacterial infections."
     },
 
@@ -138,10 +138,10 @@ const medicines = [
         category:"diabetes",
         categoryName:"Diabetes",
         manufacturer:"Siddhartha Pharma",
-        price:95,
+        price:129,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6c/Metformin_500mg.jpg",
+        image:"img2-removebg-preview.png",
         description:"A medicine commonly prescribed to help control blood glucose levels in type 2 diabetes."
     },
 
@@ -153,10 +153,10 @@ const medicines = [
         category:"diabetes",
         categoryName:"Diabetes",
         manufacturer:"Siddhartha Pharma",
-        price:110,
+        price:184,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5e/Glimepiride_2mg.jpg",
+        image:"pharmacy/1000124203-removebg-preview.png",
         description:"An oral medicine prescribed for blood glucose management in type 2 diabetes."
     },
 
@@ -168,10 +168,10 @@ const medicines = [
         category:"heart",
         categoryName:"Cardiovascular",
         manufacturer:"Siddhartha Pharma",
-        price:90,
+        price:142,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Amlodipine_5mg.jpg",
+        image:"pharmacy/1000124225-removebg-preview.png",
         description:"A calcium-channel blocker commonly prescribed for high blood pressure."
     },
 
@@ -183,10 +183,10 @@ const medicines = [
         category:"heart",
         categoryName:"Cardiovascular",
         manufacturer:"Siddhartha Pharma",
-        price:125,
+        price:276,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/9/9e/Losartan_50mg.jpg",
+        image:"pharmacy/1000124227-removebg-preview.jpg",
         description:"An angiotensin receptor blocker commonly prescribed for hypertension."
     },
 
@@ -201,7 +201,7 @@ const medicines = [
         price:360,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Loratadine_10mg.jpg",
+        image:"pharmacy/1000124229-removebg-preview.png",
         description:"An antihistamine used to relieve common allergy symptoms."
     },
 
@@ -213,10 +213,10 @@ const medicines = [
         category:"heart",
         categoryName:"Cardiovascular",
         manufacturer:"Siddhartha Pharma",
-        price:145,
+        price:341,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/2/2d/Atorvastatin_20mg.jpg",
+        image:"pharmacy/1000124211-removebg-preview.png",
         description:"A statin medicine prescribed to help lower cholesterol."
     },
 
@@ -228,10 +228,10 @@ const medicines = [
         category:"stomach",
         categoryName:"Gastrointestinal",
         manufacturer:"Siddhartha Pharma",
-        price:95,
+        price:157,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Domperidone_10mg.jpg",
+        image:"pharmacy/1000124213-removebg-preview.png",
         description:"A medicine used in selected gastrointestinal conditions under medical guidance."
     },
 
@@ -243,10 +243,10 @@ const medicines = [
         category:"other",
         categoryName:"General Care",
         manufacturer:"Siddhartha Pharma",
-        price:25,
+        price:37,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5f/Oral_rehydration_salts.jpg",
+        image:"pharmacy/1000124215-removebg-preview.png",
         description:"Used to help replace fluids and electrolytes during dehydration."
     },
 
@@ -258,10 +258,10 @@ const medicines = [
         category:"vitamin",
         categoryName:"Vitamins",
         manufacturer:"Siddhartha Pharma",
-        price:150,
+        price:227,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Vitamin_C_tablets.jpg",
+        image:"pharmacy/1000124217-removebg-preview.png",
         description:"A vitamin supplement containing ascorbic acid."
     },
 
@@ -273,10 +273,10 @@ const medicines = [
         category:"vitamin",
         categoryName:"Vitamins",
         manufacturer:"Siddhartha Pharma",
-        price:280,
+        price:402,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/4/4e/Multivitamin_tablets.jpg",
+        image:"pharmacy/1000124219-removebg-preview.png",
         description:"A combination vitamin supplement for general nutritional support."
     },
 
@@ -288,10 +288,10 @@ const medicines = [
         category:"vitamin",
         categoryName:"Vitamins",
         manufacturer:"Siddhartha Pharma",
-        price:175,
+        price:264,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/3/3f/Calcium_tablets.jpg",
+        image:"pharmacy/1000124221-removebg-preview.png",
         description:"A calcium supplement used when additional calcium intake is required."
     },
 
@@ -303,10 +303,10 @@ const medicines = [
         category:"vitamin",
         categoryName:"Vitamins",
         manufacturer:"Siddhartha Pharma",
-        price:220,
+        price:357,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5d/Vitamin_D3.jpg",
+        image:"pharmacy/1000124223-removebg-preview.png",
         description:"A vitamin D supplement that supports normal calcium and bone metabolism."
     },
 
@@ -318,10 +318,10 @@ const medicines = [
         category:"other",
         categoryName:"General Care",
         manufacturer:"Siddhartha Pharma",
-        price:145,
+        price:173,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/4/4d/Cough_syrup.jpg",
+        image:"pharmacy/1000124241-removebg-preview.png",
         description:"A cough preparation intended for symptomatic relief."
     },
 
@@ -333,10 +333,10 @@ const medicines = [
         category:"stomach",
         categoryName:"Gastrointestinal",
         manufacturer:"Siddhartha Pharma",
-        price:130,
+        price:189,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/8/8f/Antacid_suspension.jpg",
+        image:"pharmacy/1000124243-removebg-preview.png",
         description:"An antacid preparation used to neutralize excess stomach acid."
     },
 
@@ -348,10 +348,10 @@ const medicines = [
         category:"pain",
         categoryName:"Pain Relief",
         manufacturer:"Siddhartha Pharma",
-        price:85,
+        price:137,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/2/2e/Diclofenac_50mg.jpg",
+        image:"pharmacy/1000124245-removebg-preview.jpg",
         description:"An anti-inflammatory medicine used for selected painful inflammatory conditions."
     },
 
@@ -363,10 +363,10 @@ const medicines = [
         category:"allergy",
         categoryName:"Allergy",
         manufacturer:"Siddhartha Pharma",
-        price:190,
+        price:286,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/9/9c/Montelukast_10mg.jpg",
+        image:"pharmacy/1000124247-removebg-preview.png",
         description:"A medicine prescribed for selected respiratory and allergy-related conditions."
     },
 
@@ -378,10 +378,10 @@ const medicines = [
         category:"other",
         categoryName:"General Care",
         manufacturer:"Siddhartha Pharma",
-        price:160,
+        price:221,
         stock:true,
         prescription:false,
-        image:"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+        image:"pharmacy/1000124249-removebg-preview.png",
         description:"A general cold and allergy relief product."
     },
 
@@ -393,10 +393,10 @@ const medicines = [
         category:"other",
         categoryName:"Eye Care",
         manufacturer:"Siddhartha Pharma",
-        price:125,
+        price:163,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/0/0d/Eye_drops.jpg",
+        image:"pharmacy/1000124231-removebg-preview.png",
         description:"Lubricating eye drops intended to relieve symptoms of dry or irritated eyes."
     },
 
@@ -408,10 +408,10 @@ const medicines = [
         category:"diabetes",
         categoryName:"Diabetes",
         manufacturer:"Siddhartha Pharma",
-        price:850,
+        price:857,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/5/5d/Insulin_vial.jpg",
+        image:"pharmacy/1000124233-removebg-preview.png",
         description:"Insulin used for blood glucose management according to a prescribed treatment plan."
     },
 
@@ -423,10 +423,10 @@ const medicines = [
         category:"heart",
         categoryName:"Cardiovascular",
         manufacturer:"Siddhartha Pharma",
-        price:65,
+        price:83,
         stock:true,
         prescription:true,
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Aspirin_75mg.jpg",
+        image:"pharmacy/1000124235-removebg-preview.png",
         description:"A low-dose aspirin product that may be prescribed for cardiovascular protection."
     },
 
@@ -438,10 +438,10 @@ const medicines = [
         category:"other",
         categoryName:"Antiseptic",
         manufacturer:"Siddhartha Pharma",
-        price:95,
+        price:119,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Povidone-iodine.jpg",
+        image:"pharmacy/1000124237-removebg-preview.png",
         description:"An antiseptic preparation used for cleaning and disinfecting skin."
     },
 
@@ -453,10 +453,10 @@ const medicines = [
         category:"vitamin",
         categoryName:"Vitamins",
         manufacturer:"Siddhartha Pharma",
-        price:110,
+        price:147,
         stock:true,
         prescription:false,
-        image:"https://upload.wikimedia.org/wikipedia/commons/3/3b/Zinc_tablets.jpg",
+        image:"pharmacy/1000124239-removebg-preview.png",
         description:"A zinc supplement used when additional dietary zinc is required."
     }
 
@@ -2944,3 +2944,5 @@ document.addEventListener(
     },
     true
 );
+
+
