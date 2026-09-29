@@ -4269,6 +4269,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }, 1000);
 
-    }, 3500);
+    }, 2500);
 
 });
