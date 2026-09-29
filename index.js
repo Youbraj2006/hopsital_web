@@ -4226,22 +4226,47 @@ document.addEventListener(
 
 
 
-
 /* =========================================================
-   LUMBINI CITY HOSPITAL — 5 SECOND INTRO
+   LUMBINI CITY HOSPITAL — INTRO + LOGIN POPUP
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const intro = document.getElementById("hospitalIntro");
+    const loginPopup = document.getElementById("loginPopup");
 
     if (!intro) return;
 
+    const loggedIn =
+        localStorage.getItem("hospitalLoggedIn") === "true";
+
+    if (loggedIn) {
+        intro.remove();
+        document.body.style.overflow = "";
+        return;
+    }
+
+    document.body.style.overflow = "hidden";
+
     setTimeout(() => {
+
         intro.classList.add("hide");
 
         setTimeout(() => {
+
             intro.remove();
+
+            if (
+                loginPopup &&
+                localStorage.getItem("hospitalLoggedIn") !== "true"
+            ) {
+
+                loginPopup.classList.add("show");
+
+                document.body.style.overflow = "hidden";
+
+            }
+
         }, 1000);
 
     }, 3500);
